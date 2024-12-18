@@ -1,67 +1,112 @@
-const clans = [
-    { name: "TDR", start: 2022, end: 2025, color: "#FF5733" },
-    { name: "Royal Clans", start: 2018, end: 2023, color: "#C70039" },
-    { name: "Valhalla", start: 2019, end: 2022, color: "#900C3F" },
-    { name: "ARC", start: 2020, end: 2025, color: "#581845" },
-    { name: "STACK", start: 2017, end: 2021, color: "#FFC300" },
-    { name: "DOGE", start: 2021, end: 2024, color: "#DAF7A6" },
-    { name: "X4F", start: 2023, end: 2025, color: "#3498DB" },
-    { name: "RR", start: 2016, end: 2020, color: "#A569BD" },
-];
-
 const startYear = 2016; // Début de la frise
 const endYear = 2026;   // Fin de la frise
+const totalYears = endYear - startYear + 1;
+const totalMonths = totalYears * 12;
+
+// Définir une largeur fixe par mois pour garantir un alignement parfait
+const MONTH_WIDTH = 40;
+const YEAR_WIDTH = MONTH_WIDTH * 12;
+const TIMELINE_WIDTH = totalMonths * MONTH_WIDTH;
+
+// Palette de couleurs pour les clans
+const clanColors = [
+    "#e6194b", "#3cb44b", "#ffe119", "#0082c8", "#f58231",
+    "#911eb4", "#46f0f0", "#f032e6", "#d2f53c", "#fabebe",
+    "#008080", "#e6beff", "#aa6e28", "#fffac8", "#800000",
+    "#aaffc3", "#808000", "#ffd8b1", "#000080", "#808080"
+];
 
 // Fonction pour afficher les années
 function generateYears() {
     const yearsContainer = document.getElementById("years");
-    yearsContainer.innerHTML = ""; // Réinitialiser les années
+    yearsContainer.innerHTML = "";
+    yearsContainer.style.position = "relative";
+    yearsContainer.style.width = TIMELINE_WIDTH + "px";
+
     for (let year = startYear; year <= endYear; year++) {
         const yearDiv = document.createElement("div");
-        yearDiv.style.flex = "1";
+        yearDiv.style.position = "absolute";
+        yearDiv.style.left = ((year - startYear) * YEAR_WIDTH) + "px";
         yearDiv.textContent = year;
+        yearDiv.style.color = "#aaa";
+        yearDiv.style.fontSize = "0.9rem";
+        yearDiv.style.top = "0";
         yearsContainer.appendChild(yearDiv);
     }
 }
 
 // Fonction pour générer les segments des clans
-function generateTimeline() {
+function generateTimeline(clans) {
     const container = document.getElementById("clan-container");
-    container.innerHTML = ""; // Réinitialiser les segments
-    const totalYears = endYear - startYear + 1;
-    const containerWidth = container.offsetWidth;
-    const yearWidth = containerWidth / totalYears;
+    container.innerHTML = "";
+    container.style.position = "relative";
+    container.style.width = TIMELINE_WIDTH + "px";
+
     const rowHeight = 40;
 
     clans.forEach((clan, index) => {
-        const segment = document.createElement("div");
-        segment.className = "segment";
-        segment.style.backgroundColor = clan.color;
+        const clanColor = clanColors[index % clanColors.length];
 
-        // Empêcher les segments de dépasser 2025
-        const adjustedEnd = Math.min(clan.end, 2025);
+        clan.segments.forEach((segment) => {
+            const segmentDiv = document.createElement("div");
+            segmentDiv.className = "segment";
+            segmentDiv.style.backgroundColor = clanColor;
 
-        // Correction de la largeur (on ne rajoute pas d'année supplémentaire)
-        const left = (clan.start - startYear) * yearWidth;
-        const width = (adjustedEnd - clan.start) * yearWidth;
+            // Extraction des années et mois depuis le segment
+            const [segStartYear, segStartMonth] = segment.start.split("-").map(Number);
+            const [segEndYear, segEndMonth] = segment.end.split("-").map(Number);
 
-        // Position verticale
-        const top = index * rowHeight;
+            // Calcul des offsets en mois par rapport à la frise de départ
+            const startOffset = ((segStartYear - startYear) * 12) + (segStartMonth - 1);
+            const endOffset = ((segEndYear - startYear) * 12) + (segEndMonth - 1);
 
-        // Application des styles
-        segment.style.left = `${left}px`;
-        segment.style.width = `${width}px`;
-        segment.style.top = `${top}px`;
-        segment.textContent = `${clan.name} (${clan.start} - ${adjustedEnd})`;
+            const left = startOffset * MONTH_WIDTH;
+            const width = (endOffset - startOffset + 1) * MONTH_WIDTH;
 
-        container.appendChild(segment);
+            // Position verticale : chaque clan est sur une ligne distincte
+            const top = index * rowHeight;
+
+            // Positionnement des segments
+            segmentDiv.style.position = "absolute";
+            segmentDiv.style.left = `${left}px`;
+            segmentDiv.style.width = `${width}px`;
+            segmentDiv.style.top = `${top}px`;
+            segmentDiv.textContent = `${segment.name} (${segment.start} - ${segment.end})`;
+
+            container.appendChild(segmentDiv);
+
+            // Affichage du leader si présent
+            if (segment.leader) {
+                const leaderLabel = document.createElement("div");
+                leaderLabel.className = "leader";
+                leaderLabel.style.position = "absolute";
+                leaderLabel.style.left = `${left}px`;
+                leaderLabel.style.top = `${top - 20}px`;
+                leaderLabel.textContent = `Leader: ${segment.leader}`;
+                container.appendChild(leaderLabel);
+            }
+        });
     });
 
-    // Ajuster la hauteur du conteneur
     container.style.height = `${clans.length * rowHeight}px`;
 }
 
-window.onload = () => {
-    generateYears();
-    generateTimeline();
-};
+// Fonction pour charger les données des clans
+function loadClans() {
+    fetch("data.json")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Erreur lors du chargement des données.");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            generateYears();
+            generateTimeline(data);
+        })
+        .catch((error) => {
+            console.error("Erreur:", error);
+        });
+}
+
+window.onload = loadClans;
