@@ -67,3 +67,143 @@ header {
   max-width: 300px;
   box-sizing: border-box;
 }
+
+/* Le panneau de filtres sur la droite */
+#filter-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 320px;
+  background: #1e1e1e;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Quand le panneau est fermé, on le translate quasi totalement à droite, 
+   ne laissant apparaître que le bouton toggle. */
+#filter-panel.closed {
+  transform: translateX(calc(100% - 40px));
+}
+/* Icône du toggle */
+#toggle-icon {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 2px white solid;
+  padding: 5px 10px;
+}
+
+/* Ajustement du formulaire à l'intérieur du panneau */
+form#filter-form {
+  flex: 1;
+  padding: 20px;
+  background: #1e1e1e;
+  border-radius: 0;
+  box-shadow: none;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* On réutilise le style précédent pour le formulaire */
+form#filter-form fieldset {
+  height: 100%;
+  padding: 0 20px;
+}
+
+form#filter-form legend {
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+form#filter-form div {
+  margin-bottom: 15px;
+}
+
+form#filter-form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+form#filter-form input[type="text"],
+form#filter-form input[type="number"],
+form#filter-form input[type="month"],
+form#filter-form select {
+  padding: 5px;
+  border: 2px solid #444;
+  border-radius: 5px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form#filter-form select {
+  width: 100%;
+}
+
+form#filter-form input[type="text"],
+form#filter-form input[type="number"],
+form#filter-form input[type="month"] {
+  width: 94%;
+}
+
+form#filter-form input:focus,
+form#filter-form select:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 8px #00bcd4;
+  outline: none;
+}
+
+form#filter-form input::placeholder {
+  color: #666;
+  font-style: italic;
+}
+
+form#filter-form button {
+  display: block;
+  width: 100%;
+  padding: 5px 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #00bcd4;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+form#filter-form button:hover {
+  background-color: #008ba3;
+  transform: translateY(-2px);
+}
+
+form#filter-form button:active {
+  background-color: #005f6b;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  #filter-panel {
+    width: 80%;
+  }
+
+  form#filter-form legend {
+    font-size: 1.3rem;
+  }
+
+  form#filter-form input,
+  form#filter-form select,
+  form#filter-form button {
+    font-size: 0.9rem;
+  }
+}

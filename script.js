@@ -5,7 +5,7 @@ const totalYears = endYear - startYear + 1;
 const totalMonths = totalYears * 12;
 
 // Largeur par mois
-const MONTH_WIDTH = 80;
+const MONTH_WIDTH = 50;
 const YEAR_WIDTH = MONTH_WIDTH * 12;
 const TIMELINE_WIDTH = totalMonths * MONTH_WIDTH;
 
@@ -108,14 +108,15 @@ function generateTimeline(clans) {
             const segmentInfo = `
                 <hr/>
                 <div><strong>${segment.name}</strong></div>
-                <div>Play in  <strong>${clan.mainRegion}</strong></div>
+                <div>Play in <strong>${clan.mainRegion}</strong></div>
                 <div>${segment.start} - ${segment.end}</div>
                 <div><strong>Leader :</strong> ${segment.leader}</div>
-                <div><strong>Currently Active : </strong> ${clan.isActive}</div>
+                <div><strong>Currently Active :</strong> ${clan.isActive ? "Yes" : "No"}</div>
                 <div><strong>Active members :</strong> ${segment.playerCount}</div>
-                <div><strong>Cheating : </strong> ${clan.isCheaterClan}</div>
-                <div><strong>Team : </strong> ${clan.isTeam}</div>
+                <div><strong>Cheating :</strong> ${clan.isCheaterClan ? "Yes" : "No"}</div>
+                <div><strong>Team :</strong> ${clan.isTeam ? "Yes" : "No"}</div>
             `;
+
             const tooltipContent = segmentInfo;
 
             segmentDiv.addEventListener("mouseenter", () => {

@@ -1,0 +1,5 @@
+Appliquer des couleurs hexadecimal fixw pour les clans/ teams
+Etablir la liste compléte et entiere des team et clans
+ajuster la hauteur hauteur de la height de la timeline,
+
+utiliser des webkite pour avoir des scrollnbar stylé
