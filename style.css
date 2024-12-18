@@ -21,6 +21,8 @@ header {
   padding: 10px 0;
   overflow-x: auto;
   border-top: 2px solid #444;
+  box-sizing: border-box;
+  height: 100vh;
 }
 
 #years {
@@ -51,11 +53,17 @@ header {
   overflow: hidden;
 }
 
-/* Label du leader */
-.leader {
-  font-size: 0.7rem;
+/* Tooltip */
+#tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2px 5px;
-  border-radius: 3px;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+  font-size: 0.8rem;
+  z-index: 999;
+  pointer-events: none;
+  max-width: 300px;
+  box-sizing: border-box;
 }

@@ -16,6 +16,104 @@
         <div id="months"></div>
         <div id="clan-container"></div>
       </div>
+
+      <form id="filter-form">
+        <fieldset>
+          <legend>Filtrer les Clans</legend>
+
+          <!-- Filtre par segment name -->
+          <div>
+            <label for="segment-name-filter">Nom du Segment:</label>
+            <input
+              type="text"
+              id="segment-name-filter"
+              name="segmentName"
+              placeholder="Nom du segment"
+            />
+          </div>
+
+          <!-- Filtre par isCheaterClan -->
+          <div>
+            <label for="cheater-filter">Clan Tricheur:</label>
+            <select id="cheater-filter" name="isCheaterClan">
+              <option value="">Indifférent</option>
+              <option value="true">Oui</option>
+              <option value="false">Non</option>
+            </select>
+          </div>
+
+          <!-- Filtre par isTeam -->
+          <div>
+            <label for="team-filter">Team:</label>
+            <select id="team-filter" name="isTeam">
+              <option value="">Indifférent</option>
+              <option value="true">Oui</option>
+              <option value="false">Non</option>
+            </select>
+          </div>
+
+          <!-- Filtre par isActive -->
+          <div>
+            <label for="active-filter">Actif:</label>
+            <select id="active-filter" name="isActive">
+              <option value="">Indifférent</option>
+              <option value="true">Oui</option>
+              <option value="false">Non</option>
+            </select>
+          </div>
+
+          <!-- Filtre par mainRegion -->
+          <div>
+            <label for="region-filter">Région:</label>
+            <select id="region-filter" name="mainRegion">
+              <option value="">Indifférent</option>
+              <option value="EUROPE">Europe</option>
+              <option value="AMERICA">America</option>
+              <option value="ASIA">Asia</option>
+            </select>
+          </div>
+
+          <!-- Filtre par date de début sur les segments -->
+          <div>
+            <label for="start-date-filter">Date de début (après):</label>
+            <input type="month" id="start-date-filter" name="startDate" />
+          </div>
+
+          <!-- Filtre par date de fin sur les segments -->
+          <div>
+            <label for="end-date-filter">Date de fin (avant):</label>
+            <input type="month" id="end-date-filter" name="endDate" />
+          </div>
+
+          <!-- Filtre par nombre de joueurs (segments) -->
+          <div>
+            <label for="min-player-filter">Nombre de joueurs minimum:</label>
+            <input
+              type="number"
+              id="min-player-filter"
+              name="minPlayerCount"
+              min="0"
+              placeholder="0"
+            />
+          </div>
+
+          <div>
+            <label for="max-player-filter">Nombre de joueurs maximum:</label>
+            <input
+              type="number"
+              id="max-player-filter"
+              name="maxPlayerCount"
+              min="0"
+              placeholder="100"
+            />
+          </div>
+
+          <button type="submit">Appliquer les filtres</button>
+        </fieldset>
+      </form>
+
+      <!-- Tooltip -->
+      <div id="tooltip"></div>
     </main>
     <script src="script.js"></script>
   </body>
