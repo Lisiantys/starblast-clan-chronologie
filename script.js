@@ -108,9 +108,8 @@ function generateTimeline(clans) {
             const segmentInfo = `
                 <hr/>
                 <div><strong>${segment.name}</strong></div>
-                <div><strong>Play in </strong> ${clan.mainRegion}</div>
-                <div><strong>Start :</strong> ${segment.start}</div>
-                <div><strong>End :</strong> ${segment.end}</div>
+                <div>Play in  <strong>${clan.mainRegion}</strong></div>
+                <div>${segment.start} - ${segment.end}</div>
                 <div><strong>Leader :</strong> ${segment.leader}</div>
                 <div><strong>Currently Active : </strong> ${clan.isActive}</div>
                 <div><strong>Active members :</strong> ${segment.playerCount}</div>
@@ -176,24 +175,26 @@ function loadClans() {
         });
 }
 
+
 // Écouteur sur le formulaire de filtre
 document.getElementById("filter-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const form = e.target;
 
-    const nameVal = form.name.value.trim();
+    const segmentNameVal = form.segmentName.value.trim().toLowerCase();
     const isCheaterClanVal = form.isCheaterClan.value;
     const isTeamVal = form.isTeam.value;
     const isActiveVal = form.isActive.value;
-    const startDateVal = form.startDate.value; // "YYYY-MM"
-    const endDateVal = form.endDate.value;     // "YYYY-MM"
+    const mainRegionVal = form.mainRegion.value;
+    const startDateVal = form.startDate.value;
+    const endDateVal = form.endDate.value;
     const minPlayerCountVal = form.minPlayerCount.value;
     const maxPlayerCountVal = form.maxPlayerCount.value;
 
-    // Conversion des champs booléens
     const filterCheater = isCheaterClanVal === "" ? null : (isCheaterClanVal === "true");
     const filterTeam = isTeamVal === "" ? null : (isTeamVal === "true");
     const filterActive = isActiveVal === "" ? null : (isActiveVal === "true");
+    const filterRegion = mainRegionVal === "" ? null : mainRegionVal;
 
     const filterStartDate = parseDateStr(startDateVal);
     const filterEndDate = parseDateStr(endDateVal);
@@ -202,34 +203,39 @@ document.getElementById("filter-form").addEventListener("submit", (e) => {
     const maxPC = maxPlayerCountVal ? parseInt(maxPlayerCountVal, 10) : null;
 
     const filteredData = originalClansData.filter(clan => {
-        // Filtre par nom
-        if (nameVal && !clan.name.toLowerCase().includes(nameVal.toLowerCase())) {
-            return false;
-        }
-
-        // Filtres booléens
+        // Filtres booléens & région
         if (filterCheater !== null && clan.isCheaterClan !== filterCheater) return false;
         if (filterTeam !== null && clan.isTeam !== filterTeam) return false;
         if (filterActive !== null && clan.isActive !== filterActive) return false;
+        if (filterRegion !== null && clan.mainRegion !== filterRegion) return false;
 
-        // Filtres par date
-        const clanStart = parseDateStr(clan.start);
-        const clanEnd = parseDateStr(clan.end);
-        if (filterStartDate !== null && clanStart < filterStartDate) return false;
-        if (filterEndDate !== null && clanEnd > filterEndDate) return false;
+        // Maintenant filtrage sur les segments
+        // On veut au moins un segment qui matche tous les critères segments
+        const segmentFits = clan.segments.some(seg => {
+            // Filtre par nom de segment
+            if (segmentNameVal && !seg.name.toLowerCase().includes(segmentNameVal)) return false;
 
-        // Filtre par playerCount sur les segments
-        if (minPC !== null || maxPC !== null) {
-            // On vérifie si au moins un segment convient
-            const segmentFits = clan.segments.some(seg => {
-                const pc = seg.playerCount || 0;
-                if (minPC !== null && pc < minPC) return false;
-                if (maxPC !== null && pc > maxPC) return false;
-                return true;
-            });
-            if (!segmentFits) return false;
-        }
+            // Filtre par date : le segment doit commencer après startDate si défini
+            if (filterStartDate !== null) {
+                const segStart = parseDateStr(seg.start);
+                if (segStart < filterStartDate) return false;
+            }
 
+            // Filtre par date de fin : segment doit finir avant endDate si défini
+            if (filterEndDate !== null) {
+                const segEnd = parseDateStr(seg.end);
+                if (segEnd > filterEndDate) return false;
+            }
+
+            // Filtre par playerCount
+            const pc = seg.playerCount || 0;
+            if (minPC !== null && pc < minPC) return false;
+            if (maxPC !== null && pc > maxPC) return false;
+
+            return true;
+        });
+
+        if (!segmentFits) return false;
         return true;
     });
 

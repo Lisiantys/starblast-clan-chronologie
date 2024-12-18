@@ -10,7 +10,7 @@
                 "end": "2025-06",
                 "name": "TDR",
                 "leader": "John Doe",
-                "playerCount": 45
+                "playerCount": 1
             }
         ]
     },
@@ -25,7 +25,7 @@
                 "end": "2020-05",
                 "name": "Royal Clans",
                 "leader": "Alice Green",
-                "playerCount": 45
+                "playerCount": 5
             },
             {
                 "start": "2021-02",

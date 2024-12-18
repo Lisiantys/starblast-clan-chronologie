@@ -19,11 +19,11 @@
 
       <form id="filter-form">
         <fieldset>
-          <legend>Filtrer les Clans</legend>
+          <legend>Filter Clans / Teams</legend>
 
           <!-- Filtre par segment name -->
           <div>
-            <label for="segment-name-filter">Nom du Segment:</label>
+            <label for="segment-name-filter">Name :</label>
             <input
               type="text"
               id="segment-name-filter"
@@ -34,39 +34,39 @@
 
           <!-- Filtre par isCheaterClan -->
           <div>
-            <label for="cheater-filter">Clan Tricheur:</label>
+            <label for="cheater-filter">Are cheating ?</label>
             <select id="cheater-filter" name="isCheaterClan">
-              <option value="">Indifférent</option>
-              <option value="true">Oui</option>
-              <option value="false">Non</option>
+              <option value="">------</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
             </select>
           </div>
 
           <!-- Filtre par isTeam -->
           <div>
-            <label for="team-filter">Team:</label>
+            <label for="team-filter">Are a clan ? </label>
             <select id="team-filter" name="isTeam">
-              <option value="">Indifférent</option>
-              <option value="true">Oui</option>
-              <option value="false">Non</option>
+              <option value="">------</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
             </select>
           </div>
 
           <!-- Filtre par isActive -->
           <div>
-            <label for="active-filter">Actif:</label>
+            <label for="active-filter">Active ?</label>
             <select id="active-filter" name="isActive">
-              <option value="">Indifférent</option>
-              <option value="true">Oui</option>
-              <option value="false">Non</option>
+              <option value="">------</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
             </select>
           </div>
 
           <!-- Filtre par mainRegion -->
           <div>
-            <label for="region-filter">Région:</label>
+            <label for="region-filter">Region ?</label>
             <select id="region-filter" name="mainRegion">
-              <option value="">Indifférent</option>
+              <option value="">------</option>
               <option value="EUROPE">Europe</option>
               <option value="AMERICA">America</option>
               <option value="ASIA">Asia</option>
@@ -75,19 +75,19 @@
 
           <!-- Filtre par date de début sur les segments -->
           <div>
-            <label for="start-date-filter">Date de début (après):</label>
+            <label for="start-date-filter">Start :</label>
             <input type="month" id="start-date-filter" name="startDate" />
           </div>
 
           <!-- Filtre par date de fin sur les segments -->
           <div>
-            <label for="end-date-filter">Date de fin (avant):</label>
+            <label for="end-date-filter">Ended :</label>
             <input type="month" id="end-date-filter" name="endDate" />
           </div>
 
           <!-- Filtre par nombre de joueurs (segments) -->
           <div>
-            <label for="min-player-filter">Nombre de joueurs minimum:</label>
+            <label for="min-player-filter">Min actives members :</label>
             <input
               type="number"
               id="min-player-filter"
@@ -98,7 +98,7 @@
           </div>
 
           <div>
-            <label for="max-player-filter">Nombre de joueurs maximum:</label>
+            <label for="max-player-filter">Max actives members :</label>
             <input
               type="number"
               id="max-player-filter"
@@ -108,7 +108,7 @@
             />
           </div>
 
-          <button type="submit">Appliquer les filtres</button>
+          <button type="submit">Apply filters</button>
         </fieldset>
       </form>
 
