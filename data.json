@@ -6,14 +6,13 @@
         "isCheaterClan": false,
         "isTeam": false,
         "isActive": true,
-        "leader": "John Doe",
-        "playerCount": 45,
         "segments": [
             {
                 "start": "2022-01",
                 "end": "2025-06",
                 "name": "TDR",
-                "leader": "John Doe"
+                "leader": "John Doe",
+                "playerCount": 45
             }
         ]
     },
@@ -24,20 +23,20 @@
         "isCheaterClan": false,
         "isTeam": false,
         "isActive": true,
-        "leader": "Alice Green",
-        "playerCount": 60,
         "segments": [
             {
                 "start": "2018-03",
                 "end": "2020-05",
                 "name": "Royal Clans",
-                "leader": "Alice Green"
+                "leader": "Alice Green",
+                "playerCount": 45
             },
             {
                 "start": "2021-02",
                 "end": "2023-08",
                 "name": "Royal Warriors",
-                "leader": "Alice Green"
+                "leader": "Alice Green",
+                "playerCount": 45
             }
         ]
     },
@@ -48,14 +47,13 @@
         "isCheaterClan": true,
         "isTeam": false,
         "isActive": false,
-        "leader": "Olaf Ragnar",
-        "playerCount": 30,
         "segments": [
             {
                 "start": "2019-06",
                 "end": "2022-09",
                 "name": "Valhalla",
-                "leader": "Olaf Ragnar"
+                "leader": "Olaf Ragnar",
+                "playerCount": 45
             }
         ]
     },
@@ -66,14 +64,13 @@
         "isCheaterClan": false,
         "isTeam": true,
         "isActive": false,
-        "leader": "Lucas Sky",
-        "playerCount": 20,
         "segments": [
             {
                 "start": "2017-01",
                 "end": "2021-11",
                 "name": "STACK",
-                "leader": "Lucas Sky"
+                "leader": "Lucas Sky",
+                "playerCount": 20
             }
         ]
     },
@@ -84,14 +81,13 @@
         "isCheaterClan": false,
         "isTeam": true,
         "isActive": true,
-        "leader": "Jack Wilson",
-        "playerCount": 50,
         "segments": [
             {
                 "start": "2021-05",
                 "end": "2024-02",
                 "name": "DOGE",
-                "leader": "Jack Wilson"
+                "leader": "Jack Wilson",
+                "playerCount": 50
             }
         ]
     },
@@ -102,20 +98,20 @@
         "isCheaterClan": false,
         "isTeam": true,
         "isActive": true,
-        "leader": "Ethan Hunt",
-        "playerCount": 35,
         "segments": [
             {
                 "start": "2023-07",
                 "end": "2024-04",
                 "name": "X4F",
-                "leader": "Ethan Hunt"
+                "leader": "Ethan Hunt",
+                "playerCount": 35
             },
             {
                 "start": "2024-07",
                 "end": "2025-12",
                 "name": "X4F Reloaded",
-                "leader": "Ethan Hunt"
+                "leader": "Ethan Hunt",
+                "playerCount": 35
             }
         ]
     },
@@ -126,14 +122,13 @@
         "isCheaterClan": false,
         "isTeam": false,
         "isActive": false,
-        "leader": "Ryan Red",
-        "playerCount": 15,
         "segments": [
             {
                 "start": "2016-08",
                 "end": "2020-12",
                 "name": "RR",
-                "leader": "Ryan Red"
+                "leader": "Ryan Red",
+                "playerCount": 15
             }
         ]
     },
@@ -144,20 +139,20 @@
         "isCheaterClan": false,
         "isTeam": false,
         "isActive": false,
-        "leader": "Max Phoenix",
-        "playerCount": 25,
         "segments": [
             {
                 "start": "2017-03",
                 "end": "2020-02",
                 "name": "Phoenix",
-                "leader": "Max Phoenix"
+                "leader": "Max Phoenix",
+                "playerCount": 25
             },
             {
                 "start": "2022-01",
                 "end": "2023-01",
                 "name": "Phoenix Rising",
-                "leader": "Stark Phoenix"
+                "leader": "Stark Phoenix",
+                "playerCount": 25
             }
         ]
     }

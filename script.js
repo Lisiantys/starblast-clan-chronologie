@@ -3,13 +3,13 @@ const endYear = 2026;   // Fin de la frise
 const totalYears = endYear - startYear + 1;
 const totalMonths = totalYears * 12;
 
-// Largeur par mois réduite pour une frise plus compacte
-const MONTH_WIDTH = 20;
+// On passe à 80px par mois (au lieu de 40px initialement) pour doubler l'espacement entre chaque année
+const MONTH_WIDTH = 40;
 const YEAR_WIDTH = MONTH_WIDTH * 12;
 const TIMELINE_WIDTH = totalMonths * MONTH_WIDTH;
 
 // Mois en anglais, 3 premières lettres
-const monthNames = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 // Palette de couleurs pour les clans
 const clanColors = [
@@ -25,7 +25,7 @@ function generateYears() {
     yearsContainer.innerHTML = "";
     yearsContainer.style.position = "relative";
     yearsContainer.style.width = TIMELINE_WIDTH + "px";
-    yearsContainer.style.height = "20px"; // hauteur pour les années
+    yearsContainer.style.height = "20px";
 
     for (let year = startYear; year <= endYear; year++) {
         const yearDiv = document.createElement("div");
@@ -45,7 +45,7 @@ function generateMonths() {
     monthsContainer.innerHTML = "";
     monthsContainer.style.position = "relative";
     monthsContainer.style.width = TIMELINE_WIDTH + "px";
-    monthsContainer.style.height = "20px"; // hauteur pour les mois
+    monthsContainer.style.height = "20px";
 
     for (let i = 0; i < totalMonths; i++) {
         const monthIndex = i % 12;
@@ -69,7 +69,8 @@ function generateTimeline(clans) {
     container.style.width = TIMELINE_WIDTH + "px";
 
     const rowHeight = 40;
-    // On décale le container des clans pour laisser de la place aux labels années et mois
+
+    // On laisse un espace vertical pour les années et les mois
     container.style.marginTop = "50px";
 
     clans.forEach((clan, index) => {
@@ -101,17 +102,6 @@ function generateTimeline(clans) {
             segmentDiv.textContent = `${segment.name} (${segment.start} - ${segment.end})`;
 
             container.appendChild(segmentDiv);
-
-            // Affichage du leader si présent
-            if (segment.leader) {
-                const leaderLabel = document.createElement("div");
-                leaderLabel.className = "leader";
-                leaderLabel.style.position = "absolute";
-                leaderLabel.style.left = `${left}px`;
-                leaderLabel.style.top = `${top - 20}px`;
-                leaderLabel.textContent = `Leader: ${segment.leader}`;
-                container.appendChild(leaderLabel);
-            }
         });
     });
 

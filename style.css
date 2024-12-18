@@ -36,7 +36,6 @@ header {
 /* Conteneur des segments */
 #clan-container {
   position: relative;
-  /* La hauteur sera dynamique en fonction du contenu */
 }
 
 /* Style des segments */
