@@ -131,7 +131,7 @@ function generateTimeline(clans) {
                 const tooltipHeight = tooltip.offsetHeight;
 
                 const mouseX = e.clientX - containerRect.left;
-                const mouseY = (e.clientY + 120) - containerRect.top;
+                const mouseY = (e.clientY + 170) - containerRect.top;
 
                 // Centrage horizontal du tooltip par rapport à la souris
                 let tooltipLeft = mouseX - (tooltipWidth / 2);

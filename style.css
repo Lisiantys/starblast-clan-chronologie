@@ -158,8 +158,8 @@ form#filter-form input[type="month"] {
 
 form#filter-form input:focus,
 form#filter-form select:focus {
-  border-color: #00bcd4;
-  box-shadow: 0 0 8px #00bcd4;
+  border-color: #ffffff;
+  box-shadow: 0 0 8px #ffffff;
   outline: none;
 }
 
@@ -176,19 +176,20 @@ form#filter-form button {
   font-weight: bold;
   border: none;
   border-radius: 5px;
-  background-color: #00bcd4;
+  background-color: #494f50;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
 
 form#filter-form button:hover {
-  background-color: #008ba3;
+  background-color: #ffffff;
+  color: black;
   transform: translateY(-2px);
 }
 
 form#filter-form button:active {
-  background-color: #005f6b;
+  background-color: #494f50;
   transform: translateY(0);
 }
 
