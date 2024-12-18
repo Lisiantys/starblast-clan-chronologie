@@ -1,3 +1,32 @@
+* {
+  scrollbar-width: thin;
+  scrollbar-color: white transparent;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid transparent;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+
+  /* Supprimer les flèches des barres de défilement */
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
 /* Style global */
 body {
   font-family: Arial, sans-serif;
@@ -22,15 +51,14 @@ header {
   overflow-x: auto;
   border-top: 2px solid #444;
   box-sizing: border-box;
-  height: 100vh;
 }
 
-#years {
+.years {
   position: relative;
   margin-bottom: 5px;
 }
 
-#months {
+.months {
   position: relative;
   margin-bottom: 5px;
 }
@@ -38,15 +66,17 @@ header {
 /* Conteneur des segments */
 #clan-container {
   position: relative;
+  height: 100vh;
 }
 
 /* Style des segments */
 .segment {
-  height: 30px;
-  line-height: 30px;
+  height: 16px;
+  line-height: 16px;
   padding: 0 10px;
   border-radius: 5px;
   color: #fff;
+  font-weight: bolder;
   font-size: 0.8rem;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   white-space: nowrap;

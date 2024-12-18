@@ -31,7 +31,7 @@ function parseDateStr(str) {
 }
 
 function generateYears() {
-    const yearsContainer = document.getElementById("years");
+    const yearsContainer = document.querySelector(".years");
     yearsContainer.innerHTML = "";
     yearsContainer.style.position = "relative";
     yearsContainer.style.width = TIMELINE_WIDTH + "px";
@@ -50,7 +50,7 @@ function generateYears() {
 }
 
 function generateMonths() {
-    const monthsContainer = document.getElementById("months");
+    const monthsContainer = document.querySelector(".months");
     monthsContainer.innerHTML = "";
     monthsContainer.style.position = "relative";
     monthsContainer.style.width = TIMELINE_WIDTH + "px";
@@ -112,7 +112,6 @@ function generateTimeline(clans) {
                 <div>${segment.start} - ${segment.end}</div>
                 <div><strong>Leader :</strong> ${segment.leader}</div>
                 <div><strong>Currently Active :</strong> ${clan.isActive ? "Yes" : "No"}</div>
-                <div><strong>Active members :</strong> ${segment.playerCount}</div>
                 <div><strong>Cheating :</strong> ${clan.isCheaterClan ? "Yes" : "No"}</div>
                 <div><strong>Team :</strong> ${clan.isTeam ? "Yes" : "No"}</div>
             `;
@@ -189,9 +188,6 @@ document.getElementById("filter-form").addEventListener("submit", (e) => {
     const mainRegionVal = form.mainRegion.value;
     const startDateVal = form.startDate.value;
     const endDateVal = form.endDate.value;
-    const minPlayerCountVal = form.minPlayerCount.value;
-    const maxPlayerCountVal = form.maxPlayerCount.value;
-
     const filterCheater = isCheaterClanVal === "" ? null : (isCheaterClanVal === "true");
     const filterTeam = isTeamVal === "" ? null : (isTeamVal === "true");
     const filterActive = isActiveVal === "" ? null : (isActiveVal === "true");
@@ -199,9 +195,6 @@ document.getElementById("filter-form").addEventListener("submit", (e) => {
 
     const filterStartDate = parseDateStr(startDateVal);
     const filterEndDate = parseDateStr(endDateVal);
-
-    const minPC = minPlayerCountVal ? parseInt(minPlayerCountVal, 10) : null;
-    const maxPC = maxPlayerCountVal ? parseInt(maxPlayerCountVal, 10) : null;
 
     const filteredData = originalClansData.filter(clan => {
         // Filtres booléens & région
@@ -227,11 +220,6 @@ document.getElementById("filter-form").addEventListener("submit", (e) => {
                 const segEnd = parseDateStr(seg.end);
                 if (segEnd > filterEndDate) return false;
             }
-
-            // Filtre par playerCount
-            const pc = seg.playerCount || 0;
-            if (minPC !== null && pc < minPC) return false;
-            if (maxPC !== null && pc > maxPC) return false;
 
             return true;
         });

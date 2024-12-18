@@ -13,8 +13,8 @@
     </header>
     <main>
       <div id="timeline-container">
-        <div id="years"></div>
-        <div id="months"></div>
+        <div class="years"></div>
+        <div class="months"></div>
         <div id="clan-container"></div>
       </div>
       <!-- Panneau de filtre -->
@@ -27,19 +27,19 @@
               <input type="text" id="segment-name-filter" name="segmentName" />
             </div>
             <div>
-              <label for="cheater-filter">Are cheating ?</label>
+              <label for="cheater-filter">Reputation ?</label>
               <select id="cheater-filter" name="isCheaterClan">
                 <option value="">------</option>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
+                <option value="true">Cheaters</option>
+                <option value="false">Fair</option>
               </select>
             </div>
             <div>
-              <label for="team-filter">Are a clan ? </label>
+              <label for="team-filter">Structure ? </label>
               <select id="team-filter" name="isTeam">
                 <option value="">------</option>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
+                <option value="true">Clan</option>
+                <option value="false">Team</option>
               </select>
             </div>
             <div>
@@ -67,27 +67,6 @@
               <label for="end-date-filter">Ended :</label>
               <input type="month" id="end-date-filter" name="endDate" />
             </div>
-            <div>
-              <label for="min-player-filter">Min active members :</label>
-              <input
-                type="number"
-                id="min-player-filter"
-                name="minPlayerCount"
-                min="0"
-                placeholder="0"
-              />
-            </div>
-            <div>
-              <label for="max-player-filter">Max active members :</label>
-              <input
-                type="number"
-                id="max-player-filter"
-                name="maxPlayerCount"
-                min="0"
-                placeholder="100"
-              />
-            </div>
-
             <button type="submit">Apply filters</button>
           </fieldset>
         </form>

@@ -9,8 +9,7 @@
                 "start": "2022-01",
                 "end": "2025-06",
                 "name": "TDR",
-                "leader": "John Doe",
-                "playerCount": 1
+                "leader": "John Doe"
             }
         ]
     },
@@ -24,15 +23,13 @@
                 "start": "2018-03",
                 "end": "2020-05",
                 "name": "Royal Clans",
-                "leader": "Alice Green",
-                "playerCount": 5
+                "leader": "Alice Green"
             },
             {
                 "start": "2021-02",
                 "end": "2023-08",
                 "name": "Royal Warriors",
-                "leader": "Alice Green",
-                "playerCount": 45
+                "leader": "Alice Green"
             }
         ]
     },
@@ -46,8 +43,7 @@
                 "start": "2019-06",
                 "end": "2022-09",
                 "name": "Valhalla",
-                "leader": "Olaf Ragnar",
-                "playerCount": 45
+                "leader": "Olaf Ragnar"
             }
         ]
     },
@@ -61,8 +57,7 @@
                 "start": "2017-01",
                 "end": "2021-11",
                 "name": "STACK",
-                "leader": "Lucas Sky",
-                "playerCount": 20
+                "leader": "Lucas Sky"
             }
         ]
     },
@@ -76,8 +71,7 @@
                 "start": "2021-05",
                 "end": "2024-02",
                 "name": "DOGE",
-                "leader": "Jack Wilson",
-                "playerCount": 50
+                "leader": "Jack Wilson"
             }
         ]
     },
@@ -91,15 +85,13 @@
                 "start": "2023-07",
                 "end": "2024-04",
                 "name": "X4F",
-                "leader": "Ethan Hunt",
-                "playerCount": 35
+                "leader": "Ethan Hunt"
             },
             {
                 "start": "2024-07",
                 "end": "2025-12",
                 "name": "X4F Reloaded",
-                "leader": "Ethan Hunt",
-                "playerCount": 35
+                "leader": "Ethan Hunt"
             }
         ]
     },
@@ -113,8 +105,7 @@
                 "start": "2016-08",
                 "end": "2020-12",
                 "name": "RR",
-                "leader": "Ryan Red",
-                "playerCount": 15
+                "leader": "Ryan Red"
             }
         ]
     },
@@ -128,15 +119,13 @@
                 "start": "2017-03",
                 "end": "2020-02",
                 "name": "Phoenix",
-                "leader": "Max Phoenix",
-                "playerCount": 25
+                "leader": "Max Phoenix"
             },
             {
                 "start": "2022-01",
                 "end": "2023-01",
                 "name": "Phoenix Rising",
-                "leader": "Stark Phoenix",
-                "playerCount": 25
+                "leader": "Stark Phoenix"
             }
         ]
     }

@@ -1,5 +1,4 @@
 Appliquer des couleurs hexadecimal fixw pour les clans/ teams
+afficher par defaut les clans par date de créations. du plus vieux au plus jeune
 Etablir la liste compléte et entiere des team et clans
-ajuster la hauteur hauteur de la height de la timeline,
-
-utiliser des webkite pour avoir des scrollnbar stylé
+ajuster la hauteur  de la height de la timeline,
