@@ -3,10 +3,13 @@ const endYear = 2026;   // Fin de la frise
 const totalYears = endYear - startYear + 1;
 const totalMonths = totalYears * 12;
 
-// Définir une largeur fixe par mois pour garantir un alignement parfait
-const MONTH_WIDTH = 40;
+// Largeur par mois réduite pour une frise plus compacte
+const MONTH_WIDTH = 20;
 const YEAR_WIDTH = MONTH_WIDTH * 12;
 const TIMELINE_WIDTH = totalMonths * MONTH_WIDTH;
+
+// Mois en anglais, 3 premières lettres
+const monthNames = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
 
 // Palette de couleurs pour les clans
 const clanColors = [
@@ -16,12 +19,13 @@ const clanColors = [
     "#aaffc3", "#808000", "#ffd8b1", "#000080", "#808080"
 ];
 
-// Fonction pour afficher les années
+// Affiche les années sur la ligne du haut
 function generateYears() {
     const yearsContainer = document.getElementById("years");
     yearsContainer.innerHTML = "";
     yearsContainer.style.position = "relative";
     yearsContainer.style.width = TIMELINE_WIDTH + "px";
+    yearsContainer.style.height = "20px"; // hauteur pour les années
 
     for (let year = startYear; year <= endYear; year++) {
         const yearDiv = document.createElement("div");
@@ -35,7 +39,29 @@ function generateYears() {
     }
 }
 
-// Fonction pour générer les segments des clans
+// Affiche les mois sous la ligne des années
+function generateMonths() {
+    const monthsContainer = document.getElementById("months");
+    monthsContainer.innerHTML = "";
+    monthsContainer.style.position = "relative";
+    monthsContainer.style.width = TIMELINE_WIDTH + "px";
+    monthsContainer.style.height = "20px"; // hauteur pour les mois
+
+    for (let i = 0; i < totalMonths; i++) {
+        const monthIndex = i % 12;
+        const monthName = monthNames[monthIndex];
+        const monthDiv = document.createElement("div");
+        monthDiv.style.position = "absolute";
+        monthDiv.style.left = (i * MONTH_WIDTH) + "px";
+        monthDiv.textContent = monthName;
+        monthDiv.style.color = "#ccc";
+        monthDiv.style.fontSize = "0.7rem";
+        monthDiv.style.top = "0";
+        monthsContainer.appendChild(monthDiv);
+    }
+}
+
+// Génère les segments des clans en fonction des données
 function generateTimeline(clans) {
     const container = document.getElementById("clan-container");
     container.innerHTML = "";
@@ -43,6 +69,8 @@ function generateTimeline(clans) {
     container.style.width = TIMELINE_WIDTH + "px";
 
     const rowHeight = 40;
+    // On décale le container des clans pour laisser de la place aux labels années et mois
+    container.style.marginTop = "50px";
 
     clans.forEach((clan, index) => {
         const clanColor = clanColors[index % clanColors.length];
@@ -63,10 +91,9 @@ function generateTimeline(clans) {
             const left = startOffset * MONTH_WIDTH;
             const width = (endOffset - startOffset + 1) * MONTH_WIDTH;
 
-            // Position verticale : chaque clan est sur une ligne distincte
+            // Position verticale : chaque clan sur une ligne distincte
             const top = index * rowHeight;
 
-            // Positionnement des segments
             segmentDiv.style.position = "absolute";
             segmentDiv.style.left = `${left}px`;
             segmentDiv.style.width = `${width}px`;
@@ -102,6 +129,7 @@ function loadClans() {
         })
         .then((data) => {
             generateYears();
+            generateMonths();
             generateTimeline(data);
         })
         .catch((error) => {

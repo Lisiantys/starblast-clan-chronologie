@@ -13,7 +13,7 @@ header {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Conteneur de la frise */
+/* Conteneur principal */
 #timeline-container {
   position: relative;
   width: 95%;
@@ -23,16 +23,20 @@ header {
   border-top: 2px solid #444;
 }
 
-/* #years sera positionné en absolu par JS */
 #years {
-  height: 20px;
-  margin-bottom: 10px;
   position: relative;
+  margin-bottom: 5px;
 }
 
-/* #clan-container sera positionné en absolu par JS */
+#months {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+/* Conteneur des segments */
 #clan-container {
   position: relative;
+  /* La hauteur sera dynamique en fonction du contenu */
 }
 
 /* Style des segments */

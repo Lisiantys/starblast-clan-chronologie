@@ -13,8 +13,7 @@
                 "start": "2022-01",
                 "end": "2025-06",
                 "name": "TDR",
-                "leader": "John Doe",
-                "isActive": true
+                "leader": "John Doe"
             }
         ]
     },
@@ -32,15 +31,13 @@
                 "start": "2018-03",
                 "end": "2020-05",
                 "name": "Royal Clans",
-                "leader": "Alice Green",
-                "isActive": true
+                "leader": "Alice Green"
             },
             {
                 "start": "2021-02",
                 "end": "2023-08",
                 "name": "Royal Warriors",
-                "leader": "Alice Green",
-                "isActive": true
+                "leader": "Alice Green"
             }
         ]
     },
@@ -58,8 +55,7 @@
                 "start": "2019-06",
                 "end": "2022-09",
                 "name": "Valhalla",
-                "leader": "Olaf Ragnar",
-                "isActive": false
+                "leader": "Olaf Ragnar"
             }
         ]
     },
@@ -77,8 +73,7 @@
                 "start": "2017-01",
                 "end": "2021-11",
                 "name": "STACK",
-                "leader": "Lucas Sky",
-                "isActive": false
+                "leader": "Lucas Sky"
             }
         ]
     },
@@ -96,8 +91,7 @@
                 "start": "2021-05",
                 "end": "2024-02",
                 "name": "DOGE",
-                "leader": "Jack Wilson",
-                "isActive": true
+                "leader": "Jack Wilson"
             }
         ]
     },
@@ -115,15 +109,13 @@
                 "start": "2023-07",
                 "end": "2024-04",
                 "name": "X4F",
-                "leader": "Ethan Hunt",
-                "isActive": true
+                "leader": "Ethan Hunt"
             },
             {
                 "start": "2024-07",
                 "end": "2025-12",
                 "name": "X4F Reloaded",
-                "leader": "Ethan Hunt",
-                "isActive": true
+                "leader": "Ethan Hunt"
             }
         ]
     },
@@ -141,8 +133,7 @@
                 "start": "2016-08",
                 "end": "2020-12",
                 "name": "RR",
-                "leader": "Ryan Red",
-                "isActive": false
+                "leader": "Ryan Red"
             }
         ]
     },
@@ -160,15 +151,13 @@
                 "start": "2017-03",
                 "end": "2020-02",
                 "name": "Phoenix",
-                "leader": "Max Phoenix",
-                "isActive": true
+                "leader": "Max Phoenix"
             },
             {
                 "start": "2022-01",
                 "end": "2023-01",
                 "name": "Phoenix Rising",
-                "leader": "Max Phoenix",
-                "isActive": false
+                "leader": "Stark Phoenix"
             }
         ]
     }
