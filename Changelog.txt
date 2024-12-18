@@ -1,0 +1,123 @@
+2.2.4/Mar 26, 2023
+NOTICE: ALL VERSIONS FROM THIS ONE IS UNOFFICIAL. USE AND DISTRIBUTE IT AT YOUR OWN RISK!\n
+As you might know, SET has been brought down from Chrome Web Store a few months ago.\n
+As first, I only brings it down to prepare for Chrome Extension Maintenance V3 update,\n
+but then I couldn't republish it due to some reasons:\n
+* Maintenance V3 breaks the way how SET loads scripts
+* Official stance of Starblast Main Discord is now prohibiting ANY client modifications regardless of its purposes.
+I know that SET is always a non-hacking client, but due to my official position on the community, i have to drop it.
+* And finally, I don't have enough motivation for this. Starblast hasn't updated for years, and I can't let myself
+staying still anymore. So it's time for me to give up and go on.\n
+Still, I still add updates for my own version, and it'll be now distributed privately.\n
+So if you can read these lines, you are the chosen one.\n
+Anyways, here is what has changed this version:
+* Fixed Anonymous Mode in response to latest updates of the Starblast client.
+* Custom BGM Feature now accepts YouTube and GitHub links as well, as long as they are available globally.
+
+2.2.3/Aug 11, 2022
+* Fixed: Copy Image feature in Ship Editor doesn't work
+* Improved load ship feature in Ship Editor, it can now load the same file twice and support more file formats
+
+2.2.2/Aug 7, 2022
+* Show SET-exclusive settings in a separate section the in-game settings modal
+* Add an option to toggle chat bubbles to display or not
+---------------------------------- SUPPORT ALERT!!! ----------------------------------
+* We now have a support Discord server: [](https://bhpsngum.github.io/redirect?id=SET_Discord_Support)
+* If you want to, buy me a coffee because i'm coffeeholic :D -> [](https://www.buymeacoffee.com/bhpsngum)
+
+2.2.1/Jul 21, 2022
+* Hot fixes for self-ship tag feature and adding supports for Standalone client
+* Added ECP Scrolling: Now you can scroll the list in order to get the customization you want!
+* Added "Don't show this again" for the warning in Ship Editor
+* Added feature for users to show blank badges in-game (may take a few seconds to load)
+
+2.2.0/Jul 20, 2022
+* Update fixes according to latest updates of Ship Editor
+* Removed link to deprecated browser modding npm in Modding page
+* Fixed and improved self-ship tag algorithm
+* Self-ship tag now can be toggled through in-game settings
+
+2.1.11/May 6, 2022
+* Improved Anonymous Mode. Now you can be completely anonymous server-side (your PDM and Invasion rankings don't count either)
+* You can change the Chat Emotes Capacity in-game to control how many emotes maximum shown on your single chat bar
+* You can now see the tag below your ship the same way you see below other ships in-game
+* Adjusted client so it always displays ships with correct finishes and names
+
+2.1.10/May 1, 2022
+* Introducing Anonymous Feature - joining the game as a fully non-ECP ship (for ECP users)\n
+Please note this feature is only for hiding perfectly from ECP player detector tools; PDM and Invasion rankings still count as usual.
+* Fixed anti-explosion effect not working on projectiles
+* Fixed changelog mechanics so this page only appears when SET is updated or installed first-time.
+* Added links to special NPM packages dedicated to modding on the modding page
+* Fixed old links and added new link to Serverlist+ by DankDmitron (@dpleshkov)
+* I have no idea what more to add since I'm running out of ideas recently, so make sure to suggest one through my Discord (Bhpsngum#2623) or using the [feedback link](https://bhpsngum.github.io/redirect/?id=SETFeedback).
+
+2.1.9/Apr 20, 2022
+* Added new features in Ship Editor: Drag Mode and Rotation Mode, also bringing a slightly better look for button icons
+* Two "features" have been added to the Starblast client:
+- Non-capitalized names: You can use your name without a full uppercase name like before\n
+- Chat emotes capacity is now increased to 5 instead of 4 like the original one
+* MUST READ:
+- Please note that SET has no intentions of becoming a hacking client. We've tried our best to add a new breeze to the game experience without accidentally introducing game-hacking features.\n
+- Due to the restriction of the main Starblast Discord, please refrain from discussing the extension there. Although widely known and trusted by the community, this extension still hasn't received official recognition from the game developers.\n
+- Since I'm currently struggling with uni stuff, I may be back at coding Starblast 1st POV in the middle of May. So stay tuned for new updates then!\n
+- Thanks for reading this, and have a nice day with a blast in space! - Bhpsngum#2623
+
+2.1.8/Apr 13, 2022
+* Quick fix in Ship Editor: Update an outdated external library. Its old version failed to compile the code with too many loops existing in the ship editor code.
+* Add a button in the Game Menu modal that resets crystals' color
+
+2.1.7/Mar 28, 2022
+* Fixed bug of UI Anti-FPS Drop doesn't show components when respawning
+* Little fix in design
+* Improved French translations. Thanks to all contributors again!
+* Added new in-game options: Crystals Color
+* Note: SET will have the 1st-person simulator (experimental version) added soon. Say tuned!
+
+2.1.6/Mar 17, 2022
+* Add toggleable shortcuts in settings. Check it out!
+* Prevent the FPS drops in some circumstances relating to the UI Components
+* Prevent the page from randomly reloading mid-game (for non-ECP users)
+* Add an option to disable explosions in-game settings
+* All available languages are displayed for selection in Game Settings's Language section
+* Various bugs fixed
+
+2.1.5/Jul 8, 2021
+* Fix parser issue on SSCV tool
+
+2.1.4/Mar 14, 2021
+* NEW FEATURE: IN-GAME MUSIC!! (BETA)
+Just open settings (before joining the game or in-game) and scroll to the music settings.\n
+You can choose from built-in music or provide the URL (must be audio file format) to your favorite music and enjoy!
+
+2.1.3/Jan 30, 2021
+* Added "Copy Image" feature (may not work in some browsers) in Ship Editor
+
+2.1.2/Jan 11, 2021
+* Added new ModExport type: Generation II
+* Fixed and enhanced Ship Editor Toolbar
+* Little rework in translations
+
+2.1.0/Dec 28, 2020
+* Added new localisations: English (default), Spanish, French, Korean, Malay, Dutch, Portuguese (Brazil), Russian, Filipino, Vietnamese, Chinese (China), and Chinese (Taiwan).\n
+Thank you all contributors!\n
+* You can freely change the extension to any available language that is not the browser's locale in [extension settings](e!/html/options/options.html)!
+EXTENSION POPUP FIXES:
+* Fixed slow extension popup + Add new extension popup loading screen
+* Reordered the buttons: Now they are in the bottom corner
+* Saved data in the extension is now synced with the Chrome browser. Say bye-bye to localStorage :)
+* Small bug fixes and improvements.
+
+2.0.1/Dec 16, 2020
+Fixed some bugs:
+* Fake editor expanding behavior
+* Expanded ship view glitch in Ship Editor
+* Added locale links for translation help
+You can find the link in the translation help button in the extension popup menu or follow this link: [](https://bhpsngum.github.io/redirect?id=SET_Translate)"
+
+2.0.0/Dec 9, 2020
+* This extension is now available in the Chrome Web Store!
+Visit here: [](https://bhpsngum.github.io/redirect?id=SETExtension-chrome)
+
+1.0.0/Nov 13, 2019
+* First release

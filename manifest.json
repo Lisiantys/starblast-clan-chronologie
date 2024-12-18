@@ -1,0 +1,82 @@
+{
+	"manifest_version": 2,
+	"name": "Starblast Enhancement Tools",
+	"short_name": "SET",
+	"version": "2.2.4",
+	"author": "Bhpsngum",
+	"default_locale": "en",
+	"description": "__MSG_desc__",
+	"homepage_url": "https://bhpsngum.github.io/",
+	"devtools_page":"/html/DevTools/DevTools.html",
+	"offline_enabled": true,
+  "content_scripts": [
+	{
+		"matches": [
+			"*://starblast.io/*",
+			"*://starblast.pleshkov.dev/*",
+			"*://starblast.dankdmitron.dev/*",
+			"*://starblast.data.neuronality.com/*",
+			"*://bhpsngum.github.io/starblast/*",
+			"*://starblast-shipyard.github.io/*",
+			"*://starblast.fandom.com/*"
+		],
+		"all_frames":true,
+		"js":[
+			"/js/main/root/algorithm/main.js",
+			"/js/main/root/decoration/main.js"
+		]
+	}],
+	"background":
+	{
+		"scripts": ["/js/background/main/background.js"],
+		"persistent":false
+	},
+	"commands": {
+		"in-game-settings": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+S",
+				"mac": "Alt+C"
+			},
+			"description": "Toggle In-game Settings (starblast.io client only)"
+		},
+		"info": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+F",
+				"mac": "Alt+I"
+			},
+			"description": "Toggle Game Info"
+		},
+		"changelog": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+L",
+				"mac": "Alt+L"
+			},
+			"description": "Toggle In-game Changelog (starblast.io client only)"
+		}
+	},
+	"options_page": "/html/options/options.html",
+	"permissions": [
+		"declarativeContent",
+		"storage",
+		"*://starblast.io/*",
+		"*://starblast.pleshkov.dev/*",
+		"*://starblast.dankdmitron.dev/*",
+		"*://starblast.data.neuronality.com/*",
+		"*://starblast-shipyard.github.io/*",
+		"*://bhpsngum.github.io/*",
+		"*://starblastio.gamepedia.com/*"
+	],
+	"web_accessible_resources":[
+		"/js/*.js",
+		"/html/tools/*.html",
+		"/_locales/*.json"
+	],
+	"icons": {
+		"64": "/icons/main/icon.png"
+	},
+	"page_action":
+	{
+		"default_icon":"/icons/main/icon.png",
+		"default_popup": "/html/popup/popup.html"
+	}
+}

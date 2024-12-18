@@ -1,0 +1,12 @@
+* {
+  background-color: rgb(24,26,27);
+  color: rgb(231,229,228);
+  font-family: Verdana;
+}
+h2, h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+a, a:visited, a:hover {
+  color: rgb(100, 149, 237);
+}
