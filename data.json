@@ -405,7 +405,7 @@
     "founders": ["maksimka", "cccp"],
     "isCheaterClan": true,
     "isClan": true,
-    "isActive": true,
+    "isActive": false,
     "mainRegion": "EU",
     "fullName": "communist starblast empire",
     "color": "#ff7f50",
@@ -441,7 +441,7 @@
     "founders": ["scorpion"],
     "isCheaterClan": true,
     "isClan": true,
-    "isActive": true,
+    "isActive": false,
     "mainRegion": "EU",
     "fullName": "x factor 4",
     "color": "#ff1493",
@@ -1434,7 +1434,7 @@
         "start": "2020-09",
         "end": "2021-04",
         "name": "ROT",
-        "leader": "Lord"
+        "leader": "Adem Almaa"
       },
       {
         "start": "2021-04",
@@ -1470,7 +1470,7 @@
         "start": "2024-11",
         "end": "2024-12",
         "name": "EOT",
-        "leader": "Lord"
+        "leader": ""
       }
     ]
   },
