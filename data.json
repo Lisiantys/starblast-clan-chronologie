@@ -1,31 +1,30 @@
 [
   {
     "name": "NUB",
-    "founders": ["unknown", "ruslann", "yalniz kurt"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
-    "fullName": "warriors of survival",
+    "fullName": "Warriors of survival",
     "color": "#e6194b",
     "segments": [
       {
-        "start": "2016-01",
+        "start": "2016-09",
         "end": "2017-09",
         "name": "NUB",
-        "leader": "unknown"
+        "leader": "Unknown"
       },
       {
         "start": "2022-04",
         "end": "2024-06",
         "name": "NUB",
-        "leader": "ruslann, yalniz kurt"
+        "leader": "Ruslann, Yalniz kurt"
       },
       {
         "start": "2024-09",
-        "end": "?",
+        "end": "2024-12",
         "name": "NUB",
-        "leader": "yalniz kurt"
+        "leader": "Ruslann, Yalniz kurt"
       }
     ]
   },
@@ -33,7 +32,7 @@
     "name": "VN",
     "founders": ["top"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "AS",
     "fullName": "vietnam",
@@ -43,13 +42,13 @@
         "start": "2024-06",
         "end": "2024-07",
         "name": "VN",
-        "leader": "top"
+        "leader": "Top"
       },
       {
         "start": "2024-09",
-        "end": "?",
+        "end": "2024-12",
         "name": "VN",
-        "leader": "top"
+        "leader": "Top"
       }
     ]
   },
@@ -57,7 +56,7 @@
     "name": "TA",
     "founders": ["tost"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "AS",
     "fullName": "team asia",
@@ -67,7 +66,7 @@
         "start": "2019-08",
         "end": "2023-03",
         "name": "TA",
-        "leader": "tost"
+        "leader": "Tost"
       }
     ]
   },
@@ -75,17 +74,17 @@
     "name": "KOR",
     "founders": ["randoms"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": true,
     "mainRegion": "AS",
-    "fullName": "koreans",
+    "fullName": "Koreans",
     "color": "#4363d8",
     "segments": [
       {
         "start": "2020-07",
-        "end": "?",
+        "end": "2024-12",
         "name": "KOR",
-        "leader": "randoms"
+        "leader": ""
       }
     ]
   },
@@ -93,7 +92,7 @@
     "name": "⅁₄",
     "founders": ["badger"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": true,
     "mainRegion": "US",
     "fullName": "badgers",
@@ -101,7 +100,7 @@
     "segments": [
       {
         "start": "2017-10",
-        "end": "?",
+        "end": "2024-12",
         "name": "⅁₄",
         "leader": "badger"
       }
@@ -111,7 +110,7 @@
     "name": "S&C",
     "founders": ["iom", "notus", "neagoe"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "starblast & chill",
@@ -119,7 +118,7 @@
     "segments": [
       {
         "start": "2021-02",
-        "end": "?",
+        "end": "2024-12",
         "name": "S&C",
         "leader": "iom, notus, neagoe"
       }
@@ -129,7 +128,7 @@
     "name": "OTEP",
     "founders": ["Purple_"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "over time europe pilot",
@@ -147,7 +146,7 @@
     "name": "DOGE",
     "founders": ["lx"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "doge",
@@ -165,7 +164,7 @@
     "name": "SRV",
     "founders": ["frozan"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "AS",
     "fullName": "shadow reaper void",
@@ -183,7 +182,7 @@
     "name": "USH",
     "founders": ["lx"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "",
@@ -201,7 +200,7 @@
     "name": "CK/HSE",
     "founders": ["xavi", "abdullah", "alex"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "cosmic knights / honorable starblast elite",
@@ -225,7 +224,7 @@
     "name": "NBK",
     "founders": ["dios eric"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "natural born killers",
@@ -243,7 +242,7 @@
     "name": "GL",
     "founders": ["isohkill"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "grand lions",
@@ -251,7 +250,7 @@
     "segments": [
       {
         "start": "2024-05",
-        "end": "?",
+        "end": "2024-12",
         "name": "GL",
         "leader": "isohkill"
       }
@@ -261,7 +260,7 @@
     "name": "IS",
     "founders": ["Leader 1"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "US",
     "fullName": "inferno squadron",
@@ -275,7 +274,7 @@
       },
       {
         "start": "2024-11",
-        "end": "?",
+        "end": "2024-12",
         "name": "IS",
         "leader": "Leader 1"
       }
@@ -285,7 +284,7 @@
     "name": "SOLO",
     "founders": ["shadow s+"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "solo",
@@ -303,7 +302,7 @@
     "name": "ACW",
     "founders": ["aadyita", "zard"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "AS",
     "fullName": "asian cosmic warriors",
@@ -321,7 +320,7 @@
     "name": "GOF",
     "founders": ["yudu haham", "karlin"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "ghost of fire",
@@ -335,7 +334,7 @@
       },
       {
         "start": "2024-08",
-        "end": "?",
+        "end": "2024-12",
         "name": "GOF",
         "leader": "yudu haham, karlin"
       }
@@ -345,7 +344,7 @@
     "name": "ARC",
     "founders": ["5470P3"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "arc",
@@ -369,7 +368,7 @@
     "name": "FV",
     "founders": ["wanda", "bautista"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "US",
     "fullName": "flammable violets",
@@ -377,7 +376,7 @@
     "segments": [
       {
         "start": "2022-01",
-        "end": "?",
+        "end": "2024-12",
         "name": "FV",
         "leader": "wanda, bautista"
       }
@@ -387,7 +386,7 @@
     "name": "EDF",
     "founders": ["God of all"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "earth-defence-force",
@@ -405,7 +404,7 @@
     "name": "CSE/GEW/Alone",
     "founders": ["maksimka", "cccp"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "communist starblast empire",
@@ -441,7 +440,7 @@
     "name": "X~/★/ROW/XF4",
     "founders": ["scorpion"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "x factor 4",
@@ -477,7 +476,7 @@
     "name": "RR",
     "founders": [],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "raging retards",
@@ -501,7 +500,7 @@
     "name": "PRO",
     "founders": ["DIE HAPPY"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "pro",
@@ -519,7 +518,7 @@
     "name": "SCF",
     "founders": [],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "centauri space force",
@@ -537,7 +536,7 @@
     "name": "S2F",
     "founders": ["Pasha", "sergio", "inspectro"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "sky 2 fly",
@@ -545,7 +544,7 @@
     "segments": [
       {
         "start": "2022-01",
-        "end": "?",
+        "end": "2024-12",
         "name": "S2F",
         "leader": "Pasha, sergio, inspectro"
       }
@@ -555,7 +554,7 @@
     "name": "TGS",
     "founders": ["turk", "general"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "",
@@ -563,7 +562,7 @@
     "segments": [
       {
         "start": "2024-10",
-        "end": "?",
+        "end": "2024-12",
         "name": "TGS",
         "leader": "turk, general"
       }
@@ -573,7 +572,7 @@
     "name": "TDR",
     "founders": ["Mercenaire", "Alex"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "the devils rejects",
@@ -597,7 +596,7 @@
     "name": "ℭ",
     "founders": ["Mercenaire"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "cursed",
@@ -615,7 +614,7 @@
     "name": "FTF",
     "founders": ["solomon"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "face to face",
@@ -633,7 +632,7 @@
     "name": "FEAR/HELL",
     "founders": ["Bey", "adem alma"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "hell",
@@ -657,7 +656,7 @@
     "name": "RE/SR",
     "founders": ["oblivion", "spartan"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "US",
     "fullName": "spartan's reign",
@@ -671,7 +670,7 @@
       },
       {
         "start": "2024-09",
-        "end": "?",
+        "end": "2024-12",
         "name": "SR",
         "leader": "oblivion, spartan"
       }
@@ -681,7 +680,7 @@
     "name": "RC²",
     "founders": ["Hazard", "twidash"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "racing champions",
@@ -699,7 +698,7 @@
     "name": "FR",
     "founders": ["Megalodon", "Zeldris"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "french team",
@@ -713,7 +712,7 @@
       },
       {
         "start": "2021-03",
-        "end": "?",
+        "end": "2024-12",
         "name": "FR",
         "leader": "Megalodon, Zeldris"
       }
@@ -723,7 +722,7 @@
     "name": "MG",
     "founders": ["randoms"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "mg",
@@ -741,7 +740,7 @@
     "name": "GG",
     "founders": [],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "team gg",
@@ -759,7 +758,7 @@
     "name": "AS",
     "founders": ["isohkill"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "",
@@ -777,7 +776,7 @@
     "name": "TNM/MR",
     "founders": ["omega", "scythe"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "the nightmare",
@@ -791,7 +790,7 @@
       },
       {
         "start": "2024-09",
-        "end": "?",
+        "end": "2024-12",
         "name": "MR",
         "leader": "omega, scythe"
       }
@@ -801,14 +800,14 @@
     "name": "MDM",
     "founders": ["randoms"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "mdm",
     "color": "#daa520",
     "segments": [
       {
-        "start": "2016-01",
+        "start": "2016-09",
         "end": "2017-05",
         "name": "MDM",
         "leader": "randoms"
@@ -819,7 +818,7 @@
     "name": "RYL",
     "founders": ["trollbaba"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "royal klan",
@@ -843,7 +842,7 @@
     "name": "AE",
     "founders": ["ae"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "AS",
     "fullName": "ae",
@@ -861,7 +860,7 @@
     "name": "PTP",
     "founders": ["Aboltyc"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "protect the players",
@@ -869,7 +868,7 @@
     "segments": [
       {
         "start": "2024-06",
-        "end": "?",
+        "end": "2024-12",
         "name": "PTP",
         "leader": "Aboltyc"
       }
@@ -879,7 +878,7 @@
     "name": "STACK",
     "founders": ["jacky"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "AS",
     "fullName": "stack",
@@ -897,7 +896,7 @@
     "name": "LS",
     "founders": ["Voltron"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "lost souls",
@@ -915,7 +914,7 @@
     "name": "SDF",
     "founders": ["x-27", "valliant"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "soloist defense force",
@@ -933,7 +932,7 @@
     "name": "LOG",
     "founders": ["Probo"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "legion of glacial",
@@ -957,7 +956,7 @@
     "name": "ULU / 7",
     "founders": ["hlti", "turk"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "",
@@ -981,7 +980,7 @@
     "name": "LVT / ☕",
     "founders": ["maidness"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "leviatanes / maid's cafe",
@@ -1005,7 +1004,7 @@
     "name": "AB / VP",
     "founders": ["Abdullah", "Abdelalim"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "arab empire / vampire community",
@@ -1029,7 +1028,7 @@
     "name": "AL",
     "founders": ["abdelalim"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "arab legend",
@@ -1037,7 +1036,7 @@
     "segments": [
       {
         "start": "2024-09",
-        "end": "?",
+        "end": "2024-12",
         "name": "AL",
         "leader": "abdelalim"
       }
@@ -1047,7 +1046,7 @@
     "name": "OTK",
     "founders": ["pudding"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "team killer",
@@ -1065,7 +1064,7 @@
     "name": "GAL",
     "founders": ["nnd", "devrim"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "german alliance",
@@ -1083,7 +1082,7 @@
     "name": "Huntr",
     "founders": ["Hell Crusher", "NND"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "hunter",
@@ -1101,7 +1100,7 @@
     "name": "KOT",
     "founders": ["kot[g]"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "kot",
@@ -1119,7 +1118,7 @@
     "name": "PAW",
     "founders": ["Anos", "Raxoun"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "paw",
@@ -1137,7 +1136,7 @@
     "name": "FA/PS",
     "founders": ["Megalodon", "NOK"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "french alliance / pure space",
@@ -1161,7 +1160,7 @@
     "name": "ASE",
     "founders": ["vortex"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "AS",
     "fullName": "asian sage elite",
@@ -1169,7 +1168,7 @@
     "segments": [
       {
         "start": "2024-02",
-        "end": "?",
+        "end": "2024-12",
         "name": "ASE",
         "leader": "vortex"
       }
@@ -1179,7 +1178,7 @@
     "name": "UJS",
     "founders": ["jins"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "",
@@ -1197,7 +1196,7 @@
     "name": "LAF",
     "founders": ["a.s", "eridani"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "light aflame",
@@ -1221,14 +1220,14 @@
     "name": "SHA",
     "founders": ["shalowa"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "sha",
     "color": "#cd5c5c",
     "segments": [
       {
-        "start": "2016-01",
+        "start": "2016-09",
         "end": "2018-10",
         "name": "SHA",
         "leader": "shalowa"
@@ -1239,7 +1238,7 @@
     "name": "YA/LD/CF",
     "founders": ["solomon", "aya", "crexy"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "ymir ascendance",
@@ -1253,7 +1252,7 @@
       },
       {
         "start": "2024-08",
-        "end": "?",
+        "end": "2024-12",
         "name": "YA",
         "leader": "solomon, aya, crexy"
       },
@@ -1275,7 +1274,7 @@
     "name": "DELTA",
     "founders": ["Delta Commander"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "delta",
@@ -1299,7 +1298,7 @@
     "name": "BORG",
     "founders": ["ter rotor"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "borg",
@@ -1317,7 +1316,7 @@
     "name": "PE",
     "founders": ["sopilote", "elvis"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": true,
     "mainRegion": "US",
     "fullName": "love peru",
@@ -1325,7 +1324,7 @@
     "segments": [
       {
         "start": "2023-05",
-        "end": "?",
+        "end": "2024-12",
         "name": "PE",
         "leader": "sopilote, elvis"
       }
@@ -1335,7 +1334,7 @@
     "name": "GA",
     "founders": ["goldman"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "goldman aerospace",
@@ -1353,7 +1352,7 @@
     "name": "F4/NSA",
     "founders": ["Sakura"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "US",
     "fullName": "ya 4 f en latin mais je sais plus",
@@ -1373,7 +1372,7 @@
       },
       {
         "start": "2023-05",
-        "end": "?",
+        "end": "2024-12",
         "name": "F4",
         "leader": "Sakura"
       }
@@ -1383,7 +1382,7 @@
     "name": "SE",
     "founders": ["rejane"],
     "isCheaterClan": false,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "spectral elite",
@@ -1401,7 +1400,7 @@
     "name": "GR",
     "founders": ["one"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "AS",
     "fullName": "army of darkness",
@@ -1419,7 +1418,7 @@
     "name": "EOT/ROT/RS",
     "founders": ["Lord"],
     "isCheaterClan": true,
-    "isTeam": true,
+    "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "end of terror / reign of terror / retribution seekers",
@@ -1469,7 +1468,7 @@
       },
       {
         "start": "2024-11",
-        "end": "?",
+        "end": "2024-12",
         "name": "EOT",
         "leader": "Lord"
       }
@@ -1479,7 +1478,7 @@
     "name": "GD",
     "founders": ["randoms"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "gd",
@@ -1497,7 +1496,7 @@
     "name": "AR/V",
     "founders": ["lexagon"],
     "isCheaterClan": false,
-    "isTeam": false,
+    "isClan": false,
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "armada / valhalla",

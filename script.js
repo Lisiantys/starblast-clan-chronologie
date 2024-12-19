@@ -110,7 +110,7 @@ function generateTimeline(clans) {
                 <div><strong>Leader :</strong> ${segment.leader}</div>
                 <div><strong>Currently Active :</strong> ${clan.isActive ? "Yes" : "No"}</div>
                 <div><strong>Cheating :</strong> ${clan.isCheaterClan ? "Yes" : "No"}</div>
-                <div><strong>Team :</strong> ${clan.isTeam ? "Yes" : "No"}</div>
+                <div><strong>Clan :</strong> ${clan.isClan ? "Yes" : "No"}</div>
             `;
 
             segmentDiv.addEventListener("mouseenter", () => {
@@ -201,13 +201,13 @@ document.getElementById("filter-form").addEventListener("submit", (e) => {
 
     const segmentNameVal = form.segmentName.value.trim().toLowerCase();
     const isCheaterClanVal = form.isCheaterClan.value;
-    const isTeamVal = form.isTeam.value;
+    const isClanVal = form.isClan.value;
     const isActiveVal = form.isActive.value;
     const mainRegionVal = form.mainRegion.value;
     const startDateVal = form.startDate.value;
     const endDateVal = form.endDate.value;
     const filterCheater = isCheaterClanVal === "" ? null : (isCheaterClanVal === "true");
-    const filterTeam = isTeamVal === "" ? null : (isTeamVal === "true");
+    const filterClan = isClanVal === "" ? null : (isClanVal === "true");
     const filterActive = isActiveVal === "" ? null : (isActiveVal === "true");
     const filterRegion = mainRegionVal === "" ? null : mainRegionVal;
 
@@ -217,7 +217,7 @@ document.getElementById("filter-form").addEventListener("submit", (e) => {
     const filteredData = originalClansData.filter(clan => {
         // Filtres booléens & région
         if (filterCheater !== null && clan.isCheaterClan !== filterCheater) return false;
-        if (filterTeam !== null && clan.isTeam !== filterTeam) return false;
+        if (filterClan !== null && clan.isClan !== filterClan) return false;
         if (filterActive !== null && clan.isActive !== filterActive) return false;
         if (filterRegion !== null && clan.mainRegion !== filterRegion) return false;
 
