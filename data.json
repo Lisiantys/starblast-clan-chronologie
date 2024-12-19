@@ -1,132 +1,1520 @@
 [
-    {
-        "isCheaterClan": false,
-        "isTeam": false,
-        "isActive": true,
-        "mainRegion" : "EUROPE",
-        "segments": [
-            {
-                "start": "2022-01",
-                "end": "2025-06",
-                "name": "TDR",
-                "leader": "John Doe"
-            }
-        ]
-    },
-    {
-        "isCheaterClan": true,
-        "isTeam": false,
-        "isActive": true,
-        "mainRegion" : "EUROPE",
-        "segments": [
-            {
-                "start": "2018-03",
-                "end": "2020-05",
-                "name": "Royal Clans",
-                "leader": "Alice Green"
-            },
-            {
-                "start": "2021-02",
-                "end": "2023-08",
-                "name": "Royal Warriors",
-                "leader": "Alice Green"
-            }
-        ]
-    },
-    {
-        "isCheaterClan": true,
-        "isTeam": false,
-        "isActive": false,
-        "mainRegion" : "EUROPE",
-        "segments": [
-            {
-                "start": "2019-06",
-                "end": "2022-09",
-                "name": "Valhalla",
-                "leader": "Olaf Ragnar"
-            }
-        ]
-    },
-    {
-        "isCheaterClan": false,
-        "isTeam": true,
-        "isActive": false,
-        "mainRegion" : "EUROPE",
-        "segments": [
-            {
-                "start": "2017-01",
-                "end": "2021-11",
-                "name": "STACK",
-                "leader": "Lucas Sky"
-            }
-        ]
-    },
-    {
-        "isCheaterClan": false,
-        "isTeam": true,
-        "isActive": true,
-        "mainRegion" : "EUROPE",
-        "segments": [
-            {
-                "start": "2021-05",
-                "end": "2024-02",
-                "name": "DOGE",
-                "leader": "Jack Wilson"
-            }
-        ]
-    },
-    {
-        "isCheaterClan": false,
-        "isTeam": true,
-        "isActive": true,
-        "mainRegion" : "AMERICA",
-        "segments": [
-            {
-                "start": "2023-07",
-                "end": "2024-04",
-                "name": "X4F",
-                "leader": "Ethan Hunt"
-            },
-            {
-                "start": "2024-07",
-                "end": "2025-12",
-                "name": "X4F Reloaded",
-                "leader": "Ethan Hunt"
-            }
-        ]
-    },
-    {
-        "isCheaterClan": false,
-        "isTeam": false,
-        "isActive": false,
-        "mainRegion" : "ASIA",
-        "segments": [
-            {
-                "start": "2016-08",
-                "end": "2020-12",
-                "name": "RR",
-                "leader": "Ryan Red"
-            }
-        ]
-    },
-    {
-        "isCheaterClan": false,
-        "isTeam": false,
-        "isActive": false,
-        "mainRegion" : "ASIA",
-        "segments": [
-            {
-                "start": "2017-03",
-                "end": "2020-02",
-                "name": "Phoenix",
-                "leader": "Max Phoenix"
-            },
-            {
-                "start": "2022-01",
-                "end": "2023-01",
-                "name": "Phoenix Rising",
-                "leader": "Stark Phoenix"
-            }
-        ]
-    }
+  {
+    "name": "NUB",
+    "founders": ["unknown", "ruslann", "yalniz kurt"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "warriors of survival",
+    "color": "#e6194b",
+    "segments": [
+      {
+        "start": "2016-01",
+        "end": "2017-09",
+        "name": "NUB",
+        "leader": "unknown"
+      },
+      {
+        "start": "2022-04",
+        "end": "2024-06",
+        "name": "NUB",
+        "leader": "ruslann, yalniz kurt"
+      },
+      {
+        "start": "2024-09",
+        "end": "?",
+        "name": "NUB",
+        "leader": "yalniz kurt"
+      }
+    ]
+  },
+  {
+    "name": "VN",
+    "founders": ["top"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "AS",
+    "fullName": "vietnam",
+    "color": "#3cb44b",
+    "segments": [
+      {
+        "start": "2024-06",
+        "end": "2024-07",
+        "name": "VN",
+        "leader": "top"
+      },
+      {
+        "start": "2024-09",
+        "end": "?",
+        "name": "VN",
+        "leader": "top"
+      }
+    ]
+  },
+  {
+    "name": "TA",
+    "founders": ["tost"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "AS",
+    "fullName": "team asia",
+    "color": "#ffe119",
+    "segments": [
+      {
+        "start": "2019-08",
+        "end": "2023-03",
+        "name": "TA",
+        "leader": "tost"
+      }
+    ]
+  },
+  {
+    "name": "KOR",
+    "founders": ["randoms"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": true,
+    "mainRegion": "AS",
+    "fullName": "koreans",
+    "color": "#4363d8",
+    "segments": [
+      {
+        "start": "2020-07",
+        "end": "?",
+        "name": "KOR",
+        "leader": "randoms"
+      }
+    ]
+  },
+  {
+    "name": "⅁₄",
+    "founders": ["badger"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": true,
+    "mainRegion": "US",
+    "fullName": "badgers",
+    "color": "#f58231",
+    "segments": [
+      {
+        "start": "2017-10",
+        "end": "?",
+        "name": "⅁₄",
+        "leader": "badger"
+      }
+    ]
+  },
+  {
+    "name": "S&C",
+    "founders": ["iom", "notus", "neagoe"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "starblast & chill",
+    "color": "#911eb4",
+    "segments": [
+      {
+        "start": "2021-02",
+        "end": "?",
+        "name": "S&C",
+        "leader": "iom, notus, neagoe"
+      }
+    ]
+  },
+  {
+    "name": "OTEP",
+    "founders": ["Purple_"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "over time europe pilot",
+    "color": "#46f0f0",
+    "segments": [
+      {
+        "start": "2020-05",
+        "end": "2021-01",
+        "name": "OTEP",
+        "leader": "Purple_"
+      }
+    ]
+  },
+  {
+    "name": "DOGE",
+    "founders": ["lx"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "doge",
+    "color": "#f032e6",
+    "segments": [
+      {
+        "start": "2022-09",
+        "end": "2023-03",
+        "name": "DOGE",
+        "leader": "lx"
+      }
+    ]
+  },
+  {
+    "name": "SRV",
+    "founders": ["frozan"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "AS",
+    "fullName": "shadow reaper void",
+    "color": "#bcf60c",
+    "segments": [
+      {
+        "start": "2023-05",
+        "end": "2024-08",
+        "name": "SRV",
+        "leader": "frozan"
+      }
+    ]
+  },
+  {
+    "name": "USH",
+    "founders": ["lx"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "",
+    "color": "#ff4500",
+    "segments": [
+      {
+        "start": "2023-11",
+        "end": "2024-01",
+        "name": "USH",
+        "leader": "lx"
+      }
+    ]
+  },
+  {
+    "name": "CK/HSE",
+    "founders": ["xavi", "abdullah", "alex"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "cosmic knights / honorable starblast elite",
+    "color": "#4682b4",
+    "segments": [
+      {
+        "start": "2024-07",
+        "end": "2024-09",
+        "name": "CK",
+        "leader": "xavi, abdullah, alex"
+      },
+      {
+        "start": "2024-09",
+        "end": "2024-11",
+        "name": "HSE",
+        "leader": "xavi, abdullah, alex"
+      }
+    ]
+  },
+  {
+    "name": "NBK",
+    "founders": ["dios eric"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "natural born killers",
+    "color": "#7cfc00",
+    "segments": [
+      {
+        "start": "2021-02",
+        "end": "2022-11",
+        "name": "NBK",
+        "leader": "dios eric"
+      }
+    ]
+  },
+  {
+    "name": "GL",
+    "founders": ["isohkill"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "grand lions",
+    "color": "#ffd700",
+    "segments": [
+      {
+        "start": "2024-05",
+        "end": "?",
+        "name": "GL",
+        "leader": "isohkill"
+      }
+    ]
+  },
+  {
+    "name": "IS",
+    "founders": ["Leader 1"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "US",
+    "fullName": "inferno squadron",
+    "color": "#ff6347",
+    "segments": [
+      {
+        "start": "2020-08",
+        "end": "2023-06",
+        "name": "IS",
+        "leader": "Leader 1"
+      },
+      {
+        "start": "2024-11",
+        "end": "?",
+        "name": "IS",
+        "leader": "Leader 1"
+      }
+    ]
+  },
+  {
+    "name": "SOLO",
+    "founders": ["shadow s+"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "solo",
+    "color": "#8a2be2",
+    "segments": [
+      {
+        "start": "2024-01",
+        "end": "2024-07",
+        "name": "SOLO",
+        "leader": "shadow s+"
+      }
+    ]
+  },
+  {
+    "name": "ACW",
+    "founders": ["aadyita", "zard"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "AS",
+    "fullName": "asian cosmic warriors",
+    "color": "#ff69b4",
+    "segments": [
+      {
+        "start": "2021-11",
+        "end": "2024-06",
+        "name": "ACW",
+        "leader": "aadyita, zard"
+      }
+    ]
+  },
+  {
+    "name": "GOF",
+    "founders": ["yudu haham", "karlin"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "ghost of fire",
+    "color": "#daa520",
+    "segments": [
+      {
+        "start": "2023-04",
+        "end": "2024-06",
+        "name": "GOF",
+        "leader": "yudu haham, karlin"
+      },
+      {
+        "start": "2024-08",
+        "end": "?",
+        "name": "GOF",
+        "leader": "yudu haham, karlin"
+      }
+    ]
+  },
+  {
+    "name": "ARC",
+    "founders": ["5470P3"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "arc",
+    "color": "#87cefa",
+    "segments": [
+      {
+        "start": "2018-01",
+        "end": "2020-03",
+        "name": "ARC",
+        "leader": "5470P3"
+      },
+      {
+        "start": "2024-02",
+        "end": "2024-09",
+        "name": "ARC",
+        "leader": "5470P3"
+      }
+    ]
+  },
+  {
+    "name": "FV",
+    "founders": ["wanda", "bautista"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "US",
+    "fullName": "flammable violets",
+    "color": "#ff4500",
+    "segments": [
+      {
+        "start": "2022-01",
+        "end": "?",
+        "name": "FV",
+        "leader": "wanda, bautista"
+      }
+    ]
+  },
+  {
+    "name": "EDF",
+    "founders": ["God of all"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "earth-defence-force",
+    "color": "#1e90ff",
+    "segments": [
+      {
+        "start": "2021-01",
+        "end": "2021-09",
+        "name": "EDF",
+        "leader": "God of all"
+      }
+    ]
+  },
+  {
+    "name": "CSE/GEW/Alone",
+    "founders": ["maksimka", "cccp"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "communist starblast empire",
+    "color": "#ff7f50",
+    "segments": [
+      {
+        "start": "2023-02",
+        "end": "2023-08",
+        "name": "CSE",
+        "leader": "maksimka, cccp"
+      },
+      {
+        "start": "2023-10",
+        "end": "2024-03",
+        "name": "CSE",
+        "leader": "maksimka, cccp"
+      },
+      {
+        "start": "2023-08",
+        "end": "2023-10",
+        "name": "GEW",
+        "leader": "maksimka, cccp"
+      },
+      {
+        "start": "2024-08",
+        "end": "2024-09",
+        "name": "Alone",
+        "leader": "maksimka, cccp"
+      }
+    ]
+  },
+  {
+    "name": "X~/★/ROW/XF4",
+    "founders": ["scorpion"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "x factor 4",
+    "color": "#ff1493",
+    "segments": [
+      {
+        "start": "2023-03",
+        "end": "2024-01",
+        "name": "X~",
+        "leader": "scorpion"
+      },
+      {
+        "start": "2023-12",
+        "end": "2024-02",
+        "name": "ROW",
+        "leader": "scorpion"
+      },
+      {
+        "start": "2024-02",
+        "end": "2024-05",
+        "name": "★",
+        "leader": "scorpion"
+      },
+      {
+        "start": "2024-05",
+        "end": "2024-09",
+        "name": "XF4",
+        "leader": "scorpion"
+      }
+    ]
+  },
+  {
+    "name": "RR",
+    "founders": [],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "raging retards",
+    "color": "#32cd32",
+    "segments": [
+      {
+        "start": "2020-08",
+        "end": "2021-11",
+        "name": "RR",
+        "leader": ""
+      },
+      {
+        "start": "2022-08",
+        "end": "2022-10",
+        "name": "RR",
+        "leader": ""
+      }
+    ]
+  },
+  {
+    "name": "PRO",
+    "founders": ["DIE HAPPY"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "pro",
+    "color": "#4682b4",
+    "segments": [
+      {
+        "start": "2018-02",
+        "end": "2019-09",
+        "name": "PRO",
+        "leader": "DIE HAPPY"
+      }
+    ]
+  },
+  {
+    "name": "SCF",
+    "founders": [],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "centauri space force",
+    "color": "#ff4500",
+    "segments": [
+      {
+        "start": "2021-03",
+        "end": "2021-12",
+        "name": "SCF",
+        "leader": ""
+      }
+    ]
+  },
+  {
+    "name": "S2F",
+    "founders": ["Pasha", "sergio", "inspectro"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "sky 2 fly",
+    "color": "#7fff00",
+    "segments": [
+      {
+        "start": "2022-01",
+        "end": "?",
+        "name": "S2F",
+        "leader": "Pasha, sergio, inspectro"
+      }
+    ]
+  },
+  {
+    "name": "TGS",
+    "founders": ["turk", "general"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "",
+    "color": "#00ced1",
+    "segments": [
+      {
+        "start": "2024-10",
+        "end": "?",
+        "name": "TGS",
+        "leader": "turk, general"
+      }
+    ]
+  },
+  {
+    "name": "TDR",
+    "founders": ["Mercenaire", "Alex"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "the devils rejects",
+    "color": "#dc143c",
+    "segments": [
+      {
+        "start": "2023-09",
+        "end": "2024-04",
+        "name": "TDR",
+        "leader": "Mercenaire, Alex"
+      },
+      {
+        "start": "2024-06",
+        "end": "2024-09",
+        "name": "TDR",
+        "leader": "Mercenaire, Alex"
+      }
+    ]
+  },
+  {
+    "name": "ℭ",
+    "founders": ["Mercenaire"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "cursed",
+    "color": "#4b0082",
+    "segments": [
+      {
+        "start": "2024-09",
+        "end": "2024-12",
+        "name": "ℭ",
+        "leader": "Mercenaire"
+      }
+    ]
+  },
+  {
+    "name": "FTF",
+    "founders": ["solomon"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "face to face",
+    "color": "#ff6347",
+    "segments": [
+      {
+        "start": "2024-02",
+        "end": "2024-06",
+        "name": "FTF",
+        "leader": "solomon"
+      }
+    ]
+  },
+  {
+    "name": "FEAR/HELL",
+    "founders": ["Bey", "adem alma"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "hell",
+    "color": "#ff8c00",
+    "segments": [
+      {
+        "start": "2018-02",
+        "end": "2018-06",
+        "name": "FEAR",
+        "leader": "Bey, adem alma"
+      },
+      {
+        "start": "2018-06",
+        "end": "2023-05",
+        "name": "HELL",
+        "leader": "Bey, adem alma"
+      }
+    ]
+  },
+  {
+    "name": "RE/SR",
+    "founders": ["oblivion", "spartan"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "US",
+    "fullName": "spartan's reign",
+    "color": "#228b22",
+    "segments": [
+      {
+        "start": "2024-08",
+        "end": "2024-08",
+        "name": "RE",
+        "leader": "oblivion, spartan"
+      },
+      {
+        "start": "2024-09",
+        "end": "?",
+        "name": "SR",
+        "leader": "oblivion, spartan"
+      }
+    ]
+  },
+  {
+    "name": "RC²",
+    "founders": ["Hazard", "twidash"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "racing champions",
+    "color": "#ff6347",
+    "segments": [
+      {
+        "start": "2023-08",
+        "end": "2024-02",
+        "name": "RC²",
+        "leader": "Hazard, twidash"
+      }
+    ]
+  },
+  {
+    "name": "FR",
+    "founders": ["Megalodon", "Zeldris"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "french team",
+    "color": "#00ced1",
+    "segments": [
+      {
+        "start": "2019-01",
+        "end": "2020-03",
+        "name": "FR",
+        "leader": "Megalodon, Zeldris"
+      },
+      {
+        "start": "2021-03",
+        "end": "?",
+        "name": "FR",
+        "leader": "Megalodon, Zeldris"
+      }
+    ]
+  },
+  {
+    "name": "MG",
+    "founders": ["randoms"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "mg",
+    "color": "#7cfc00",
+    "segments": [
+      {
+        "start": "2017-01",
+        "end": "2018-10",
+        "name": "MG",
+        "leader": "randoms"
+      }
+    ]
+  },
+  {
+    "name": "GG",
+    "founders": [],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "team gg",
+    "color": "#ff4500",
+    "segments": [
+      {
+        "start": "2020-12",
+        "end": "2022-05",
+        "name": "GG",
+        "leader": ""
+      }
+    ]
+  },
+  {
+    "name": "AS",
+    "founders": ["isohkill"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "",
+    "color": "#ffa07a",
+    "segments": [
+      {
+        "start": "2024-01",
+        "end": "2024-05",
+        "name": "AS",
+        "leader": "isohkill"
+      }
+    ]
+  },
+  {
+    "name": "TNM/MR",
+    "founders": ["omega", "scythe"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "the nightmare",
+    "color": "#8b0000",
+    "segments": [
+      {
+        "start": "2024-07",
+        "end": "2024-09",
+        "name": "TNM",
+        "leader": "omega, scythe"
+      },
+      {
+        "start": "2024-09",
+        "end": "?",
+        "name": "MR",
+        "leader": "omega, scythe"
+      }
+    ]
+  },
+  {
+    "name": "MDM",
+    "founders": ["randoms"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "mdm",
+    "color": "#daa520",
+    "segments": [
+      {
+        "start": "2016-01",
+        "end": "2017-05",
+        "name": "MDM",
+        "leader": "randoms"
+      }
+    ]
+  },
+  {
+    "name": "RYL",
+    "founders": ["trollbaba"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "royal klan",
+    "color": "#ff8c00",
+    "segments": [
+      {
+        "start": "2021-01",
+        "end": "2022-06",
+        "name": "RYL",
+        "leader": "trollbaba"
+      },
+      {
+        "start": "2023-10",
+        "end": "2024-01",
+        "name": "RYL",
+        "leader": "trollbaba"
+      }
+    ]
+  },
+  {
+    "name": "AE",
+    "founders": ["ae"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "AS",
+    "fullName": "ae",
+    "color": "#add8e6",
+    "segments": [
+      {
+        "start": "2023-01",
+        "end": "2023-05",
+        "name": "AE",
+        "leader": "ae"
+      }
+    ]
+  },
+  {
+    "name": "PTP",
+    "founders": ["Aboltyc"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "protect the players",
+    "color": "#ff4500",
+    "segments": [
+      {
+        "start": "2024-06",
+        "end": "?",
+        "name": "PTP",
+        "leader": "Aboltyc"
+      }
+    ]
+  },
+  {
+    "name": "STACK",
+    "founders": ["jacky"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "AS",
+    "fullName": "stack",
+    "color": "#6495ed",
+    "segments": [
+      {
+        "start": "2018-02",
+        "end": "2021-03",
+        "name": "STACK",
+        "leader": "jacky"
+      }
+    ]
+  },
+  {
+    "name": "LS",
+    "founders": ["Voltron"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "lost souls",
+    "color": "#ffa500",
+    "segments": [
+      {
+        "start": "2023-01",
+        "end": "2024-08",
+        "name": "LS",
+        "leader": "Voltron"
+      }
+    ]
+  },
+  {
+    "name": "SDF",
+    "founders": ["x-27", "valliant"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "soloist defense force",
+    "color": "#8b0000",
+    "segments": [
+      {
+        "start": "2017-02",
+        "end": "2019-09",
+        "name": "SDF",
+        "leader": "x-27, valliant"
+      }
+    ]
+  },
+  {
+    "name": "LOG",
+    "founders": ["Probo"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "legion of glacial",
+    "color": "#ff4500",
+    "segments": [
+      {
+        "start": "2023-12",
+        "end": "2024-02",
+        "name": "LOG",
+        "leader": "Probo"
+      },
+      {
+        "start": "2024-08",
+        "end": "2024-08",
+        "name": "LOG",
+        "leader": "Probo"
+      }
+    ]
+  },
+  {
+    "name": "ULU / 7",
+    "founders": ["hlti", "turk"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "",
+    "color": "#32cd32",
+    "segments": [
+      {
+        "start": "2024-08",
+        "end": "2024-10",
+        "name": "ULU",
+        "leader": "hlti, turk"
+      },
+      {
+        "start": "2024-10",
+        "end": "2024-11",
+        "name": "7",
+        "leader": "hlti, turk"
+      }
+    ]
+  },
+  {
+    "name": "LVT / ☕",
+    "founders": ["maidness"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "leviatanes / maid's cafe",
+    "color": "#ff69b4",
+    "segments": [
+      {
+        "start": "2021-01",
+        "end": "2022-10",
+        "name": "LVT",
+        "leader": "maidness"
+      },
+      {
+        "start": "2022-10",
+        "end": "2023-02",
+        "name": "☕",
+        "leader": "maidness"
+      }
+    ]
+  },
+  {
+    "name": "AB / VP",
+    "founders": ["Abdullah", "Abdelalim"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "arab empire / vampire community",
+    "color": "#4b0082",
+    "segments": [
+      {
+        "start": "2023-09",
+        "end": "2024-02",
+        "name": "AB",
+        "leader": "Abdullah, Abdelalim"
+      },
+      {
+        "start": "2024-02",
+        "end": "2024-06",
+        "name": "VP",
+        "leader": "Abdullah, Abdelalim"
+      }
+    ]
+  },
+  {
+    "name": "AL",
+    "founders": ["abdelalim"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "arab legend",
+    "color": "#ffd700",
+    "segments": [
+      {
+        "start": "2024-09",
+        "end": "?",
+        "name": "AL",
+        "leader": "abdelalim"
+      }
+    ]
+  },
+  {
+    "name": "OTK",
+    "founders": ["pudding"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "team killer",
+    "color": "#ff6347",
+    "segments": [
+      {
+        "start": "2017-03",
+        "end": "2018-04",
+        "name": "OTK",
+        "leader": "pudding"
+      }
+    ]
+  },
+  {
+    "name": "GAL",
+    "founders": ["nnd", "devrim"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "german alliance",
+    "color": "#00ced1",
+    "segments": [
+      {
+        "start": "2023-10",
+        "end": "2024-03",
+        "name": "GAL",
+        "leader": "nnd, devrim"
+      }
+    ]
+  },
+  {
+    "name": "Huntr",
+    "founders": ["Hell Crusher", "NND"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "hunter",
+    "color": "#dc143c",
+    "segments": [
+      {
+        "start": "2024-05",
+        "end": "2024-07",
+        "name": "Huntr",
+        "leader": "Hell Crusher, NND"
+      }
+    ]
+  },
+  {
+    "name": "KOT",
+    "founders": ["kot[g]"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "kot",
+    "color": "#556b2f",
+    "segments": [
+      {
+        "start": "2019-02",
+        "end": "2021-10",
+        "name": "KOT",
+        "leader": "kot[g]"
+      }
+    ]
+  },
+  {
+    "name": "PAW",
+    "founders": ["Anos", "Raxoun"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "paw",
+    "color": "#ff4500",
+    "segments": [
+      {
+        "start": "2023-01",
+        "end": "2023-04",
+        "name": "PAW",
+        "leader": "Anos, Raxoun"
+      }
+    ]
+  },
+  {
+    "name": "FA/PS",
+    "founders": ["Megalodon", "NOK"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "french alliance / pure space",
+    "color": "#8b008b",
+    "segments": [
+      {
+        "start": "2023-06",
+        "end": "2023-09",
+        "name": "FA",
+        "leader": "Megalodon, NOK"
+      },
+      {
+        "start": "2023-09",
+        "end": "2024-01",
+        "name": "PS",
+        "leader": "Megalodon, NOK"
+      }
+    ]
+  },
+  {
+    "name": "ASE",
+    "founders": ["vortex"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "AS",
+    "fullName": "asian sage elite",
+    "color": "#00fa9a",
+    "segments": [
+      {
+        "start": "2024-02",
+        "end": "?",
+        "name": "ASE",
+        "leader": "vortex"
+      }
+    ]
+  },
+  {
+    "name": "UJS",
+    "founders": ["jins"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "",
+    "color": "#4682b4",
+    "segments": [
+      {
+        "start": "2018-06",
+        "end": "2019-02",
+        "name": "UJS",
+        "leader": "jins"
+      }
+    ]
+  },
+  {
+    "name": "LAF",
+    "founders": ["a.s", "eridani"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "light aflame",
+    "color": "#ff8c00",
+    "segments": [
+      {
+        "start": "2021-01",
+        "end": "2022-01",
+        "name": "LAF",
+        "leader": "a.s, eridani"
+      },
+      {
+        "start": "2023-02",
+        "end": "2024-12",
+        "name": "LAF",
+        "leader": "a.s, eridani"
+      }
+    ]
+  },
+  {
+    "name": "SHA",
+    "founders": ["shalowa"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "sha",
+    "color": "#cd5c5c",
+    "segments": [
+      {
+        "start": "2016-01",
+        "end": "2018-10",
+        "name": "SHA",
+        "leader": "shalowa"
+      }
+    ]
+  },
+  {
+    "name": "YA/LD/CF",
+    "founders": ["solomon", "aya", "crexy"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "ymir ascendance",
+    "color": "#2e8b57",
+    "segments": [
+      {
+        "start": "2021-09",
+        "end": "2023-04",
+        "name": "YA",
+        "leader": "solomon, aya, crexy"
+      },
+      {
+        "start": "2024-08",
+        "end": "?",
+        "name": "YA",
+        "leader": "solomon, aya, crexy"
+      },
+      {
+        "start": "2023-04",
+        "end": "2023-08",
+        "name": "LD",
+        "leader": "solomon, aya, crexy"
+      },
+      {
+        "start": "2023-08",
+        "end": "2023-12",
+        "name": "CF",
+        "leader": "solomon, aya, crexy"
+      }
+    ]
+  },
+  {
+    "name": "DELTA",
+    "founders": ["Delta Commander"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "delta",
+    "color": "#4169e1",
+    "segments": [
+      {
+        "start": "2022-01",
+        "end": "2023-05",
+        "name": "DELTA",
+        "leader": "Delta Commander"
+      },
+      {
+        "start": "2024-06",
+        "end": "2024-08",
+        "name": "DELTA",
+        "leader": "Delta Commander"
+      }
+    ]
+  },
+  {
+    "name": "BORG",
+    "founders": ["ter rotor"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "borg",
+    "color": "#696969",
+    "segments": [
+      {
+        "start": "2020-03",
+        "end": "2022-04",
+        "name": "BORG",
+        "leader": "ter rotor"
+      }
+    ]
+  },
+  {
+    "name": "PE",
+    "founders": ["sopilote", "elvis"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": true,
+    "mainRegion": "US",
+    "fullName": "love peru",
+    "color": "#bc8f8f",
+    "segments": [
+      {
+        "start": "2023-05",
+        "end": "?",
+        "name": "PE",
+        "leader": "sopilote, elvis"
+      }
+    ]
+  },
+  {
+    "name": "GA",
+    "founders": ["goldman"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "goldman aerospace",
+    "color": "#daa520",
+    "segments": [
+      {
+        "start": "2018-07",
+        "end": "2020-12",
+        "name": "GA",
+        "leader": "goldman"
+      }
+    ]
+  },
+  {
+    "name": "F4/NSA",
+    "founders": ["Sakura"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "US",
+    "fullName": "ya 4 f en latin mais je sais plus",
+    "color": "#7fff00",
+    "segments": [
+      {
+        "start": "2021-04",
+        "end": "2023-02",
+        "name": "F4",
+        "leader": "Sakura"
+      },
+      {
+        "start": "2023-02",
+        "end": "2023-05",
+        "name": "NSA",
+        "leader": "Sakura"
+      },
+      {
+        "start": "2023-05",
+        "end": "?",
+        "name": "F4",
+        "leader": "Sakura"
+      }
+    ]
+  },
+  {
+    "name": "SE",
+    "founders": ["rejane"],
+    "isCheaterClan": false,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "spectral elite",
+    "color": "#ff69b4",
+    "segments": [
+      {
+        "start": "2022-09",
+        "end": "2024-04",
+        "name": "SE",
+        "leader": "rejane"
+      }
+    ]
+  },
+  {
+    "name": "GR",
+    "founders": ["one"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": false,
+    "mainRegion": "AS",
+    "fullName": "army of darkness",
+    "color": "#8b0000",
+    "segments": [
+      {
+        "start": "2024-05",
+        "end": "2024-07",
+        "name": "GR",
+        "leader": "one"
+      }
+    ]
+  },
+  {
+    "name": "EOT/ROT/RS",
+    "founders": ["Lord"],
+    "isCheaterClan": true,
+    "isTeam": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "end of terror / reign of terror / retribution seekers",
+    "color": "#4b0082",
+    "segments": [
+      {
+        "start": "2019-08",
+        "end": "2020-02",
+        "name": "EOT",
+        "leader": "Lord"
+      },
+      {
+        "start": "2020-09",
+        "end": "2021-04",
+        "name": "ROT",
+        "leader": "Lord"
+      },
+      {
+        "start": "2021-04",
+        "end": "2021-07",
+        "name": "RS",
+        "leader": "Lord"
+      },
+      {
+        "start": "2021-07",
+        "end": "2021-08",
+        "name": "EOT",
+        "leader": "Lord"
+      },
+      {
+        "start": "2022-01",
+        "end": "2023-06",
+        "name": "EOT",
+        "leader": "Lord"
+      },
+      {
+        "start": "2023-06",
+        "end": "2023-09",
+        "name": "RS",
+        "leader": "Lord"
+      },
+      {
+        "start": "2023-09",
+        "end": "2024-07",
+        "name": "EOT",
+        "leader": "Lord"
+      },
+      {
+        "start": "2024-11",
+        "end": "?",
+        "name": "EOT",
+        "leader": "Lord"
+      }
+    ]
+  },
+  {
+    "name": "GD",
+    "founders": ["randoms"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "US",
+    "fullName": "gd",
+    "color": "#4682b4",
+    "segments": [
+      {
+        "start": "2017-11",
+        "end": "2018-10",
+        "name": "GD",
+        "leader": "randoms"
+      }
+    ]
+  },
+  {
+    "name": "AR/V",
+    "founders": ["lexagon"],
+    "isCheaterClan": false,
+    "isTeam": false,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "armada / valhalla",
+    "color": "#ff6347",
+    "segments": [
+      {
+        "start": "2018-10",
+        "end": "2022-09",
+        "name": "AR",
+        "leader": "lexagon"
+      },
+      {
+        "start": "2022-09",
+        "end": "2023-02",
+        "name": "V",
+        "leader": "lexagon"
+      }
+    ]
+  }
 ]

@@ -1,6 +1,6 @@
 // Constantes globales
 const startYear = 2016;
-const endYear = 2026;
+const endYear = 2025;
 const totalYears = endYear - startYear + 1;
 const totalMonths = totalYears * 12;
 
@@ -10,13 +10,6 @@ const YEAR_WIDTH = MONTH_WIDTH * 12;
 const TIMELINE_WIDTH = totalMonths * MONTH_WIDTH;
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-const clanColors = [
-    "#e6194b", "#3cb44b", "#ffe119", "#0082c8", "#f58231",
-    "#911eb4", "#46f0f0", "#f032e6", "#d2f53c", "#fabebe",
-    "#008080", "#e6beff", "#aa6e28", "#fffac8", "#800000",
-    "#aaffc3", "#808000", "#ffd8b1", "#000080", "#808080"
-];
 
 let originalClansData = [];
 
@@ -82,15 +75,19 @@ function generateTimeline(clans) {
     const timelineContainer = document.getElementById("timeline-container");
 
     clans.forEach((clan, index) => {
-        const clanColor = clanColors[index % clanColors.length];
+        // Utiliser la couleur du clan définie dans le JSON
+        const clanColor = clan.color || "#ffffff";
 
         clan.segments.forEach((segment) => {
             const segmentDiv = document.createElement("div");
             segmentDiv.className = "segment";
             segmentDiv.style.backgroundColor = clanColor;
 
+            // Parsing de la date de début et de fin du segment
             const [segStartYear, segStartMonth] = segment.start.split("-").map(Number);
-            const [segEndYear, segEndMonth] = segment.end.split("-").map(Number);
+            const [segEndYear, segEndMonth] = segment.end === "?"
+                ? [endYear, 12] // si '?' on prend la fin de la frise comme limite
+                : segment.end.split("-").map(Number);
 
             const startOffset = ((segStartYear - startYear) * 12) + (segStartMonth - 1);
             const endOffset = ((segEndYear - startYear) * 12) + (segEndMonth - 1);
@@ -116,14 +113,11 @@ function generateTimeline(clans) {
                 <div><strong>Team :</strong> ${clan.isTeam ? "Yes" : "No"}</div>
             `;
 
-            const tooltipContent = segmentInfo;
-
             segmentDiv.addEventListener("mouseenter", () => {
-                tooltip.innerHTML = tooltipContent;
+                tooltip.innerHTML = segmentInfo;
                 tooltip.style.display = "block";
             });
 
-            // Mise à jour de la position du tooltip par rapport à la souris
             segmentDiv.addEventListener("mousemove", (e) => {
                 const containerRect = timelineContainer.getBoundingClientRect();
                 const tooltipWidth = tooltip.offsetWidth;
@@ -132,7 +126,6 @@ function generateTimeline(clans) {
                 const mouseX = e.clientX - containerRect.left;
                 const mouseY = (e.clientY + 170) - containerRect.top;
 
-                // Centrage horizontal du tooltip par rapport à la souris
                 let tooltipLeft = mouseX - (tooltipWidth / 2);
                 if (tooltipLeft < 0) tooltipLeft = 0;
                 const maxLeft = containerRect.width - tooltipWidth;
@@ -140,7 +133,6 @@ function generateTimeline(clans) {
                     tooltipLeft = maxLeft;
                 }
 
-                // Position au-dessus (avec l'ajout de 120px comme modifié)
                 const tooltipTop = mouseY - tooltipHeight;
 
                 tooltip.style.left = tooltipLeft + "px";
@@ -162,18 +154,44 @@ function loadClans() {
             if (!response.ok) {
                 throw new Error("Erreur lors du chargement des données.");
             }
+            // Ici on gère le cas où les données peuvent inclure des arrays ou des objets.
+            // On suppose que le data.json renvoie un tableau de clans.  
+            // Si ce n'est pas le cas, on adaptera ici la logique pour extraire le tableau de clans.
             return response.json();
         })
         .then((data) => {
-            originalClansData = data;
+            // data peut être un tableau ou un objet complexe.
+            // Vérifions si data est un tableau:
+            let clans = Array.isArray(data) ? data : [];
+
+            // Si ce n'est pas un tableau, il faut peut-être extraire les données autrement
+            // Exemple : if (data.clans && Array.isArray(data.clans)) { clans = data.clans; }
+
+            // On trie les clans du plus récent au plus ancien.
+            // Critère: date la plus récente du premier segment
+            // On récupère la date de début du premier segment et on trie par ordre décroissant.
+            clans.sort((a, b) => {
+                // Trouver la date du premier segment (le plus ancien segment) pour chaque clan
+                const aStartDates = a.segments.map(s => parseDateStr(s.start)).filter(d => d !== null);
+                const bStartDates = b.segments.map(s => parseDateStr(s.start)).filter(d => d !== null);
+                const aMin = Math.min(...aStartDates);
+                const bMin = Math.min(...bStartDates);
+
+                // On veut du plus récent au plus ancien, donc on compare à l'envers :
+                // Si aMin > bMin, alors a est plus récent (plus grande date)
+                return aMin - bMin; // Plus ancien au plus récent
+            });
+
+            originalClansData = clans;
             generateYears();
             generateMonths();
-            generateTimeline(data);
+            generateTimeline(clans);
         })
         .catch((error) => {
             console.error("Erreur:", error);
         });
 }
+
 
 
 // Écouteur sur le formulaire de filtre

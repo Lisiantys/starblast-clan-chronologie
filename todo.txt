@@ -1,4 +1,8 @@
-Appliquer des couleurs hexadecimal fixw pour les clans/ teams
+Appliquer des couleurs hexadecimal fixw pour les clans/ team
+ajouter le nom des clans en entier
 afficher par defaut les clans par date de créations. du plus vieux au plus jeune
 Etablir la liste compléte et entiere des team et clans
 ajuster la hauteur  de la height de la timeline,
+
+version futur : 
+dans une version future ajouter une barre qui au defilement afficherait le nom des clans actifs a ce moment la
