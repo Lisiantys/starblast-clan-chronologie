@@ -8,8 +8,7 @@
   </head>
   <body>
     <header>
-      <h1>Starblast Clans and Teams timeline</h1>
-      <span id="toggle-icon">Filter form</span>
+      <h1>Starblast Clans / Teams Timeline</h1>
     </header>
     <main>
       <div id="timeline-container">
@@ -18,7 +17,7 @@
         <div id="clan-container"></div>
       </div>
       <!-- Panneau de filtre -->
-      <div id="filter-panel" class="closed">
+      <div id="filter-panel">
         <form id="filter-form">
           <fieldset>
             <legend>Filter Clans / Teams</legend>
@@ -76,14 +75,5 @@
       <div id="tooltip"></div>
     </main>
     <script src="script.js"></script>
-    <script>
-      // Gestion de l'ouverture/fermeture du panneau
-      const filterPanel = document.getElementById("filter-panel");
-      const toggleIcon = document.getElementById("toggle-icon");
-
-      toggleIcon.addEventListener("click", () => {
-        filterPanel.classList.toggle("closed");
-      });
-    </script>
   </body>
 </html>

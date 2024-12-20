@@ -30,6 +30,7 @@
 
 /* Style global */
 body {
+  position: relative;
   font-family: Arial, sans-serif;
   margin: 0;
   background-color: #121212;
@@ -37,15 +38,25 @@ body {
 }
 
 header {
-  display: flex;
-  width: 100%;
-  gap: 20px;
-  text-align: center;
-  padding: 1rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: auto; /* Ajuster la largeur selon le contenu */
+  background-color: rgba(
+    18,
+    18,
+    18,
+    0.9
+  ); /* Optionnel : un fond semi-transparent */
+  padding: 10px; /* Optionnel : espace autour du texte */
+  z-index: 1000; /* Assurez-vous qu'il reste au-dessus des autres éléments */
 }
 
-h1 {
-  font-size: 16px;
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: white; /* Couleur du texte */
+  text-align: left;
 }
 
 /* Conteneur principal */
@@ -76,7 +87,6 @@ h1 {
 /* Conteneur des segments */
 #clan-container {
   position: relative;
-  height: 100vh;
 }
 
 /* Style des segments */
@@ -123,21 +133,6 @@ h1 {
   flex-direction: column;
 }
 
-/* Quand le panneau est fermé, on le translate quasi totalement à droite, 
-   ne laissant apparaître que le bouton toggle. */
-#filter-panel.closed {
-  transform: translateX(calc(100% - 40px));
-}
-/* Icône du toggle */
-#toggle-icon {
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  border: 2px white solid;
-  padding: 5px 10px;
-  align-self: center;
-}
-
 /* Ajustement du formulaire à l'intérieur du panneau */
 form#filter-form {
   flex: 1;
@@ -147,6 +142,7 @@ form#filter-form {
   box-shadow: none;
   max-width: 100%;
   margin: 0;
+  overflow-y: hidden;
 }
 
 /* On réutilise le style précédent pour le formulaire */

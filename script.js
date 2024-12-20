@@ -74,7 +74,6 @@ function generateTimeline(clans) {
     const timelineContainer = document.getElementById("timeline-container");
 
     clans.forEach((clan, index) => {
-        // Utiliser la couleur du clan définie dans le JSON
         const clanColor = clan.color || "#ffffff";
 
         clan.segments.forEach((segment) => {
@@ -82,10 +81,9 @@ function generateTimeline(clans) {
             segmentDiv.className = "segment";
             segmentDiv.style.backgroundColor = clanColor;
 
-            // Parsing de la date de début et de fin du segment
             const [segStartYear, segStartMonth] = segment.start.split("-").map(Number);
             const [segEndYear, segEndMonth] = segment.end === "?"
-                ? [endYear, 12] // si '?' on prend la fin de la frise comme limite
+                ? [endYear, 12]
                 : segment.end.split("-").map(Number);
 
             const startOffset = ((segStartYear - startYear) * 12) + (segStartMonth - 1);
@@ -106,10 +104,10 @@ function generateTimeline(clans) {
                 <div><strong>${segment.name}</strong></div>
                 <div>Play in <strong>${clan.mainRegion}</strong></div>
                 <div>${segment.start} - ${segment.end}</div>
-                <div><strong>Leader :</strong> ${segment.leader}</div>
+                <div><strong>Founder :</strong> ${segment.leader}</div>
                 <div><strong>Currently Active :</strong> ${clan.isActive ? "Yes" : "No"}</div>
-                <div><strong>Cheating :</strong> ${clan.isCheaterClan ? "Yes" : "No"}</div>
-                <div><strong>Clan :</strong> ${clan.isClan ? "Yes" : "No"}</div>
+                <div><strong>Reputation :</strong> ${clan.isCheaterClan ? "Cheaters" : "Fair"}</div>
+                <div><strong>Structure :</strong> ${clan.isClan ? "Clan" : "Team"}</div>
             `;
 
             segmentDiv.addEventListener("mouseenter", () => {
@@ -145,7 +143,11 @@ function generateTimeline(clans) {
             container.appendChild(segmentDiv);
         });
     });
+
+    // Ajuster la hauteur du conteneur en fonction du nombre de clans
+    container.style.height = `${clans.length * rowHeight}px`;
 }
+
 
 function loadClans() {
     fetch("data.json")
