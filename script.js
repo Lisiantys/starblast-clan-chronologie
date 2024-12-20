@@ -70,7 +70,6 @@ function generateTimeline(clans) {
     container.style.width = TIMELINE_WIDTH + "px";
 
     const rowHeight = 40;
-    container.style.marginTop = "50px";
     const tooltip = document.getElementById("tooltip");
     const timelineContainer = document.getElementById("timeline-container");
 

@@ -1,6 +1,7 @@
 * {
   scrollbar-width: thin;
   scrollbar-color: white transparent;
+  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     width: 3px;
@@ -50,9 +51,8 @@ h1 {
 /* Conteneur principal */
 #timeline-container {
   position: relative;
-  width: 95%;
-  margin: 0 auto 2rem auto;
-  padding: 10px 0;
+  width: 100%;
+  padding: 10px;
   overflow-x: auto;
   border-top: 2px solid #444;
   box-sizing: border-box;
