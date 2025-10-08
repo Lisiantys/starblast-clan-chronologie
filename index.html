@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clans and Teams timeline</title>
+    <title>Clans and Teams Timeline</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -16,17 +16,23 @@
         <div class="months"></div>
         <div id="clan-container"></div>
       </div>
+
       <!-- Panneau de filtre -->
       <div id="filter-panel">
         <form id="filter-form">
           <fieldset>
             <legend>Filter Clans / Teams</legend>
             <div>
-              <label for="segment-name-filter">Name :</label>
-              <input type="text" id="segment-name-filter" name="segmentName" />
+              <label for="segment-name-filter">Name</label>
+              <input
+                type="text"
+                id="segment-name-filter"
+                name="segmentName"
+                placeholder="Search by name..."
+              />
             </div>
             <div>
-              <label for="cheater-filter">Reputation ?</label>
+              <label for="cheater-filter">Reputation</label>
               <select id="cheater-filter" name="isCheaterClan">
                 <option value="">All</option>
                 <option value="true">Cheaters</option>
@@ -34,7 +40,7 @@
               </select>
             </div>
             <div>
-              <label for="team-filter">Structure ? </label>
+              <label for="team-filter">Structure</label>
               <select id="team-filter" name="isClan">
                 <option value="">All</option>
                 <option value="true">Clan</option>
@@ -42,7 +48,7 @@
               </select>
             </div>
             <div>
-              <label for="active-filter">Still active ?</label>
+              <label for="active-filter">Still Active</label>
               <select id="active-filter" name="isActive">
                 <option value="">All</option>
                 <option value="true">Yes</option>
@@ -50,7 +56,7 @@
               </select>
             </div>
             <div>
-              <label for="region-filter">Region ?</label>
+              <label for="region-filter">Region</label>
               <select id="region-filter" name="mainRegion">
                 <option value="">All</option>
                 <option value="EU">Europe</option>
@@ -59,20 +65,30 @@
               </select>
             </div>
             <div>
-              <label for="start-date-filter">Start :</label>
+              <label for="start-date-filter">Start Date</label>
               <input type="month" id="start-date-filter" name="startDate" />
             </div>
             <div>
-              <label for="end-date-filter">Ended :</label>
+              <label for="end-date-filter">End Date</label>
               <input type="month" id="end-date-filter" name="endDate" />
             </div>
-            <button type="submit">Apply filters</button>
+            <button type="submit">Apply Filters</button>
           </fieldset>
         </form>
       </div>
 
       <!-- Tooltip -->
       <div id="tooltip"></div>
+
+      <!-- Indicateur de zoom -->
+      <div id="zoom-indicator">Zoom: 100%</div>
+
+      <!-- Instructions -->
+      <div class="controls-info">
+        <strong>Ctrl + Scroll</strong> to zoom •
+        <strong>Click + Drag</strong> to pan • <strong>Scroll</strong> to
+        navigate
+      </div>
     </main>
     <script src="script.js"></script>
   </body>
