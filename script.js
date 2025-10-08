@@ -29,6 +29,10 @@ let startPanY = 0;
 let scrollLeft = 0;
 let scrollTop = 0;
 
+// Variables pour le pinch-to-zoom mobile
+let initialPinchDistance = 0;
+let initialZoomLevel = 1;
+
 // Variables pour les paramètres
 let settings = {
     displayMode: 'normal' // normal par défaut, pas de sélection UI
@@ -129,6 +133,15 @@ function generateLabels(clans) {
     const rowHeight = settings.displayMode === 'compact' ? 30 :
         settings.displayMode === 'extended' ? 50 : 40;
 
+    // Calculer le padding-top pour aligner avec la timeline
+    // Years = 25px + 10px margin = 35px
+    // Months = 20px + 15px margin = 35px (si visible)
+    const yearsHeight = 35;
+    const monthsHeight = currentZoom >= MONTH_HIDE_THRESHOLD ? 35 : 0;
+    const topPadding = yearsHeight + monthsHeight + 10; // +10 pour le padding du clan-container
+
+    innerContainer.style.paddingTop = `${topPadding}px`;
+
     clans.forEach((clan, index) => {
         const labelDiv = document.createElement("div");
         labelDiv.className = "clan-label";
@@ -142,7 +155,7 @@ function generateLabels(clans) {
     });
 
     // Important : définir la hauteur totale du conteneur interne
-    const totalHeight = clans.length * rowHeight;
+    const totalHeight = clans.length * rowHeight + topPadding;
     innerContainer.style.height = `${totalHeight}px`;
 
     // Synchroniser immédiatement
@@ -292,7 +305,19 @@ function refreshTimeline(clans) {
 
 function initializeZoom() {
     const timelineContainer = document.getElementById("timeline-container");
-    const containerWidth = window.innerWidth - 340 - 200; // Soustraire panneau filtre + labels
+
+    // Calculer la largeur disponible selon la taille d'écran
+    let availableWidth = window.innerWidth;
+
+    // Soustraire le panneau de filtres si visible
+    if (window.innerWidth > 768) {
+        availableWidth -= 340; // Panneau de filtre
+    }
+    if (window.innerWidth > 1024) {
+        availableWidth -= 200; // Labels
+    }
+
+    const containerWidth = availableWidth - 40; // Soustraire padding
     const initialZoom = containerWidth / (totalMonths * BASE_MONTH_WIDTH);
     currentZoom = Math.max(MIN_ZOOM, Math.min(initialZoom * 0.9, 1));
     refreshTimeline(originalClansData);
@@ -301,6 +326,7 @@ function initializeZoom() {
 function setupZoom() {
     const timelineContainer = document.getElementById("timeline-container");
 
+    // Zoom avec Ctrl+molette
     timelineContainer.addEventListener("wheel", (e) => {
         if (!e.ctrlKey) return;
         e.preventDefault();
@@ -328,11 +354,48 @@ function setupZoom() {
             timelineContainer.scrollTop = relativeY * currentZoom - mouseY;
         }
     }, { passive: false });
+
+    // Pinch-to-zoom pour mobile
+    timelineContainer.addEventListener("touchstart", (e) => {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            const touch1 = e.touches[0];
+            const touch2 = e.touches[1];
+            initialPinchDistance = Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+            );
+            initialZoomLevel = currentZoom;
+        }
+    }, { passive: false });
+
+    timelineContainer.addEventListener("touchmove", (e) => {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            const touch1 = e.touches[0];
+            const touch2 = e.touches[1];
+            const currentDistance = Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+            );
+
+            const scale = currentDistance / initialPinchDistance;
+            const newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, initialZoomLevel * scale));
+
+            if (Math.abs(newZoom - currentZoom) > 0.01) {
+                currentZoom = newZoom;
+                const currentClans = getCurrentFilteredClans();
+                refreshTimeline(currentClans);
+                updateZoomIndicator();
+            }
+        }
+    }, { passive: false });
 }
 
 function setupPan() {
     const timelineContainer = document.getElementById("timeline-container");
 
+    // Support souris
     timelineContainer.addEventListener("mousedown", (e) => {
         if (e.target.classList.contains("segment")) return;
 
@@ -368,6 +431,33 @@ function setupPan() {
     timelineContainer.addEventListener("selectstart", (e) => {
         if (isPanning) e.preventDefault();
     });
+
+    // Support tactile (mobile)
+    timelineContainer.addEventListener("touchstart", (e) => {
+        if (e.target.classList.contains("segment")) return;
+
+        const touch = e.touches[0];
+        isPanning = true;
+        startPanX = touch.clientX;
+        startPanY = touch.clientY;
+        scrollLeft = timelineContainer.scrollLeft;
+        scrollTop = timelineContainer.scrollTop;
+    }, { passive: true });
+
+    timelineContainer.addEventListener("touchmove", (e) => {
+        if (!isPanning) return;
+
+        const touch = e.touches[0];
+        const deltaX = touch.clientX - startPanX;
+        const deltaY = touch.clientY - startPanY;
+
+        timelineContainer.scrollLeft = scrollLeft - deltaX;
+        timelineContainer.scrollTop = scrollTop - deltaY;
+    }, { passive: true });
+
+    timelineContainer.addEventListener("touchend", () => {
+        isPanning = false;
+    }, { passive: true });
 }
 
 function setupKeyboardShortcuts() {
@@ -495,6 +585,25 @@ document.getElementById("filter-form").addEventListener("submit", (e) => {
 });
 
 document.getElementById("reset-filters")?.addEventListener("click", resetFilters);
+
+// Menu mobile
+document.getElementById("mobile-menu-btn")?.addEventListener("click", () => {
+    const filterPanel = document.getElementById("filter-panel");
+    filterPanel.classList.toggle("open");
+});
+
+// Fermer le menu mobile en cliquant en dehors
+document.addEventListener("click", (e) => {
+    const filterPanel = document.getElementById("filter-panel");
+    const menuBtn = document.getElementById("mobile-menu-btn");
+
+    if (window.innerWidth <= 768 &&
+        filterPanel.classList.contains("open") &&
+        !filterPanel.contains(e.target) &&
+        e.target !== menuBtn) {
+        filterPanel.classList.remove("open");
+    }
+});
 
 window.addEventListener("resize", () => {
     initializeZoom();

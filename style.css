@@ -472,6 +472,20 @@ form#filter-form button:active {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  main {
+    padding-left: 150px;
+  }
+
+  .clan-labels {
+    width: 150px;
+  }
+
+  .clan-label {
+    font-size: 0.75rem;
+  }
+}
+
 @media (max-width: 1024px) {
   main {
     padding-left: 0;
@@ -480,20 +494,31 @@ form#filter-form button:active {
   .clan-labels {
     display: none;
   }
+
+  header {
+    right: 300px;
+  }
+
+  #filter-panel {
+    width: 300px;
+  }
 }
 
 @media (max-width: 768px) {
   header {
     right: 0;
+    height: 60px;
+    padding: 10px 15px;
   }
 
   header h1 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   main {
     padding-right: 0;
     padding-top: 60px;
+    padding-left: 0;
   }
 
   #filter-panel {
@@ -506,14 +531,117 @@ form#filter-form button:active {
     transform: translateX(0);
   }
 
+  /* Bouton menu burger pour mobile */
+  .mobile-menu-btn {
+    display: block !important;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 10000;
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+  }
+
   .toolbar {
     left: 10px;
     right: 10px;
+    bottom: 10px;
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
   }
 
   .toolbar-section {
     flex-wrap: wrap;
+    justify-content: center;
   }
+
+  #zoom-indicator {
+    min-width: auto;
+  }
+
+  .clan-labels {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+
+  .toolbar-section span {
+    font-size: 0.65rem !important;
+  }
+
+  form#filter-form {
+    padding: 15px;
+  }
+
+  form#filter-form legend {
+    font-size: 1.2rem;
+  }
+
+  form#filter-form label {
+    font-size: 0.75rem;
+  }
+
+  form#filter-form input,
+  form#filter-form select {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  form#filter-form button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  /* Segments plus visibles sur mobile */
+  .segment {
+    font-size: 0.7rem;
+    padding: 0 8px;
+    min-height: 20px;
+  }
+
+  /* Tooltip plus compact sur mobile */
+  #tooltip {
+    min-width: 240px;
+    font-size: 0.8rem;
+  }
+
+  .tooltip-header {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+
+  .tooltip-row {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .segment {
+    font-size: 0.6rem;
+  }
+
+  .years div {
+    font-size: 0.8rem !important;
+  }
+
+  #tooltip {
+    min-width: 200px;
+  }
+}
+
+/* Bouton menu caché par défaut */
+.mobile-menu-btn {
+  display: none;
 }
