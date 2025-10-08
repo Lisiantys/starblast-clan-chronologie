@@ -2,30 +2,30 @@
   scrollbar-width: thin;
   scrollbar-color: #4a90e2 #1e1e1e;
   box-sizing: border-box;
+}
 
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
 
-  &::-webkit-scrollbar-track {
-    background: #1e1e1e;
-    border-radius: 4px;
-  }
+*::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 4px;
+}
 
-  &::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #4a90e2, #357abd);
-    border-radius: 4px;
-    border: 2px solid #1e1e1e;
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4a90e2, #357abd);
+  border-radius: 4px;
+  border: 2px solid #1e1e1e;
+}
 
-    &:hover {
-      background: linear-gradient(180deg, #5aa3f5, #4a90e2);
-    }
-  }
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5aa3f5, #4a90e2);
+}
 
-  &::-webkit-scrollbar-button {
-    display: none;
-  }
+*::-webkit-scrollbar-button {
+  display: none;
 }
 
 /* Style global */
@@ -44,19 +44,21 @@ header {
   position: fixed;
   left: 0;
   top: 0;
-  width: auto;
+  right: 340px;
+  height: 70px;
   background: linear-gradient(
     135deg,
     rgba(26, 26, 46, 0.95),
     rgba(16, 16, 30, 0.95)
   );
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   padding: 15px 25px;
   z-index: 1000;
   border-bottom: 2px solid rgba(74, 144, 226, 0.3);
-  border-right: 2px solid rgba(74, 144, 226, 0.3);
-  border-bottom-right-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header h1 {
@@ -76,17 +78,19 @@ main {
   width: 100%;
   padding-top: 70px;
   padding-right: 340px;
+  padding-left: 200px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Conteneur principal */
 #timeline-container {
   position: relative;
   width: 100%;
-  height: calc(100vh - 70px);
+  flex: 1;
   padding: 20px;
   overflow: auto;
-  border-top: 2px solid rgba(74, 144, 226, 0.2);
   box-sizing: border-box;
   cursor: grab;
   background: linear-gradient(
@@ -98,6 +102,58 @@ main {
 
 #timeline-container:active {
   cursor: grabbing;
+}
+
+/* Labels des clans à gauche */
+.clan-labels {
+  position: fixed;
+  left: 0;
+  top: 115px;
+  width: 200px;
+  bottom: 60px;
+  background: linear-gradient(
+    90deg,
+    rgba(26, 26, 46, 0.98),
+    rgba(26, 26, 46, 0.95)
+  );
+  backdrop-filter: blur(15px);
+  border-right: 2px solid rgba(74, 144, 226, 0.3);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  z-index: 500;
+  padding: 10px 0;
+}
+
+.clan-labels::-webkit-scrollbar {
+  display: none;
+}
+
+.clan-labels {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.clan-label {
+  position: absolute;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.clan-label:hover {
+  padding-left: 20px;
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .years {
@@ -137,8 +193,6 @@ main {
 
 /* Style des segments */
 .segment {
-  height: 24px;
-  line-height: 24px;
   padding: 0 12px;
   border-radius: 8px;
   color: #fff;
@@ -151,9 +205,7 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: all 0.2s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -196,7 +248,10 @@ main {
   font-weight: 700;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  /* Le background sera défini en inline avec la couleur du clan */
+}
+
+.tooltip-body {
+  padding: 8px 0;
 }
 
 .tooltip-row {
@@ -243,7 +298,6 @@ main {
   border-left: 2px solid rgba(74, 144, 226, 0.3);
 }
 
-/* Ajustement du formulaire */
 form#filter-form {
   flex: 1;
   padding: 20px;
@@ -354,46 +408,85 @@ form#filter-form button:active {
   box-shadow: 0 2px 10px rgba(74, 144, 226, 0.4);
 }
 
-/* Indicateur de zoom */
-#zoom-indicator {
+/* Boutons de contrôle */
+.control-btn {
+  padding: 8px 16px;
+  background: rgba(74, 144, 226, 0.2);
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.control-btn:hover {
+  background: rgba(74, 144, 226, 0.4);
+  transform: translateY(-1px);
+}
+
+.control-btn.active {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  border-color: #4a90e2;
+}
+
+/* Toolbar en bas */
+.toolbar {
   position: fixed;
   bottom: 20px;
-  left: 20px;
-  background: rgba(26, 26, 46, 0.9);
+  left: 220px;
+  right: 360px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.toolbar-section {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(15px);
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+#zoom-indicator {
+  background: rgba(26, 26, 46, 0.95);
   backdrop-filter: blur(10px);
   padding: 10px 20px;
   border-radius: 8px;
   color: #4a90e2;
-  font-weight: 600;
-  font-size: 0.9rem;
-  z-index: 1000;
+  font-weight: 700;
+  font-size: 1rem;
   border: 1px solid rgba(74, 144, 226, 0.3);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Instructions de navigation */
-.controls-info {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(26, 26, 46, 0.9);
-  backdrop-filter: blur(10px);
-  padding: 12px 24px;
-  border-radius: 10px;
-  color: #ccc;
-  font-size: 0.85rem;
-  z-index: 1000;
-  border: 1px solid rgba(74, 144, 226, 0.2);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  min-width: 80px;
   text-align: center;
 }
 
-.controls-info strong {
-  color: #4a90e2;
+/* Responsive */
+@media (max-width: 1024px) {
+  main {
+    padding-left: 0;
+  }
+
+  .clan-labels {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
+  header {
+    right: 0;
+  }
+
   header h1 {
     font-size: 1.2rem;
   }
@@ -413,17 +506,14 @@ form#filter-form button:active {
     transform: translateX(0);
   }
 
-  form#filter-form legend {
-    font-size: 1.2rem;
+  .toolbar {
+    left: 10px;
+    right: 10px;
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  form#filter-form input,
-  form#filter-form select,
-  form#filter-form button {
-    font-size: 0.9rem;
-  }
-
-  .controls-info {
-    display: none;
+  .toolbar-section {
+    flex-wrap: wrap;
   }
 }

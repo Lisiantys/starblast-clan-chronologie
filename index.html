@@ -1,15 +1,19 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clans and Teams Timeline</title>
+    <title>Starblast Clans & Teams Timeline</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <h1>Starblast Clans / Teams Timeline</h1>
+      <h1>Starblast Clans & Teams Timeline</h1>
     </header>
+
+    <!-- Labels des clans -->
+    <div class="clan-labels"></div>
+
     <main>
       <div id="timeline-container">
         <div class="years"></div>
@@ -21,57 +25,74 @@
       <div id="filter-panel">
         <form id="filter-form">
           <fieldset>
-            <legend>Filter Clans / Teams</legend>
+            <legend>Filters</legend>
+
             <div>
-              <label for="segment-name-filter">Name</label>
+              <label for="segment-name-filter">Search Name</label>
               <input
                 type="text"
                 id="segment-name-filter"
                 name="segmentName"
-                placeholder="Search by name..."
+                placeholder="Type clan name..."
+                autocomplete="off"
               />
             </div>
+
             <div>
               <label for="cheater-filter">Reputation</label>
               <select id="cheater-filter" name="isCheaterClan">
                 <option value="">All</option>
-                <option value="true">Cheaters</option>
-                <option value="false">Fair</option>
+                <option value="false">✓ Fair</option>
+                <option value="true">⚠ Cheaters</option>
               </select>
             </div>
+
             <div>
               <label for="team-filter">Structure</label>
               <select id="team-filter" name="isClan">
                 <option value="">All</option>
-                <option value="true">Clan</option>
-                <option value="false">Team</option>
+                <option value="true">👥 Clan</option>
+                <option value="false">🎮 Team</option>
               </select>
             </div>
+
             <div>
-              <label for="active-filter">Still Active</label>
+              <label for="active-filter">Status</label>
               <select id="active-filter" name="isActive">
                 <option value="">All</option>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
+                <option value="true">✅ Active</option>
+                <option value="false">❌ Inactive</option>
               </select>
             </div>
+
             <div>
               <label for="region-filter">Region</label>
               <select id="region-filter" name="mainRegion">
-                <option value="">All</option>
+                <option value="">All Regions</option>
                 <option value="EU">Europe</option>
                 <option value="US">America</option>
                 <option value="AS">Asia</option>
               </select>
             </div>
+
             <div>
               <label for="start-date-filter">Start Date</label>
               <input type="month" id="start-date-filter" name="startDate" />
             </div>
+
             <div>
               <label for="end-date-filter">End Date</label>
               <input type="month" id="end-date-filter" name="endDate" />
             </div>
+
+            <button
+              type="button"
+              id="reset-filters"
+              style="margin-bottom: 10px; background: rgba(255, 100, 100, 0.3)"
+            >
+              Reset Filters
+            </button>
+
             <button type="submit">Apply Filters</button>
           </fieldset>
         </form>
@@ -80,16 +101,23 @@
       <!-- Tooltip -->
       <div id="tooltip"></div>
 
-      <!-- Indicateur de zoom -->
-      <div id="zoom-indicator">Zoom: 100%</div>
+      <!-- Toolbar en bas -->
+      <div class="toolbar">
+        <!-- Zoom Indicator -->
+        <div id="zoom-indicator">100%</div>
 
-      <!-- Instructions -->
-      <div class="controls-info">
-        <strong>Ctrl + Scroll</strong> to zoom •
-        <strong>Click + Drag</strong> to pan • <strong>Scroll</strong> to
-        navigate
+        <!-- Keyboard Shortcuts Info -->
+        <div class="toolbar-section" style="flex: 1; justify-content: center">
+          <span style="color: #999; font-size: 0.75rem; text-align: center">
+            <strong style="color: #4a90e2">Ctrl+Scroll</strong> Zoom (2% steps)
+            • <strong style="color: #4a90e2">Click+Drag</strong> Pan •
+            <strong style="color: #4a90e2">Ctrl+0</strong> Reset Zoom •
+            <strong style="color: #4a90e2">Ctrl+±</strong> Zoom In/Out
+          </span>
+        </div>
       </div>
     </main>
+
     <script src="script.js"></script>
   </body>
 </html>

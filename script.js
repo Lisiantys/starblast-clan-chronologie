@@ -13,13 +13,14 @@ let TIMELINE_WIDTH = totalMonths * MONTH_WIDTH;
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 let originalClansData = [];
+let currentFilteredClans = [];
 
 // Variables pour le zoom et le pan
 let currentZoom = 1;
 const MIN_ZOOM = 0.1;
 const MAX_ZOOM = 3;
-const ZOOM_SPEED = 0.1;
-const MONTH_HIDE_THRESHOLD = 0.6; // Augmenté pour cacher les mois plus tôt
+const ZOOM_SPEED = 0.02; // Changé de 0.1 à 0.02 pour zoom 2 par 2
+const MONTH_HIDE_THRESHOLD = 0.6;
 
 // Variables pour le pan
 let isPanning = false;
@@ -27,6 +28,11 @@ let startPanX = 0;
 let startPanY = 0;
 let scrollLeft = 0;
 let scrollTop = 0;
+
+// Variables pour les paramètres
+let settings = {
+    displayMode: 'normal' // normal par défaut, pas de sélection UI
+};
 
 // Fonction utilitaire pour parser une date "YYYY-MM" en un nombre (année * 12 + mois)
 function parseDateStr(str) {
@@ -47,7 +53,7 @@ function updateDimensions() {
 function updateZoomIndicator() {
     const indicator = document.getElementById("zoom-indicator");
     if (indicator) {
-        indicator.textContent = `Zoom: ${Math.round(currentZoom * 100)}%`;
+        indicator.textContent = `${Math.round(currentZoom * 100)}%`;
     }
 }
 
@@ -57,7 +63,6 @@ function generateYears() {
     yearsContainer.innerHTML = "";
     yearsContainer.style.position = "relative";
 
-    // S'assurer que la largeur est au moins celle du conteneur
     const containerWidth = timelineContainer.clientWidth;
     const calculatedWidth = Math.max(TIMELINE_WIDTH, containerWidth);
     yearsContainer.style.width = calculatedWidth + "px";
@@ -82,7 +87,6 @@ function generateMonths() {
     monthsContainer.innerHTML = "";
     monthsContainer.style.position = "relative";
 
-    // Cacher les mois si le zoom est trop petit
     if (currentZoom < MONTH_HIDE_THRESHOLD) {
         monthsContainer.style.display = "none";
         return;
@@ -90,7 +94,6 @@ function generateMonths() {
         monthsContainer.style.display = "block";
     }
 
-    // S'assurer que la largeur est au moins celle du conteneur
     const containerWidth = timelineContainer.clientWidth;
     const calculatedWidth = Math.max(TIMELINE_WIDTH, containerWidth);
     monthsContainer.style.width = calculatedWidth + "px";
@@ -110,18 +113,78 @@ function generateMonths() {
     }
 }
 
+function generateLabels(clans) {
+    const labelsContainer = document.querySelector(".clan-labels");
+    if (!labelsContainer) return;
+
+    // Créer ou récupérer le conteneur interne
+    let innerContainer = labelsContainer.querySelector(".clan-labels-inner");
+    if (!innerContainer) {
+        innerContainer = document.createElement("div");
+        innerContainer.className = "clan-labels-inner";
+        labelsContainer.appendChild(innerContainer);
+    }
+
+    innerContainer.innerHTML = "";
+    const rowHeight = settings.displayMode === 'compact' ? 30 :
+        settings.displayMode === 'extended' ? 50 : 40;
+
+    clans.forEach((clan, index) => {
+        const labelDiv = document.createElement("div");
+        labelDiv.className = "clan-label";
+        labelDiv.style.top = `${index * rowHeight}px`;
+        labelDiv.style.height = `${rowHeight}px`;
+        labelDiv.style.lineHeight = `${rowHeight}px`;
+        labelDiv.textContent = clan.name;
+        labelDiv.style.backgroundColor = clan.color;
+        labelDiv.title = clan.fullName || clan.name;
+        innerContainer.appendChild(labelDiv);
+    });
+
+    // Important : définir la hauteur totale du conteneur interne
+    const totalHeight = clans.length * rowHeight;
+    innerContainer.style.height = `${totalHeight}px`;
+
+    // Synchroniser immédiatement
+    setTimeout(() => syncLabelsScroll(), 0);
+}
+
+function syncLabelsScroll() {
+    const timelineContainer = document.getElementById("timeline-container");
+    const labelsContainer = document.querySelector(".clan-labels");
+
+    if (timelineContainer && labelsContainer) {
+        // Synchroniser le scroll vertical
+        labelsContainer.scrollTop = timelineContainer.scrollTop;
+    }
+}
+
+function setupScrollSync() {
+    const timelineContainer = document.getElementById("timeline-container");
+
+    if (timelineContainer) {
+        // Écouter le scroll de la timeline
+        timelineContainer.addEventListener("scroll", () => {
+            syncLabelsScroll();
+        });
+    }
+}
+
 function generateTimeline(clans) {
     const container = document.getElementById("clan-container");
     const timelineContainer = document.getElementById("timeline-container");
     container.innerHTML = "";
     container.style.position = "relative";
 
-    // S'assurer que la largeur est au moins celle du conteneur
     const containerWidth = timelineContainer.clientWidth;
     const calculatedWidth = Math.max(TIMELINE_WIDTH, containerWidth);
     container.style.width = calculatedWidth + "px";
 
-    const rowHeight = 40;
+    const rowHeight = settings.displayMode === 'compact' ? 30 :
+        settings.displayMode === 'extended' ? 50 : 40;
+    const segmentHeight = settings.displayMode === 'compact' ? 20 :
+        settings.displayMode === 'extended' ? 30 : 24;
+
     const tooltip = document.getElementById("tooltip");
 
     clans.forEach((clan, index) => {
@@ -131,6 +194,8 @@ function generateTimeline(clans) {
             const segmentDiv = document.createElement("div");
             segmentDiv.className = "segment";
             segmentDiv.style.backgroundColor = clanColor;
+            segmentDiv.style.height = `${segmentHeight}px`;
+            segmentDiv.style.lineHeight = `${segmentHeight}px`;
 
             const [segStartYear, segStartMonth] = segment.start.split("-").map(Number);
             const [segEndYear, segEndMonth] = segment.end === "?"
@@ -149,8 +214,8 @@ function generateTimeline(clans) {
             segmentDiv.style.width = `${width}px`;
             segmentDiv.style.top = `${top}px`;
             segmentDiv.textContent = `${segment.name} (${segment.start} - ${segment.end})`;
+            segmentDiv.dataset.clanName = clan.name;
 
-            // Fonction pour assombrir une couleur (pour le gradient)
             const darkenColor = (color, amount = 20) => {
                 const num = parseInt(color.replace("#", ""), 16);
                 const r = Math.max(0, (num >> 16) - amount);
@@ -163,17 +228,20 @@ function generateTimeline(clans) {
 
             const segmentInfo = `
                 <div class="tooltip-header" style="background: linear-gradient(135deg, ${clanColor}, ${darkColor});">${segment.name}</div>
-                <div class="tooltip-row"><span class="tooltip-label">Region:</span> <span class="tooltip-value">${clan.mainRegion}</span></div>
-                <div class="tooltip-row"><span class="tooltip-label">Period:</span> <span class="tooltip-value">${segment.start} - ${segment.end}</span></div>
-                <div class="tooltip-row"><span class="tooltip-label">Leader:</span> <span class="tooltip-value">${segment.leader}</span></div>
-                <div class="tooltip-row"><span class="tooltip-label">Active:</span> <span class="tooltip-value">${clan.isActive ? "✓ Yes" : "✗ No"}</span></div>
-                <div class="tooltip-row"><span class="tooltip-label">Reputation:</span> <span class="tooltip-value">${clan.isCheaterClan ? "⚠ Cheaters" : "✓ Fair"}</span></div>
-                <div class="tooltip-row"><span class="tooltip-label">Type:</span> <span class="tooltip-value">${clan.isClan ? "Clan" : "Team"}</span></div>
+                <div class="tooltip-body">
+                    <div class="tooltip-row"><span class="tooltip-label">Region:</span> <span class="tooltip-value">${clan.mainRegion}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Period:</span> <span class="tooltip-value">${segment.start} - ${segment.end}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Leader:</span> <span class="tooltip-value">${segment.leader}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Active:</span> <span class="tooltip-value">${clan.isActive ? "✓ Yes" : "✗ No"}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Reputation:</span> <span class="tooltip-value">${clan.isCheaterClan ? "⚠ Cheaters" : "✓ Fair"}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Type:</span> <span class="tooltip-value">${clan.isClan ? "Clan" : "Team"}</span></div>
+                </div>
             `;
 
             segmentDiv.addEventListener("mouseenter", () => {
                 tooltip.innerHTML = segmentInfo;
                 tooltip.style.display = "block";
+                segmentDiv.style.filter = "brightness(1.2)";
             });
 
             segmentDiv.addEventListener("mousemove", (e) => {
@@ -199,32 +267,34 @@ function generateTimeline(clans) {
 
             segmentDiv.addEventListener("mouseleave", () => {
                 tooltip.style.display = "none";
+                segmentDiv.style.filter = "none";
             });
 
             container.appendChild(segmentDiv);
         });
     });
 
-    // Ajuster la hauteur du conteneur en fonction du nombre de clans
     container.style.height = `${clans.length * rowHeight}px`;
+    generateLabels(clans);
 }
 
 function refreshTimeline(clans) {
+    currentFilteredClans = clans;
     updateDimensions();
     generateYears();
     generateMonths();
     generateTimeline(clans);
     updateZoomIndicator();
+
+    // IMPORTANT : Synchroniser après le refresh
+    setTimeout(() => syncLabelsScroll(), 50);
 }
 
 function initializeZoom() {
     const timelineContainer = document.getElementById("timeline-container");
-
-    // Calculer le zoom initial pour voir toute la timeline
-    const containerWidth = window.innerWidth - 340; // Soustraire la largeur du panneau de filtre
+    const containerWidth = window.innerWidth - 340 - 200; // Soustraire panneau filtre + labels
     const initialZoom = containerWidth / (totalMonths * BASE_MONTH_WIDTH);
     currentZoom = Math.max(MIN_ZOOM, Math.min(initialZoom * 0.9, 1));
-
     refreshTimeline(originalClansData);
 }
 
@@ -232,36 +302,27 @@ function setupZoom() {
     const timelineContainer = document.getElementById("timeline-container");
 
     timelineContainer.addEventListener("wheel", (e) => {
-        // Zoom uniquement avec Ctrl+molette
         if (!e.ctrlKey) return;
-
         e.preventDefault();
 
         const rect = timelineContainer.getBoundingClientRect();
         const mouseX = e.clientX - rect.left;
         const mouseY = e.clientY - rect.top;
 
-        // Position relative dans le contenu avant le zoom
         const scrollX = timelineContainer.scrollLeft;
         const scrollY = timelineContainer.scrollTop;
         const relativeX = (scrollX + mouseX) / TIMELINE_WIDTH;
         const relativeY = (scrollY + mouseY) / currentZoom;
 
-        // Calculer le nouveau zoom
         const delta = e.deltaY > 0 ? -ZOOM_SPEED : ZOOM_SPEED;
         const newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, currentZoom + delta));
 
         if (newZoom !== currentZoom) {
             currentZoom = newZoom;
-
-            // Récupérer les données filtrées actuelles
             const currentClans = getCurrentFilteredClans();
             refreshTimeline(currentClans);
-
-            // Mettre à jour après le refresh
             updateZoomIndicator();
 
-            // Ajuster le scroll pour garder le point sous la souris
             const newTimelineWidth = totalMonths * BASE_MONTH_WIDTH * currentZoom;
             timelineContainer.scrollLeft = relativeX * newTimelineWidth - mouseX;
             timelineContainer.scrollTop = relativeY * currentZoom - mouseY;
@@ -273,7 +334,6 @@ function setupPan() {
     const timelineContainer = document.getElementById("timeline-container");
 
     timelineContainer.addEventListener("mousedown", (e) => {
-        // Ignorer si on clique sur un segment (pour garder le tooltip fonctionnel)
         if (e.target.classList.contains("segment")) return;
 
         isPanning = true;
@@ -305,9 +365,33 @@ function setupPan() {
         timelineContainer.style.cursor = "grab";
     });
 
-    // Empêcher la sélection de texte pendant le pan
     timelineContainer.addEventListener("selectstart", (e) => {
         if (isPanning) e.preventDefault();
+    });
+}
+
+function setupKeyboardShortcuts() {
+    document.addEventListener("keydown", (e) => {
+        // Ctrl + 0 : Reset zoom
+        if (e.ctrlKey && e.key === "0") {
+            e.preventDefault();
+            currentZoom = 1;
+            refreshTimeline(currentFilteredClans);
+        }
+
+        // Ctrl + + : Zoom in
+        if (e.ctrlKey && (e.key === "+" || e.key === "=")) {
+            e.preventDefault();
+            currentZoom = Math.min(MAX_ZOOM, currentZoom + ZOOM_SPEED);
+            refreshTimeline(currentFilteredClans);
+        }
+
+        // Ctrl + - : Zoom out
+        if (e.ctrlKey && e.key === "-") {
+            e.preventDefault();
+            currentZoom = Math.max(MIN_ZOOM, currentZoom - ZOOM_SPEED);
+            refreshTimeline(currentFilteredClans);
+        }
     });
 }
 
@@ -358,6 +442,12 @@ function getCurrentFilteredClans() {
     });
 }
 
+// Fonctions pour les contrôles
+function resetFilters() {
+    document.getElementById("filter-form").reset();
+    refreshTimeline(originalClansData);
+}
+
 function loadClans() {
     fetch("data.json")
         .then((response) => {
@@ -378,27 +468,34 @@ function loadClans() {
             });
 
             originalClansData = clans;
+            currentFilteredClans = clans;
 
-            // Initialiser avec un zoom adapté
+            // Initialiser la timeline
             initializeZoom();
 
             // Configurer les contrôles
             setupZoom();
             setupPan();
+            setupScrollSync(); // IMPORTANT : Configurer la synchronisation du scroll
+            setupKeyboardShortcuts();
+
+            // Forcer une première synchronisation
+            setTimeout(() => syncLabelsScroll(), 100);
         })
         .catch((error) => {
             console.error("Erreur:", error);
         });
 }
 
-// Écouteur sur le formulaire de filtre
+// Event listeners
 document.getElementById("filter-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const filteredData = getCurrentFilteredClans();
     refreshTimeline(filteredData);
 });
 
-// Recalculer le zoom initial si la fenêtre change de taille
+document.getElementById("reset-filters")?.addEventListener("click", resetFilters);
+
 window.addEventListener("resize", () => {
     initializeZoom();
 });
