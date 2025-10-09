@@ -2,6 +2,7 @@
   scrollbar-width: thin;
   scrollbar-color: #4a90e2 #1e1e1e;
   box-sizing: border-box;
+  user-select: none;
 }
 
 *::-webkit-scrollbar {
