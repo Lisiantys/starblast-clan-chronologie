@@ -1,4 +1,4 @@
-[
+  [
   {
     "name": "NUB",
     "isCheaterClan": true,
@@ -22,7 +22,13 @@
       },
       {
         "start": "2024-09",
-        "end": "2024-12",
+        "end": "2025-07",
+        "name": "͜͜͡✯",
+        "leader": "Ruslann, Yalniz kurt"
+      },
+      {
+        "start": "2025-07",
+        "end": "2025-10",
         "name": "NUB",
         "leader": "Ruslann, Yalniz kurt"
       }
@@ -67,6 +73,24 @@
         "end": "2023-03",
         "name": "TA",
         "leader": "Tost"
+      }
+    ]
+  },
+  {
+    "name": "Butterfly",
+    "founders": ["Twidash, Glowia"],
+    "isCheaterClan": false,
+    "isClan": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "Butterfly",
+    "color": "#ffe119",
+    "segments": [
+      {
+        "start": "2024-11",
+        "end": "2025-10",
+        "name": "ʚɞ",
+        "leader": "Twidash"
       }
     ]
   },
@@ -118,7 +142,7 @@
     "segments": [
       {
         "start": "2021-02",
-        "end": "2024-12",
+        "end": "2025-10",
         "name": "S&C",
         "leader": "iom, notus, neagoe"
       }
@@ -253,6 +277,24 @@
         "end": "2024-12",
         "name": "GL",
         "leader": "isohkill"
+      },
+      {
+        "start": "2024-12",
+        "end": "2025-03",
+        "name": "GL",
+        "leader": "isohkill"
+      },
+      {
+        "start": "2025-05",
+        "end": "2025-06",
+        "name": "GL",
+        "leader": "isohkill"
+      },
+      {
+        "start": "2025-09",
+        "end": "2025-10",
+        "name": "GL",
+        "leader": "isohkill"
       }
     ]
   },
@@ -274,7 +316,7 @@
       },
       {
         "start": "2024-11",
-        "end": "2024-12",
+        "end": "2025-02",
         "name": "IS",
         "leader": "Leader 1"
       }
@@ -337,6 +379,12 @@
         "end": "2024-12",
         "name": "GOF",
         "leader": "yudu haham, karlin"
+      },
+      {
+        "start": "2025-05",
+        "end": "2025-06",
+        "name": "GOF",
+        "leader": "karlin"
       }
     ]
   },
@@ -358,7 +406,7 @@
       },
       {
         "start": "2024-02",
-        "end": "2024-09",
+        "end": "2024-10",
         "name": "ARC",
         "leader": "5470P3"
       }
@@ -376,7 +424,7 @@
     "segments": [
       {
         "start": "2022-01",
-        "end": "2024-12",
+        "end": "2025-10",
         "name": "FV",
         "leader": "wanda, bautista"
       }
@@ -430,8 +478,14 @@
       },
       {
         "start": "2024-08",
-        "end": "2024-09",
+        "end": "2025-03",
         "name": "Alone",
+        "leader": "maksimka, cccp"
+      },
+      {
+        "start": "2025-08",
+        "end": "2025-10",
+        "name": "CSE",
         "leader": "maksimka, cccp"
       }
     ]
@@ -547,6 +601,12 @@
         "end": "2024-12",
         "name": "S2F",
         "leader": "Pasha, sergio, inspectro"
+      },
+      {
+        "start": "2025-03",
+        "end": "2025-10",
+        "name": "S2F",
+        "leader": "Pasha"
       }
     ]
   },
@@ -586,9 +646,15 @@
       },
       {
         "start": "2024-06",
-        "end": "2024-09",
+        "end": "2024-10",
         "name": "TDR",
-        "leader": "Mercenaire, Alex"
+        "leader": "Mercenaire, Alex, NOK, Adonys"
+      },
+      {
+        "start": "2025-02",
+        "end": "2025-07",
+        "name": "TDR",
+        "leader": "Mercenaire, Adonys, NOK, Rithy"
       }
     ]
   },
@@ -603,7 +669,7 @@
     "color": "#4b0082",
     "segments": [
       {
-        "start": "2024-09",
+        "start": "2024-10",
         "end": "2024-12",
         "name": "ℭ",
         "leader": "Mercenaire"
@@ -712,9 +778,27 @@
       },
       {
         "start": "2021-03",
-        "end": "2024-12",
+        "end": "2023-06",
         "name": "FR",
-        "leader": "Megalodon, Zeldris"
+        "leader": "Megalodon"
+      },
+      {
+        "start": "2023-06",
+        "end": "2024-01",
+        "name": "FR",
+        "leader": "NOK"
+      },
+      {
+        "start": "2024-01",
+        "end": "2024-10",
+        "name": "FR",
+        "leader": "Alex"
+      },
+      {
+        "start": "2024-10",
+        "end": "2025-10",
+        "name": "FR",
+        "leader": "Megalodon"
       }
     ]
   },
@@ -942,13 +1026,13 @@
         "start": "2023-12",
         "end": "2024-02",
         "name": "LOG",
-        "leader": "Probo"
+        "leader": "Kak Kak To"
       },
       {
         "start": "2024-08",
-        "end": "2024-08",
+        "end": "2024-10",
         "name": "LOG",
-        "leader": "Probo"
+        "leader": "Kak Kak To"
       }
     ]
   },
@@ -972,7 +1056,13 @@
         "start": "2024-10",
         "end": "2024-11",
         "name": "7",
-        "leader": "hlti, turk"
+        "leader": "Probo, Alexz"
+      },
+      {
+        "start": "2025-02",
+        "end": "2025-10",
+        "name": "7",
+        "leader": "Probo, Alexz"
       }
     ]
   },
@@ -1007,7 +1097,7 @@
     "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
-    "fullName": "arab empire / vampire community",
+    "fullName": "arab empire / vampire community / leaders of starblast",
     "color": "#4b0082",
     "segments": [
       {
@@ -1021,6 +1111,30 @@
         "end": "2024-06",
         "name": "VP",
         "leader": "Abdullah, Abdelalim"
+      },
+      {
+        "start": "2024-06",
+        "end": "2024-07",
+        "name": "AB",
+        "leader": "Abdullah, Abdelalim"
+      },
+      {
+        "start": "2024-11",
+        "end": "2024-05",
+        "name": "AL",
+        "leader": "Mokoko, Abdelalim, The Legend"
+      },
+      {
+        "start": "2024-02",
+        "end": "2025-12",
+        "name": "AL",
+        "leader": "Mokoko, Abdelalim, The Legend"
+      },
+      {
+        "start": "2024-12",
+        "end": "2025-10",
+        "name": "AL",
+        "leader": "The Legend, Abdelalim"
       }
     ]
   },
@@ -1153,6 +1267,12 @@
         "end": "2024-01",
         "name": "PS",
         "leader": "Megalodon, NOK"
+      },
+      {
+        "start": "2025-06",
+        "end": "2025-09",
+        "name": "PSr",
+        "leader": "NOK"
       }
     ]
   },
@@ -1267,6 +1387,12 @@
         "end": "2023-12",
         "name": "CF",
         "leader": "solomon, aya, crexy"
+      },
+      {
+        "start": "2024-09",
+        "end": "2025-10",
+        "name": "CF",
+        "leader": "crexy"
       }
     ]
   },
@@ -1372,7 +1498,7 @@
       },
       {
         "start": "2023-05",
-        "end": "2024-12",
+        "end": "2025-10",
         "name": "F4",
         "leader": "Sakura"
       }
@@ -1411,6 +1537,24 @@
         "end": "2024-07",
         "name": "GR",
         "leader": "one"
+      }
+    ]
+  },
+  {
+    "name": "FX",
+    "founders": ["Hiperr (Komutan)"],
+    "isCheaterClan": true,
+    "isClan": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "Fallen Xurath",
+    "color": "#29c5ff",
+    "segments": [
+      {
+        "start": "2025-8",
+        "end": "2025-10",
+        "name": "GR",
+        "leader": "Hiperr (Komutan)"
       }
     ]
   },
@@ -1470,7 +1614,13 @@
         "start": "2024-11",
         "end": "2024-12",
         "name": "EOT",
-        "leader": ""
+        "leader": "None"
+      },
+      {
+        "start": "2025-05",
+        "end": "2025-10",
+        "name": "EOT",
+        "leader": "Lord"
       }
     ]
   },

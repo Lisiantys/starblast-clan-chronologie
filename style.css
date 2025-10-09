@@ -87,7 +87,7 @@ main {
 
 /* Conteneur principal */
 #timeline-container {
-  position: relative;
+  position: sticky;
   width: 100%;
   flex: 1;
   padding: 20px;
