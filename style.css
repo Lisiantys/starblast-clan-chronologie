@@ -1,8 +1,10 @@
 * {
   scrollbar-width: thin;
-  scrollbar-color: #4a90e2 #1e1e1e;
+  scrollbar-color: var(--main-color) #1e1e1e;
   box-sizing: border-box;
   user-select: none;
+  --main-color: rgb(134, 121, 250);
+  --main-color-opacity: rgba(134, 121, 250, 0.534);
 }
 
 *::-webkit-scrollbar {
@@ -16,13 +18,13 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #4a90e2;
+  background: var(--main-color);
   border-radius: 4px;
   border: 2px solid #1e1e1e;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #5aa3f5;
+  background: var(--main-color);
 }
 
 *::-webkit-scrollbar-button {
@@ -50,7 +52,7 @@ header {
   backdrop-filter: blur(15px);
   padding: 15px 25px;
   z-index: 1000;
-  border-bottom: 2px solid rgba(74, 144, 226, 0.3);
+  border-bottom: 2px solid var(--main-color-opacity);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -59,7 +61,7 @@ header {
 header h1 {
   margin: 0;
   font-size: 1.5rem;
-  background: #4a90e2;
+  background: var(--main-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -102,7 +104,6 @@ main {
   width: 200px;
   bottom: 60px;
   backdrop-filter: blur(15px);
-  border-right: 2px solid rgba(74, 144, 226, 0.3);
   overflow-y: hidden;
   overflow-x: hidden;
   z-index: 500;
@@ -125,8 +126,7 @@ main {
   font-size: 0.85rem;
   font-weight: 600;
   color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-shadow: 0 1px 3px #333333;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -152,7 +152,7 @@ main {
 .years div {
   color: #fff !important;
   font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px var(--main-color-opacity);
   font-size: 1.1rem !important;
 }
 
@@ -187,8 +187,8 @@ main {
   text-overflow: ellipsis;
   cursor: pointer;
   transition: all 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(207, 207, 207, 0.384);
+  text-shadow: 0 1px 2px var(--main-color-opacity);
 }
 
 .segment:hover {
@@ -220,8 +220,8 @@ main {
   padding: 12px 16px;
   font-size: 1.1rem;
   font-weight: 700;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--main-color-opacity);
+  text-shadow: 0 2px 4px var(--main-color-opacity);
 }
 
 .tooltip-body {
@@ -261,7 +261,7 @@ main {
   z-index: 9999;
   display: flex;
   flex-direction: column;
-  border-left: 2px solid rgba(74, 144, 226, 0.3);
+  border-left: 2px solid var(--main-color-opacity);
 }
 
 form#filter-form {
@@ -292,12 +292,12 @@ form#filter-form legend {
   font-weight: 700;
   margin-bottom: 25px;
   color: #fff;
-  background: #4a90e2;
+  background: var(--main-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   padding-bottom: 15px;
-  border-bottom: 2px solid rgba(74, 144, 226, 0.3);
+  border-bottom: 2px solid var(--main-color-opacity);
 }
 
 form#filter-form div {
@@ -321,7 +321,7 @@ form#filter-form input[type="month"],
 form#filter-form select {
   width: 100%;
   padding: 10px 12px;
-  border: 2px solid rgba(74, 144, 226, 0.3);
+  border: 2px solid var(--main-color-opacity);
   border-radius: 8px;
   background: rgba(15, 15, 25, 0.6);
   color: #fff;
@@ -332,9 +332,9 @@ form#filter-form select {
 
 form#filter-form input:focus,
 form#filter-form select:focus {
-  border-color: #3972b3;
+  border-color: var(--main-color);
   outline: none;
-  background: rgba(20, 20, 35, 0.8);
+  background: rgb(20, 20, 35);
 }
 
 form#filter-form input::placeholder {
@@ -350,7 +350,7 @@ form#filter-form button {
   font-weight: 700;
   border: none;
   border-radius: 10px;
-  background: #4a90e2;
+  background: var(--main-color);
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -370,8 +370,8 @@ form#filter-form button:active {
 /* Boutons de contrôle */
 .control-btn {
   padding: 8px 16px;
-  background: rgba(74, 144, 226, 0.2);
-  border: 1px solid rgba(74, 144, 226, 0.3);
+  background: var(--main-color-opacity);
+  border: 1px solid var(--main-color-opacity);
   border-radius: 6px;
   color: #fff;
   font-size: 0.85rem;
@@ -382,7 +382,7 @@ form#filter-form button:active {
 }
 
 .control-btn:hover {
-  background: rgba(74, 144, 226, 0.4);
+  background: var(--main-color-opacity);
   transform: translateY(-1px);
 }
 
@@ -392,6 +392,7 @@ form#filter-form button:active {
   justify-content: space-between;
   align-items: center;
   gap: 15px;
+  padding: 5px 10px;
 }
 
 .toolbar-section {
@@ -402,7 +403,7 @@ form#filter-form button:active {
   backdrop-filter: blur(15px);
   padding: 10px 15px;
   border-radius: 10px;
-  border: 1px solid rgba(74, 144, 226, 0.3);
+  border: 1px solid var(--main-color-opacity);
 }
 
 #zoom-indicator {
@@ -410,10 +411,10 @@ form#filter-form button:active {
   backdrop-filter: blur(10px);
   padding: 10px 20px;
   border-radius: 8px;
-  color: #4a90e2;
+  color: var(--main-color);
   font-weight: 700;
   font-size: 1rem;
-  border: 1px solid rgba(74, 144, 226, 0.3);
+  border: 1px solid var(--main-color-opacity);
   min-width: 80px;
   text-align: center;
 }
@@ -485,7 +486,7 @@ form#filter-form button:active {
     top: 15px;
     right: 15px;
     z-index: 10000;
-    background: #4a90e2;
+    background: var(--main-color);
     border: none;
     padding: 10px 15px;
     border-radius: 8px;
