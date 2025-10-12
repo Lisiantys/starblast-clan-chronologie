@@ -220,7 +220,7 @@ main {
   padding: 12px 16px;
   font-size: 1.1rem;
   font-weight: 700;
-  border-bottom: 1px solid var(--main-color-opacity);
+  border-bottom: 1px solid #ffffff6c;
   text-shadow: 0 2px 4px var(--main-color-opacity);
 }
 
