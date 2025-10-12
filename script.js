@@ -242,12 +242,12 @@ function generateTimeline(clans) {
             const segmentInfo = `
                 <div class="tooltip-header" style="background: linear-gradient(135deg, ${clanColor}, ${darkColor});">${segment.name}</div>
                 <div class="tooltip-body">
-                    <div class="tooltip-row"><span class="tooltip-label">Region:</span> <span class="tooltip-value">${clan.mainRegion}</span></div>
-                    <div class="tooltip-row"><span class="tooltip-label">Period:</span> <span class="tooltip-value">${segment.start} - ${segment.end}</span></div>
-                    <div class="tooltip-row"><span class="tooltip-label">Leader:</span> <span class="tooltip-value">${segment.leader}</span></div>
-                    <div class="tooltip-row"><span class="tooltip-label">Active:</span> <span class="tooltip-value">${clan.isActive ? "✓ Yes" : "✗ No"}</span></div>
-                    <div class="tooltip-row"><span class="tooltip-label">Reputation:</span> <span class="tooltip-value">${clan.isCheaterClan ? "⚠ Cheaters" : "✓ Fair"}</span></div>
-                    <div class="tooltip-row"><span class="tooltip-label">Type:</span> <span class="tooltip-value">${clan.isClan ? "Clan" : "Team"}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Region :</span> <span class="tooltip-value">${clan.mainRegion}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Period :</span> <span class="tooltip-value">${segment.start} - ${segment.end}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Leader :</span> <span class="tooltip-value">${segment.leader}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Active :</span> <span class="tooltip-value">${clan.isActive ? "Yes" : "No"}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Reputation :</span> <span class="tooltip-value">${clan.isCheaterClan ? "Cheaters" : "Fair"}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Type :</span> <span class="tooltip-value">${clan.isClan ? "Clan" : "Team"}</span></div>
                 </div>
             `;
 
