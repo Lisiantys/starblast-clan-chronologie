@@ -1542,8 +1542,8 @@
   },
   {
     "name": "FX",
-    "founders": ["Hiperr (Komutan)"],
-    "isCheaterClan": true,
+    "founders": ["Hyperr (Komutan106)"],
+    "isCheaterClan": false,
     "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
@@ -1553,13 +1553,31 @@
       {
         "start": "2025-8",
         "end": "2025-10",
-        "name": "GR",
-        "leader": "Hiperr (Komutan)"
+        "name": "FX",
+        "leader": "Hyperr (Komutan106)"
       }
     ]
   },
   {
-    "name": "EOT/ROT/RS",
+    "name": "EOT 2025",
+    "founders": ["Lord"],
+    "isCheaterClan": false,
+    "isClan": true,
+    "isActive": true,
+    "mainRegion": "EU",
+    "fullName": "End of terror",
+    "color": "#7806CAFF",
+    "segments": [
+      {
+        "start": "2025-05",
+        "end": "2025-10",
+        "name": "EOT 2025",
+        "leader": "Lord"
+      }
+    ]
+  },
+  {
+    "name": "EOT/ROT/RS in Past",
     "founders": ["Lord"],
     "isCheaterClan": true,
     "isClan": true,
@@ -1615,12 +1633,6 @@
         "end": "2024-12",
         "name": "EOT",
         "leader": "None"
-      },
-      {
-        "start": "2025-05",
-        "end": "2025-10",
-        "name": "EOT",
-        "leader": "Lord"
       }
     ]
   },
