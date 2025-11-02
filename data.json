@@ -232,7 +232,7 @@
         "leader": "xavi, abdullah, alex"
       },
       {
-        "start": "2024-09",
+        "start": "2024-10",
         "end": "2024-11",
         "name": "HSE",
         "leader": "xavi, abdullah, alex"
@@ -655,13 +655,14 @@
     ]
   },
   {
-    "name": "ℭ",
+    "name": "ℭ/Cursed",
     "founders": ["Mercenaire"],
     "isCheaterClan": false,
     "isClan": false,
     "isActive": false,
     "mainRegion": "EU",
-    "fullName": "cursed",
+    "fullName": "Cursed",
+    "description": "Following the fall of TDR V2, 2024 saw the rise of Cursed. Behind anonymous names, elite players gathered with a single purpose : to end every survival clan across Europe.",
     "color": "#4b0082",
     "segments": [
       {
@@ -776,7 +777,8 @@
     "isActive": true,
     "mainRegion": "EU",
     "fullName": "French team",
-    "color": "#00ced1",
+    "description": "Founded by iconic players like Megalodon, Zeldris and their associates Beezy and Aries, the FR Team became the heart of the French Starblast community. From their efforts, Pure Space (PS) was born, a strong team that continues the fight against cheaters.",
+    "color": "#000091",
     "segments": [
       {
         "start": "2019-01",
@@ -785,25 +787,25 @@
         "leader": "Megalodon, Zeldris"
       },
       {
-        "start": "2021-03",
+        "start": "2021-04",
         "end": "2023-06",
         "name": "FR",
         "leader": "Megalodon"
       },
       {
-        "start": "2023-06",
+        "start": "2023-07",
         "end": "2024-01",
         "name": "FR",
         "leader": "NOK"
       },
       {
-        "start": "2024-01",
+        "start": "2024-02",
         "end": "2024-10",
         "name": "FR",
         "leader": "Alex"
       },
       {
-        "start": "2024-10",
+        "start": "2024-11",
         "end": "2025-10",
         "name": "FR",
         "leader": "Megalodon"
@@ -881,7 +883,7 @@
         "leader": "omega, scythe"
       },
       {
-        "start": "2024-09",
+        "start": "2024-10",
         "end": "2024-12",
         "name": "MR",
         "leader": "omega, scythe"
@@ -1061,13 +1063,7 @@
         "leader": "hlti, turk"
       },
       {
-        "start": "2024-10",
-        "end": "2024-11",
-        "name": "7",
-        "leader": "Probo, Alexz"
-      },
-      {
-        "start": "2025-02",
+        "start": "2024-11",
         "end": "2025-10",
         "name": "7",
         "leader": "Probo, Alexz"
@@ -1110,13 +1106,13 @@
     "segments": [
       {
         "start": "2023-09",
-        "end": "2024-02",
+        "end": "2024-01",
         "name": "AB",
         "leader": "Abdullah, Abdelalim"
       },
       {
         "start": "2024-02",
-        "end": "2024-06",
+        "end": "2024-05",
         "name": "VP",
         "leader": "Abdullah, Abdelalim"
       },
@@ -1127,14 +1123,8 @@
         "leader": "Abdullah, Abdelalim"
       },
       {
-        "start": "2024-11",
-        "end": "2024-05",
-        "name": "AL",
-        "leader": "Mokoko, Abdelalim, The Legend"
-      },
-      {
-        "start": "2024-02",
-        "end": "2025-12",
+        "start": "2024-08",
+        "end": "2024-11",
         "name": "AL",
         "leader": "Mokoko, Abdelalim, The Legend"
       },
@@ -1280,7 +1270,7 @@
       {
         "start": "2025-06",
         "end": "2025-09",
-        "name": "PSr",
+        "name": "PSR",
         "leader": "NOK"
       }
     ]
@@ -1380,25 +1370,25 @@
         "leader": "solomon, aya, crexy"
       },
       {
+        "start": "2023-05",
+        "end": "2023-08",
+        "name": "LD",
+        "leader": "solomon, aya, crexy"
+      },
+       {
+        "start": "2023-09",
+        "end": "2023-12",
+        "name": "CF",
+        "leader": "solomon, aya, crexy"
+      },
+      {
         "start": "2024-08",
         "end": "2024-12",
         "name": "YA",
         "leader": "solomon, aya, crexy"
       },
       {
-        "start": "2023-04",
-        "end": "2023-08",
-        "name": "LD",
-        "leader": "solomon, aya, crexy"
-      },
-      {
-        "start": "2023-08",
-        "end": "2023-12",
-        "name": "CF",
-        "leader": "solomon, aya, crexy"
-      },
-      {
-        "start": "2024-09",
+        "start": "2025-01",
         "end": "2025-10",
         "name": "CF",
         "leader": "crexy"
@@ -1506,7 +1496,7 @@
         "leader": "Néo"
       },
       {
-        "start": "2023-05",
+        "start": "2023-06",
         "end": "2025-10",
         "name": "F4",
         "leader": "Sakura"
@@ -1618,7 +1608,7 @@
     "isActive": false,
     "mainRegion": "EU",
     "fullName": "End of Terror",
-    "description": "EOT was originally created to take down ROT. During its cheating period, it became one of the biggest and strongest enemies of the anti-cheater clans. Today, the EOT tag still lives on, now representing fair play and a strong community.",
+    "description": "EOT was originally created to take down ROT. During its cheating period, it became one of the biggest and strongest enemy of the anti-cheater community. Today, the EOT tag still lives on, now representing fair play and a strong community.",
     "color": "#4b0082",
     "segments": [
       {

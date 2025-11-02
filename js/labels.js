@@ -46,7 +46,7 @@ function generateLabels(clans) {
         if (clan.description) {
             const infoIcon = document.createElement("div");
             infoIcon.className = "clan-info-icon";
-            infoIcon.innerHTML = "ⓘ";
+            infoIcon.innerHTML = "𝒊";
 
             // Créer le contenu du tooltip pour la description
             const darkenColor = (color, amount = 20) => {
@@ -65,7 +65,7 @@ function generateLabels(clans) {
                     ${clan.fullName || clan.name}
                 </div>
                 <div class="tooltip-body">
-                    <div style="padding: 12px 16px; color: #e0e0e0; line-height: 1.5;">
+                    <div class="tooltip-description">
                         ${clan.description}
                     </div>
                     ${clan.founders && clan.founders.length > 0 ? `
@@ -89,28 +89,30 @@ function generateLabels(clans) {
                 </div>
             `;
 
-            // Event listeners pour le tooltip
-            infoIcon.addEventListener("mouseenter", (e) => {
+            labelDiv.appendChild(infoIcon);
+
+            // Event listeners sur TOUT le label (pas juste l'icône)
+            labelDiv.addEventListener("mouseenter", (e) => {
                 tooltip.innerHTML = tooltipContent;
                 tooltip.style.display = "block";
                 infoIcon.style.transform = "scale(1.2)";
             });
 
-            infoIcon.addEventListener("mousemove", (e) => {
+            labelDiv.addEventListener("mousemove", (e) => {
                 const tooltipWidth = tooltip.offsetWidth;
                 const tooltipHeight = tooltip.offsetHeight;
 
-                // Positionner le tooltip à droite de l'icône
-                const iconRect = infoIcon.getBoundingClientRect();
+                // Positionner le tooltip à droite du label
+                const labelRect = labelDiv.getBoundingClientRect();
                 const containerRect = labelsContainer.getBoundingClientRect();
 
-                let tooltipLeft = iconRect.right - containerRect.left + 10;
-                let tooltipTop = iconRect.top - containerRect.top + (iconRect.height / 2) - (tooltipHeight / 2);
+                let tooltipLeft = labelRect.right - containerRect.left + 10;
+                let tooltipTop = labelRect.top - containerRect.top + (labelRect.height / 2) - (tooltipHeight / 2);
 
                 // Ajuster si le tooltip sort de l'écran
                 const maxTop = window.innerHeight - tooltipHeight - 20;
-                if (iconRect.top + tooltipTop > maxTop) {
-                    tooltipTop = maxTop - iconRect.top;
+                if (labelRect.top + tooltipTop > maxTop) {
+                    tooltipTop = maxTop - labelRect.top;
                 }
                 if (tooltipTop < 10) {
                     tooltipTop = 10;
@@ -120,12 +122,11 @@ function generateLabels(clans) {
                 tooltip.style.top = tooltipTop + "px";
             });
 
-            infoIcon.addEventListener("mouseleave", () => {
+            labelDiv.addEventListener("mouseleave", () => {
                 tooltip.style.display = "none";
                 infoIcon.style.transform = "scale(1)";
+                labelDiv.style.filter = "none";
             });
-
-            labelDiv.appendChild(infoIcon);
         }
 
         innerContainer.appendChild(labelDiv);

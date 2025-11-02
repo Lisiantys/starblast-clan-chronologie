@@ -402,6 +402,20 @@ form#filter-form legend {
   border-bottom: 2px solid var(--main-color-opacity);
 }
 
+.tooltip-description {
+  padding: 16px 20px; /* Plus de marge pour le texte */
+  color: #e0e0e0;
+  line-height: 1.6; /* Espacement des lignes légèrement augmenté */
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: normal; /* Permet le retour à la ligne */
+  word-wrap: break-word; /* Casse les mots trop longs */
+  word-break: break-word; /* Alternative pour certains navigateurs */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.02); /* Léger fond pour délimiter la zone */
+}
+
 form#filter-form div {
   margin-bottom: 18px;
 }
