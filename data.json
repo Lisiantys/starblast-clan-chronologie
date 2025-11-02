@@ -21,12 +21,6 @@
         "leader": "Ruslann, Yalniz kurt"
       },
       {
-        "start": "2024-09",
-        "end": "2025-07",
-        "name": "͜͜͡✯",
-        "leader": "Ruslann, Yalniz kurt"
-      },
-      {
         "start": "2025-07",
         "end": "2025-10",
         "name": "NUB",
@@ -72,7 +66,7 @@
         "start": "2019-08",
         "end": "2023-03",
         "name": "TA",
-        "leader": "Tost"
+        "leader": "Tost, Liberal"
       }
     ]
   },
@@ -528,7 +522,7 @@
   },
   {
     "name": "RR",
-    "founders": [],
+    "founders": ["Desean", "Pix", "thebeyonder"],
     "isCheaterClan": false,
     "isClan": false,
     "isActive": false,
@@ -540,13 +534,13 @@
         "start": "2020-08",
         "end": "2021-11",
         "name": "RR",
-        "leader": ""
+        "leader": "Desean, Pix, thebeyonder"
       },
       {
         "start": "2022-08",
         "end": "2022-10",
         "name": "RR",
-        "leader": ""
+        "leader": "Desean, Pix, thebeyonder"
       }
     ]
   },
@@ -720,7 +714,7 @@
   },
   {
     "name": "RE/SR",
-    "founders": ["oblivion", "spartan"],
+    "founders": ["Blaszexd", "58C", "Emerson"],
     "isCheaterClan": false,
     "isClan": true,
     "isActive": true,
@@ -732,13 +726,13 @@
         "start": "2024-08",
         "end": "2024-08",
         "name": "RE",
-        "leader": "oblivion, spartan"
+        "leader": "Blaszexd, 58C, Emerson"
       },
       {
         "start": "2024-09",
         "end": "2024-12",
         "name": "SR",
-        "leader": "oblivion, spartan"
+        "leader": "Blaszexd, 58C, Emerson"
       }
     ]
   },
@@ -960,7 +954,7 @@
   },
   {
     "name": "STACK",
-    "founders": ["jacky"],
+    "founders": ["Jacky", "Nukephysics"],
     "isCheaterClan": false,
     "isClan": true,
     "isActive": false,
@@ -972,7 +966,7 @@
         "start": "2018-02",
         "end": "2021-03",
         "name": "STACK",
-        "leader": "jacky"
+        "leader": "jacky, nukephysics"
       }
     ]
   },
@@ -1460,7 +1454,7 @@
     "name": "GA",
     "founders": ["goldman"],
     "isCheaterClan": false,
-    "isClan": false,
+    "isClan": true,
     "isActive": false,
     "mainRegion": "US",
     "fullName": "goldman aerospace",
@@ -1494,7 +1488,7 @@
         "start": "2023-02",
         "end": "2023-05",
         "name": "NSA",
-        "leader": "Sakura"
+        "leader": "Néo"
       },
       {
         "start": "2023-05",
@@ -1519,6 +1513,30 @@
         "end": "2024-04",
         "name": "SE",
         "leader": "rejane"
+      }
+    ]
+  },
+  {
+    "name": "ᴍᴀX/͜͜͡✯",
+    "founders": ["Hisoka"],
+    "isCheaterClan": true,
+    "isClan": true,
+    "isActive": false,
+    "mainRegion": "EU",
+    "fullName": "Max",
+    "color": "#A5115BFF",
+    "segments": [
+      {
+        "start": "2025-06",
+        "end": "2025-07",
+        "name": "͜͜͡✯",
+        "leader": "Hisoka"
+      },
+      {
+        "start": "2025-08",
+        "end": "2025-08",
+        "name": "Max",
+        "leader": "Hisoka"
       }
     ]
   },
@@ -1551,7 +1569,7 @@
     "color": "#29c5ff",
     "segments": [
       {
-        "start": "2025-8",
+        "start": "2025-09",
         "end": "2025-10",
         "name": "FX",
         "leader": "Hyperr (Komutan106)"
