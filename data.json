@@ -12,7 +12,8 @@
         "start": "2016-09",
         "end": "2017-09",
         "name": "NUB",
-        "leader": "Unknown"
+        "leader": "Unknown",
+        "isCheating" : false
       },
       {
         "start": "2022-04",
@@ -629,8 +630,9 @@
     "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
-    "fullName": "the devils rejects",
+    "fullName": "The devil's rejects",
     "color": "#dc143c",
+    "description": "Founded to fight cheaters across Europe, TDR rose to become the most dominant EU clan of 2024. Its second goal was to unite all EU anti-cheater clans under a single banner... but was never achieved.",
     "segments": [
       {
         "start": "2023-09",
@@ -641,13 +643,13 @@
       {
         "start": "2024-06",
         "end": "2024-10",
-        "name": "TDR",
+        "name": "TDR V2",
         "leader": "Mercenaire, Alex, NOK, Adonys"
       },
       {
         "start": "2025-02",
         "end": "2025-07",
-        "name": "TDR",
+        "name": "TDR V3",
         "leader": "Mercenaire, Adonys, NOK, Rithy"
       }
     ]
@@ -773,7 +775,7 @@
     "isClan": false,
     "isActive": true,
     "mainRegion": "EU",
-    "fullName": "french team",
+    "fullName": "French team",
     "color": "#00ced1",
     "segments": [
       {
@@ -1259,7 +1261,8 @@
     "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
-    "fullName": "french alliance / pure space",
+    "fullName": "French alliance / Pure space",
+    "description": "With the rise of cheater clans like NUB, Pure Space was born in 2022 as the international extension of the French team (FR). It soon became a new leading force in the European community alongside other anti-cheat clans such as S2F.",
     "color": "#8b008b",
     "segments": [
       {
@@ -1596,7 +1599,7 @@
     "isClan": true,
     "isActive": true,
     "mainRegion": "EU",
-    "fullName": "End of terror",
+    "fullName": "Essence of Twilight",
     "color": "#7806CAFF",
     "segments": [
       {
@@ -1614,7 +1617,8 @@
     "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
-    "fullName": "end of terror / reign of terror / retribution seekers",
+    "fullName": "End of Terror",
+    "description": "EOT was originally created to take down ROT. During its cheating period, it became one of the biggest and strongest enemies of the anti-cheater clans. Today, the EOT tag still lives on, now representing fair play and a strong community.",
     "color": "#4b0082",
     "segments": [
       {
@@ -1641,7 +1645,7 @@
         "start": "2022-09",
         "end": "2022-10",
         "name": "RS",
-        "leader": "Lord",
+        "leader": "Lord, Hazard",
         "isCheating": false
       },
       {

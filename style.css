@@ -134,10 +134,112 @@ main {
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .clan-label:hover {
   padding-left: 20px;
+}
+
+.clan-label-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 5px;
+}
+
+.clan-info-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2); /* Plus visible par défaut */
+  color: #fff;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: help;
+  opacity: 0.8; /* Toujours visible mais légèrement transparent */
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+/* Afficher l'icône au survol du label */
+.clan-label:hover .clan-info-icon {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Effet au survol de l'icône */
+.clan-info-icon:hover {
+  background: var(--main-color-opacity) !important;
+  transform: scale(1.2);
+  opacity: 1;
+  box-shadow: 0 2px 8px rgba(134, 121, 250, 0.5);
+}
+
+@media (max-width: 1200px) {
+  .clan-label {
+    font-size: 0.75rem;
+  }
+
+  .clan-info-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+}
+
+/* En-tête du tooltip */
+.desc-tooltip-header {
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Corps du tooltip */
+.desc-tooltip-body {
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #e0e0e0;
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 1200px) {
+  .clan-label {
+    font-size: 0.75rem;
+  }
+
+  .clan-info-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+
+  .clan-description-tooltip {
+    min-width: 220px;
+    max-width: 300px;
+  }
+
+  .desc-tooltip-header {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .desc-tooltip-body {
+    font-size: 0.8rem;
+    padding: 10px 12px;
+  }
 }
 
 .years {
@@ -212,10 +314,10 @@ main {
   font-size: 0.9rem;
   z-index: 9999;
   pointer-events: none;
-  min-width: 280px;
+  width: 400px; /* Largeur fixe */
+  max-width: 400px; /* S'assurer que ça ne dépasse pas */
   overflow: hidden;
 }
-
 .tooltip-header {
   padding: 12px 16px;
   font-size: 1.1rem;
