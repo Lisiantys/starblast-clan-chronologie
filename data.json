@@ -417,7 +417,7 @@
     "color": "#ff4500",
     "segments": [
       {
-        "start": "2022-01",
+        "start": "2021-10",
         "end": "2025-10",
         "name": "FV",
         "leader": "wanda, bautista"
@@ -689,26 +689,38 @@
     ]
   },
   {
-    "name": "FEAR/HELL",
+    "name": "FEAR/HELL/TR/ROT",
     "founders": ["Bey", "adem alma"],
     "isCheaterClan": true,
     "isClan": true,
     "isActive": false,
     "mainRegion": "EU",
-    "fullName": "hell",
+    "fullName": "Hell",
     "color": "#ff8c00",
     "segments": [
       {
         "start": "2018-02",
         "end": "2018-06",
         "name": "FEAR",
-        "leader": "Bey, adem alma"
+        "leader": "Bey, Adem Alma"
       },
       {
-        "start": "2018-06",
-        "end": "2023-05",
+        "start": "2019-09",
+        "end": "2019-12",
+        "name": "TR",
+        "leader": "Adem Alma"
+      },
+      {
+        "start": "2020-01",
+        "end": "2020-07",
+        "name": "ROT",
+        "leader": "Adem Alma"
+      },
+      {
+        "start": "2023-06",
+        "end": "2024-05",
         "name": "HELL",
-        "leader": "Bey, adem alma"
+        "leader": "Bey, Adem Alma"
       }
     ]
   },
@@ -1536,7 +1548,8 @@
         "start": "2025-08",
         "end": "2025-08",
         "name": "Max",
-        "leader": "Hisoka"
+        "leader": "Hisoka",
+        "isCheating": false
       }
     ]
   },
@@ -1577,7 +1590,7 @@
     ]
   },
   {
-    "name": "EOT 2025",
+    "name": "EOT/Essence of Twilight",
     "founders": ["Lord"],
     "isCheaterClan": false,
     "isClan": true,
@@ -1587,62 +1600,53 @@
     "color": "#7806CAFF",
     "segments": [
       {
-        "start": "2025-05",
+        "start": "2025-06",
         "end": "2025-10",
-        "name": "EOT 2025",
+        "name": "EOT / Essence of Twilight",
         "leader": "Lord"
       }
     ]
   },
   {
-    "name": "EOT/ROT/RS in Past",
+    "name": "EOT/End of Terror",
     "founders": ["Lord"],
     "isCheaterClan": true,
     "isClan": true,
-    "isActive": true,
+    "isActive": false,
     "mainRegion": "EU",
     "fullName": "end of terror / reign of terror / retribution seekers",
     "color": "#4b0082",
     "segments": [
       {
-        "start": "2019-08",
-        "end": "2020-02",
+        "start": "2019-02",
+        "end": "2019-12",
+        "name": "LK",
+        "leader": "Lord",
+        "isCheating": false
+      },
+      {
+        "start": "2020-01",
+        "end": "2021-12",
         "name": "EOT",
-        "leader": "Lord"
-      },
-      {
-        "start": "2020-09",
-        "end": "2021-04",
-        "name": "ROT",
-        "leader": "Adem Almaa"
-      },
-      {
-        "start": "2021-04",
-        "end": "2021-07",
-        "name": "RS",
-        "leader": "Lord"
-      },
-      {
-        "start": "2021-07",
-        "end": "2021-08",
-        "name": "EOT",
-        "leader": "Lord"
+        "leader": "Lord",
+        "isCheating": false
       },
       {
         "start": "2022-01",
-        "end": "2023-06",
+        "end": "2022-08",
         "name": "EOT",
         "leader": "Lord"
       },
       {
-        "start": "2023-06",
-        "end": "2023-09",
+        "start": "2022-09",
+        "end": "2022-10",
         "name": "RS",
-        "leader": "Lord"
+        "leader": "Lord",
+        "isCheating": false
       },
       {
-        "start": "2023-09",
-        "end": "2024-07",
+        "start": "2022-11",
+        "end": "2024-05",
         "name": "EOT",
         "leader": "Lord"
       },

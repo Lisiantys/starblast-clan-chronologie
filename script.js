@@ -117,6 +117,31 @@ function generateMonths() {
     }
 }
 
+// Fonction pour déterminer si un segment est cheater
+function isSegmentCheater(segment, clan) {
+    // Si le segment a une valeur isCheating définie, l'utiliser
+    if (segment.isCheating !== undefined) {
+        return segment.isCheating;
+    }
+    // Sinon, utiliser la valeur par défaut du clan
+    return clan.isCheaterClan;
+}
+
+function getSegmentReputation(segment, clan) {
+    const isCheater = isSegmentCheater(segment, clan);
+
+    // Si le segment a une valeur différente du clan, l'indiquer
+    if (segment.isCheating !== undefined && segment.isCheating !== clan.isCheaterClan) {
+        if (isCheater) {
+            return "Cheaters (during this period)";
+        } else {
+            return "Fair (reformed)";
+        }
+    }
+
+    return isCheater ? "Cheaters" : "Fair";
+}
+
 function generateLabels(clans) {
     const labelsContainer = document.querySelector(".clan-labels");
     if (!labelsContainer) return;
@@ -206,7 +231,18 @@ function generateTimeline(clans) {
         clan.segments.forEach((segment) => {
             const segmentDiv = document.createElement("div");
             segmentDiv.className = "segment";
+
+            // Déterminer si ce segment est cheater
+            const segmentIsCheater = isSegmentCheater(segment, clan);
+
+            // Appliquer un style visuel différent si le segment est cheater
             segmentDiv.style.backgroundColor = clanColor;
+            if (segmentIsCheater) {
+                // Ajouter un indicateur visuel pour les segments cheater
+                segmentDiv.style.borderColor = "#ff4444";
+                segmentDiv.style.borderWidth = "2px";
+            }
+
             segmentDiv.style.height = `${segmentHeight}px`;
             segmentDiv.style.lineHeight = `${segmentHeight}px`;
 
@@ -239,14 +275,17 @@ function generateTimeline(clans) {
 
             const darkColor = darkenColor(clanColor, 30);
 
+            // Obtenir la réputation spécifique pour ce segment
+            const segmentReputation = getSegmentReputation(segment, clan);
+
             const segmentInfo = `
                 <div class="tooltip-header" style="background: linear-gradient(135deg, ${clanColor}, ${darkColor});">${segment.name}</div>
                 <div class="tooltip-body">
                     <div class="tooltip-row"><span class="tooltip-label">Region :</span> <span class="tooltip-value">${clan.mainRegion}</span></div>
                     <div class="tooltip-row"><span class="tooltip-label">Period :</span> <span class="tooltip-value">${segment.start} - ${segment.end}</span></div>
-                    <div class="tooltip-row"><span class="tooltip-label">Leader :</span> <span class="tooltip-value">${segment.leader}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Leader :</span> <span class="tooltip-value">${segment.leader || "Unknown"}</span></div>
                     <div class="tooltip-row"><span class="tooltip-label">Active :</span> <span class="tooltip-value">${clan.isActive ? "Yes" : "No"}</span></div>
-                    <div class="tooltip-row"><span class="tooltip-label">Reputation :</span> <span class="tooltip-value">${clan.isCheaterClan ? "Cheaters" : "Fair"}</span></div>
+                    <div class="tooltip-row"><span class="tooltip-label">Reputation :</span> <span class="tooltip-value" style="${segmentIsCheater ? 'color: #ff6666;' : ''}">${segmentReputation}</span></div>
                     <div class="tooltip-row"><span class="tooltip-label">Type :</span> <span class="tooltip-value">${clan.isClan ? "Clan" : "Team"}</span></div>
                 </div>
             `;
@@ -506,8 +545,12 @@ function getCurrentFilteredClans() {
     const filterEndDate = parseDateStr(endDateVal);
 
     return originalClansData.filter(clan => {
-        if (filterCheater !== null && clan.isCheaterClan !== filterCheater) return false;
-        if (filterClan !== null && clan.isClan !== filterClan) return false;
+        if (filterCheater !== null) {
+            const hasMatchingSegment = clan.segments.some(segment =>
+                isSegmentCheater(segment, clan) === filterCheater
+            );
+            if (!hasMatchingSegment) return false;
+        } if (filterClan !== null && clan.isClan !== filterClan) return false;
         if (filterActive !== null && clan.isActive !== filterActive) return false;
         if (filterRegion !== null && clan.mainRegion !== filterRegion) return false;
 
