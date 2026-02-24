@@ -1,44 +1,48 @@
+/* =============================================
+   VARIABLES & RESET
+   ============================================= */
+:root {
+  --main-color: rgb(134, 121, 250);
+  --main-color-opacity: rgba(134, 121, 250, 0.534);
+  --main-color-dim: rgba(134, 121, 250, 0.2);
+  --bg-dark: #0a0a0a;
+  --bg-panel: rgba(16, 16, 30, 0.85);
+  --bg-surface: rgba(26, 26, 46, 0.5);
+  --bg-input: rgba(15, 15, 25, 0.6);
+  --text-primary: #fff;
+  --text-secondary: #999;
+  --text-muted: #666;
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-light: rgba(207, 207, 207, 0.384);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --transition: 0.2s ease;
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--main-color) #1e1e1e;
   box-sizing: border-box;
   user-select: none;
-  --main-color: rgb(134, 121, 250);
-  --main-color-opacity: rgba(134, 121, 250, 0.534);
+  margin: 0;
+  padding: 0;
 }
 
-*::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
+/* Scrollbar Webkit */
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-track { background: #1e1e1e; border-radius: 4px; }
+*::-webkit-scrollbar-thumb { background: var(--main-color); border-radius: 4px; border: 2px solid #1e1e1e; }
+*::-webkit-scrollbar-button { display: none; }
 
-*::-webkit-scrollbar-track {
-  background: #1e1e1e;
-  border-radius: 4px;
-}
-
-*::-webkit-scrollbar-thumb {
-  background: var(--main-color);
-  border-radius: 4px;
-  border: 2px solid #1e1e1e;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background: var(--main-color);
-}
-
-*::-webkit-scrollbar-button {
-  display: none;
-}
-
-/* Style global */
+/* =============================================
+   LAYOUT
+   ============================================= */
 body {
   position: relative;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-  color: #fff;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a2e 100%);
+  color: var(--text-primary);
   overflow: hidden;
   height: 100vh;
 }
@@ -59,7 +63,6 @@ header {
 }
 
 header h1 {
-  margin: 0;
   font-size: 1.5rem;
   background: var(--main-color);
   -webkit-background-clip: text;
@@ -73,22 +76,21 @@ header h1 {
 main {
   height: 100vh;
   width: 100%;
-  padding-top: 70px;
-  padding-right: 340px;
-  padding-left: 8%;
+  padding: 70px 340px 0 8%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* Conteneur principal */
+/* =============================================
+   TIMELINE CONTAINER
+   ============================================= */
 #timeline-container {
   position: sticky;
   width: 100%;
   flex: 1;
   padding: 20px;
   overflow: auto;
-  box-sizing: border-box;
   cursor: grab;
 }
 
@@ -96,7 +98,69 @@ main {
   cursor: grabbing;
 }
 
-/* Labels des clans à gauche */
+/* Years */
+.years {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(5px);
+}
+
+.years div {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+  text-shadow: 0 2px 4px var(--main-color-opacity);
+  font-size: 1.1rem !important;
+}
+
+/* Months */
+.months {
+  position: relative;
+  margin-bottom: 15px;
+  padding: 5px 0;
+  background: rgba(20, 20, 35, 0.3);
+  border-radius: var(--radius-sm);
+}
+
+.months div {
+  color: var(--text-secondary) !important;
+  font-size: 0.75rem !important;
+}
+
+/* =============================================
+   SEGMENTS
+   ============================================= */
+#clan-container {
+  position: relative;
+  padding: 10px 0;
+}
+
+.segment {
+  padding: 0 12px;
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: transform var(--transition), filter var(--transition);
+  border: 1px solid var(--border-light);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.segment:hover {
+  transform: translateY(-2px);
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* =============================================
+   CLAN LABELS (left sidebar)
+   ============================================= */
 .clan-labels {
   position: fixed;
   left: 0;
@@ -104,19 +168,15 @@ main {
   width: 200px;
   bottom: 60px;
   backdrop-filter: blur(15px);
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
   z-index: 500;
   padding: 10px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .clan-labels::-webkit-scrollbar {
   display: none;
-}
-
-.clan-labels {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
 .clan-label {
@@ -125,13 +185,13 @@ main {
   padding: 0 15px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #fff;
-  text-shadow: 0 1px 3px #333333;
+  color: var(--text-primary);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: padding var(--transition), filter var(--transition);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -139,6 +199,7 @@ main {
 
 .clan-label:hover {
   padding-left: 20px;
+  filter: brightness(1.15);
 }
 
 .clan-label-name {
@@ -149,33 +210,30 @@ main {
   margin-right: 5px;
 }
 
+/* Info icon */
 .clan-info-icon {
-  position: relative;
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2); /* Plus visible par défaut */
-  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
   font-size: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: help;
-  opacity: 0.8; /* Toujours visible mais légèrement transparent */
-  transition: all 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  opacity: 0.7;
+  transition: all var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   font-weight: bold;
   margin-left: 8px;
   flex-shrink: 0;
 }
 
-/* Afficher l'icône au survol du label */
 .clan-label:hover .clan-info-icon {
   opacity: 1;
-  background: rgba(255, 255, 255, 0.2);
 }
 
-/* Effet au survol de l'icône */
 .clan-info-icon:hover {
   background: var(--main-color-opacity) !important;
   transform: scale(1.2);
@@ -183,29 +241,83 @@ main {
   box-shadow: 0 2px 8px rgba(134, 121, 250, 0.5);
 }
 
-@media (max-width: 1200px) {
-  .clan-label {
-    font-size: 0.75rem;
-  }
-
-  .clan-info-icon {
-    width: 16px;
-    height: 16px;
-    font-size: 10px;
-  }
+/* =============================================
+   TOOLTIP
+   ============================================= */
+#tooltip {
+  position: absolute;
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.98), rgba(16, 16, 30, 0.98));
+  backdrop-filter: blur(15px);
+  color: var(--text-primary);
+  padding: 0;
+  border-radius: var(--radius-lg);
+  display: none;
+  font-size: 0.9rem;
+  z-index: 9999;
+  pointer-events: none;
+  width: 400px;
+  max-width: 400px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--main-color-dim);
 }
 
-/* En-tête du tooltip */
+.tooltip-header {
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.tooltip-body {
+  padding: 8px 0;
+}
+
+.tooltip-row {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tooltip-row:last-child {
+  border-bottom: none;
+}
+
+.tooltip-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.tooltip-value {
+  color: var(--text-primary);
+  font-weight: 600;
+  text-align: right;
+}
+
+.tooltip-description {
+  padding: 14px 16px;
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-size: 0.88rem;
+  font-weight: 500;
+  white-space: normal;
+  word-wrap: break-word;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Description tooltip (labels) */
 .desc-tooltip-header {
   padding: 10px 14px;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Corps du tooltip */
 .desc-tooltip-body {
   padding: 12px 14px;
   font-size: 0.85rem;
@@ -213,9 +325,193 @@ main {
   color: #e0e0e0;
 }
 
-/* === RESPONSIVE === */
+/* =============================================
+   FILTER PANEL (right sidebar)
+   ============================================= */
+#filter-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 340px;
+  backdrop-filter: blur(20px);
+  background: var(--bg-panel);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid var(--main-color-opacity);
+}
 
+form#filter-form {
+  flex: 1;
+  padding: 20px;
+  background: transparent;
+  max-width: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+form#filter-form fieldset {
+  border: none;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+form#filter-form legend {
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: var(--main-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--main-color-opacity);
+}
+
+form#filter-form div {
+  margin-bottom: 16px;
+}
+
+form#filter-form label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+form#filter-form input[type="text"],
+form#filter-form input[type="number"],
+form#filter-form input[type="month"],
+form#filter-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--main-color-dim);
+  border-radius: var(--radius-md);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  font-family: inherit;
+}
+
+form#filter-form input:focus,
+form#filter-form select:focus {
+  border-color: var(--main-color);
+  outline: none;
+  background: rgba(20, 20, 35, 0.9);
+}
+
+form#filter-form input::placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+form#filter-form button {
+  display: block;
+  width: 100%;
+  padding: 11px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--main-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: auto;
+}
+
+form#filter-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(134, 121, 250, 0.3);
+}
+
+form#filter-form button:active {
+  transform: translateY(0);
+}
+
+/* =============================================
+   TOOLBAR (bottom)
+   ============================================= */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 10px;
+}
+
+.toolbar-section {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: var(--bg-surface);
+  backdrop-filter: blur(15px);
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--main-color-dim);
+}
+
+#zoom-indicator {
+  background: var(--bg-surface);
+  backdrop-filter: blur(10px);
+  padding: 8px 18px;
+  border-radius: var(--radius-md);
+  color: var(--main-color);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1px solid var(--main-color-dim);
+  min-width: 75px;
+  text-align: center;
+}
+
+/* =============================================
+   MOBILE MENU BUTTON
+   ============================================= */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 10000;
+  background: var(--main-color);
+  border: none;
+  padding: 10px 15px;
+  border-radius: var(--radius-md);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform var(--transition);
+}
+
+.mobile-menu-btn:hover {
+  transform: scale(1.05);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+/* Tablet landscape */
 @media (max-width: 1200px) {
+  main {
+    padding-left: 150px;
+  }
+
+  .clan-labels {
+    width: 150px;
+  }
+
   .clan-label {
     font-size: 0.75rem;
   }
@@ -242,314 +538,7 @@ main {
   }
 }
 
-.years {
-  position: relative;
-  margin-bottom: 10px;
-  padding: 10px 0;
-  background: rgba(26, 26, 46, 0.5);
-  border-radius: 8px;
-  backdrop-filter: blur(5px);
-}
-
-.years div {
-  color: #fff !important;
-  font-weight: 700;
-  text-shadow: 0 2px 4px var(--main-color-opacity);
-  font-size: 1.1rem !important;
-}
-
-.months {
-  position: relative;
-  margin-bottom: 15px;
-  padding: 5px 0;
-  background: rgba(20, 20, 35, 0.3);
-  border-radius: 6px;
-}
-
-.months div {
-  color: #999 !important;
-  font-size: 0.75rem !important;
-}
-
-/* Conteneur des segments */
-#clan-container {
-  position: relative;
-  padding: 10px 0;
-}
-
-/* Style des segments */
-.segment {
-  padding: 0 12px;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: 1px solid rgba(207, 207, 207, 0.384);
-  text-shadow: 0 1px 2px var(--main-color-opacity);
-}
-
-.segment:hover {
-  transform: translateY(-2px);
-  z-index: 10;
-}
-
-/* Tooltip */
-#tooltip {
-  position: absolute;
-  background: linear-gradient(
-    135deg,
-    rgba(26, 26, 46, 0.98),
-    rgba(16, 16, 30, 0.98)
-  );
-  backdrop-filter: blur(15px);
-  color: #fff;
-  padding: 0;
-  border-radius: 12px;
-  display: none;
-  font-size: 0.9rem;
-  z-index: 9999;
-  pointer-events: none;
-  width: 400px; /* Largeur fixe */
-  max-width: 400px; /* S'assurer que ça ne dépasse pas */
-  overflow: hidden;
-}
-.tooltip-header {
-  padding: 12px 16px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border-bottom: 1px solid #ffffff6c;
-  text-shadow: 0 2px 4px var(--main-color-opacity);
-}
-
-.tooltip-body {
-  padding: 8px 0;
-}
-
-.tooltip-row {
-  padding: 8px 16px;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.tooltip-row:last-child {
-  border-bottom: none;
-}
-
-.tooltip-label {
-  color: #999;
-  font-weight: 500;
-}
-
-.tooltip-value {
-  color: #fff;
-  font-weight: 600;
-  text-align: right;
-}
-
-/* Le panneau de filtres sur la droite */
-#filter-panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 340px;
-  backdrop-filter: blur(15px);
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  border-left: 2px solid var(--main-color-opacity);
-}
-
-form#filter-form {
-  flex: 1;
-  padding: 20px;
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
-  max-width: 100%;
-  margin: 0;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-form#filter-form fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-form#filter-form legend {
-  font-size: 1.4rem;
-  text-align: center;
-  font-weight: 700;
-  margin-bottom: 25px;
-  color: #fff;
-  background: var(--main-color);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  padding-bottom: 15px;
-  border-bottom: 2px solid var(--main-color-opacity);
-}
-
-.tooltip-description {
-  padding: 16px 20px; /* Plus de marge pour le texte */
-  color: #e0e0e0;
-  line-height: 1.6; /* Espacement des lignes légèrement augmenté */
-  font-size: 0.9rem;
-  font-weight: 600;
-  white-space: normal; /* Permet le retour à la ligne */
-  word-wrap: break-word; /* Casse les mots trop longs */
-  word-break: break-word; /* Alternative pour certains navigateurs */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  margin-bottom: 8px;
-  background: rgba(255, 255, 255, 0.02); /* Léger fond pour délimiter la zone */
-}
-
-form#filter-form div {
-  margin-bottom: 18px;
-}
-
-form#filter-form label {
-  display: block;
-  font-size: 0.95rem;
-  margin-bottom: 8px;
-  color: #ffffff;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.85rem;
-}
-
-form#filter-form input[type="text"],
-form#filter-form input[type="number"],
-form#filter-form input[type="month"],
-form#filter-form select {
-  width: 100%;
-  padding: 10px 12px;
-  border: 2px solid var(--main-color-opacity);
-  border-radius: 8px;
-  background: rgba(15, 15, 25, 0.6);
-  color: #fff;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  font-family: inherit;
-}
-
-form#filter-form input:focus,
-form#filter-form select:focus {
-  border-color: var(--main-color);
-  outline: none;
-  background: rgb(20, 20, 35);
-}
-
-form#filter-form input::placeholder {
-  color: #666;
-  font-style: italic;
-}
-
-form#filter-form button {
-  display: block;
-  width: 100%;
-  padding: 12px 20px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 10px;
-  background: var(--main-color);
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: auto;
-}
-
-form#filter-form button:hover {
-  transform: translateY(-2px);
-}
-
-form#filter-form button:active {
-  transform: translateY(0);
-}
-
-/* Boutons de contrôle */
-.control-btn {
-  padding: 8px 16px;
-  background: var(--main-color-opacity);
-  border: 1px solid var(--main-color-opacity);
-  border-radius: 6px;
-  color: #fff;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.control-btn:hover {
-  background: var(--main-color-opacity);
-  transform: translateY(-1px);
-}
-
-/* Toolbar en bas */
-.toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  padding: 5px 10px;
-}
-
-.toolbar-section {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  background: rgba(26, 26, 46, 0.95);
-  backdrop-filter: blur(15px);
-  padding: 10px 15px;
-  border-radius: 10px;
-  border: 1px solid var(--main-color-opacity);
-}
-
-#zoom-indicator {
-  background: rgba(26, 26, 46, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: var(--main-color);
-  font-weight: 700;
-  font-size: 1rem;
-  border: 1px solid var(--main-color-opacity);
-  min-width: 80px;
-  text-align: center;
-}
-
-/* Responsive */
-@media (max-width: 1200px) {
-  main {
-    padding-left: 150px;
-  }
-
-  .clan-labels {
-    width: 150px;
-  }
-
-  .clan-label {
-    font-size: 0.75rem;
-  }
-}
-
+/* Tablet portrait */
 @media (max-width: 1024px) {
   main {
     padding-left: 0;
@@ -568,6 +557,7 @@ form#filter-form button:active {
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   header {
     right: 0;
@@ -580,9 +570,7 @@ form#filter-form button:active {
   }
 
   main {
-    padding-right: 0;
-    padding-top: 60px;
-    padding-left: 0;
+    padding: 60px 0 0 0;
   }
 
   #filter-panel {
@@ -595,29 +583,14 @@ form#filter-form button:active {
     transform: translateX(0);
   }
 
-  /* Bouton menu burger pour mobile */
   .mobile-menu-btn {
     display: block !important;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 10000;
-    background: var(--main-color);
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
   }
 
   .toolbar {
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
+    gap: 8px;
   }
 
   .toolbar-section {
@@ -634,6 +607,7 @@ form#filter-form button:active {
   }
 }
 
+/* Small mobile */
 @media (max-width: 480px) {
   header h1 {
     font-size: 0.85rem;
@@ -649,7 +623,7 @@ form#filter-form button:active {
   }
 
   form#filter-form legend {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   form#filter-form label {
@@ -663,20 +637,19 @@ form#filter-form button:active {
   }
 
   form#filter-form button {
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 10px 15px;
   }
 
-  /* Segments plus visibles sur mobile */
   .segment {
     font-size: 0.7rem;
     padding: 0 8px;
     min-height: 20px;
   }
 
-  /* Tooltip plus compact sur mobile */
   #tooltip {
-    min-width: 240px;
+    width: 280px;
+    max-width: 280px;
     font-size: 0.8rem;
   }
 
@@ -700,11 +673,7 @@ form#filter-form button:active {
   }
 
   #tooltip {
-    min-width: 200px;
+    width: 220px;
+    max-width: 220px;
   }
-}
-
-/* Bouton menu caché par défaut */
-.mobile-menu-btn {
-  display: none;
 }

@@ -1,3 +1,5 @@
+//Script.js
+
 // Constantes globales
 const startYear = 2016;
 const endYear = 2025;
