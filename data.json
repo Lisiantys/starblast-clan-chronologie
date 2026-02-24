@@ -408,21 +408,21 @@
     "isClan": true,
     "isActive": true,
     "mainRegion": "US",
-    "fullName": "flammable violets", 
+    "fullName": "Flammable Violets", 
     "color": "#ff4500",
     "description": ".",
     "segments": [
       {
-        "start": "2019-01",
-        "end": "2019-09",
+        "start": "2021-03",
+        "end": "2021-08",
         "name": "CRC",
-        "leader": "wanda, bautista"
+        "leader": "wanda, jeff"
       },
       {
         "start": "2021-10",
         "end": "2025-10",
         "name": "FV",
-        "leader": "wanda, bautista"
+        "leader": "Wanda"
       }
     ]
   },
