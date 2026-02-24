@@ -36,6 +36,13 @@ function generateLabels(clans) {
         labelDiv.style.backgroundColor = clan.color;
         labelDiv.title = clan.fullName || clan.name;
 
+        labelDiv.dataset.clanName = clan.name;
+
+        // Click pour sélectionner/désélectionner pour la comparaison
+        labelDiv.addEventListener("click", () => {
+            toggleClanSelection(clan.name);
+        });
+
         // Ajouter le texte du nom
         const nameSpan = document.createElement("span");
         nameSpan.className = "clan-label-name";

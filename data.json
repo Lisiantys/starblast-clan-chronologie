@@ -403,7 +403,7 @@
   },
   {
     "name": "FV",
-    "founders": ["wanda", "bautista"],
+    "founders": ["Wanda", "bautista"],
     "isCheaterClan": false,
     "isClan": true,
     "isActive": true,
@@ -416,7 +416,7 @@
         "start": "2021-03",
         "end": "2021-08",
         "name": "CRC",
-        "leader": "wanda, jeff"
+        "leader": "Wanda, jeff"
       },
       {
         "start": "2021-10",
@@ -1482,14 +1482,14 @@
     "isClan": true,
     "isActive": true,
     "mainRegion": "US",
-    "fullName": "ya 4 f en latin mais je sais plus",
+    "fullName": "F4 Legion",
     "color": "#7fff00",
     "segments": [
       {
-        "start": "2021-04",
-        "end": "2023-02",
+        "start": "2022-04",
+        "end": "2023-01",
         "name": "F4",
-        "leader": "Sakura"
+        "leader": "Fatality"
       },
       {
         "start": "2023-02",

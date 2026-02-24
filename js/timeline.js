@@ -175,6 +175,8 @@ function refreshTimeline(clans) {
     generateMonths();
     generateTimeline(clans);
     updateZoomIndicator();
-
-    setTimeout(() => syncLabelsScroll(), 50);
+    setTimeout(() => {
+        syncLabelsScroll();
+        if (typeof updateSelectionUI === 'function') updateSelectionUI(); // <-- AJOUTER
+    }, 50);
 }
