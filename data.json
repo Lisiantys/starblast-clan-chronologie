@@ -305,12 +305,6 @@
     "segments": [
       {
         "start": "2020-08",
-        "end": "2023-06",
-        "name": "IS",
-        "leader": "Leader 1"
-      },
-      {
-        "start": "2024-11",
         "end": "2025-02",
         "name": "IS",
         "leader": "Leader 1"
@@ -414,9 +408,16 @@
     "isClan": true,
     "isActive": true,
     "mainRegion": "US",
-    "fullName": "flammable violets",
+    "fullName": "flammable violets", 
     "color": "#ff4500",
+    "description": ".",
     "segments": [
+      {
+        "start": "2019-01",
+        "end": "2019-09",
+        "name": "CRC",
+        "leader": "wanda, bautista"
+      },
       {
         "start": "2021-10",
         "end": "2025-10",
@@ -1013,10 +1014,11 @@
     "mainRegion": "US",
     "fullName": "soloist defense force",
     "color": "#8b0000",
+    "description": "SDF clan merged in IS clan.",
     "segments": [
       {
         "start": "2017-02",
-        "end": "2019-09",
+        "end": "2021-06",
         "name": "SDF",
         "leader": "x-27, valliant"
       }
