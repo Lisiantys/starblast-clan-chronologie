@@ -21,6 +21,9 @@ function generateLabels(clans) {
     const monthsHeight = STATE.currentZoom >= CONFIG.MONTH_HIDE_THRESHOLD ? 35 : 0;
     const topPadding = yearsHeight + monthsHeight + 10;
 
+    // Ajuster le top selon la visibilité des mois
+    labelsContainer.style.top = (STATE.currentZoom >= CONFIG.MONTH_HIDE_THRESHOLD) ? "150px" : "115px";
+
     innerContainer.style.paddingTop = `${topPadding}px`;
 
     // Récupérer le tooltip existant (le même que pour les segments)
