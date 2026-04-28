@@ -304,10 +304,10 @@
     "color": "#ff6347",
     "segments": [
       {
-        "start": "2020-08",
+        "start": "2020-05",
         "end": "2025-02",
         "name": "IS",
-        "leader": "Leader 1"
+        "leader": "Leader 1, Leader 2"
       }
     ]
   },
@@ -706,7 +706,14 @@
         "start": "2018-02",
         "end": "2018-06",
         "name": "FEAR",
-        "leader": "Bey, Adem Alma"
+        "leader": "Medusa, Adem Alma"
+      },
+      {
+        "start": "2018-07",
+        "end": "2019-08",
+        "name": "HELL",
+        "leader": "Hazard, Adem Alma",
+        "isCheating": false
       },
       {
         "start": "2019-09",
@@ -718,13 +725,14 @@
         "start": "2020-01",
         "end": "2020-07",
         "name": "ROT",
-        "leader": "Adem Alma"
+        "leader": "Hazard",
+        "isCheating": false
       },
       {
         "start": "2023-06",
         "end": "2024-05",
-        "name": "HELL",
-        "leader": "Bey, Adem Alma"
+        "name": "HELL (Fake)",
+        "leader": "Yavuz, Adem Alma"
       }
     ]
   },
@@ -1038,13 +1046,31 @@
         "start": "2023-12",
         "end": "2024-02",
         "name": "LOG",
-        "leader": "Kak Kak To"
+        "leader": "Probo"
       },
       {
         "start": "2024-08",
         "end": "2024-10",
         "name": "LOG",
-        "leader": "Kak Kak To"
+        "leader": "Probo"
+      }
+    ]
+  },
+  {
+    "name": "L7",
+    "founders": ["Lttr7, goldesnsteel"],
+    "isCheaterClan": false,
+    "isClan": true,
+    "isActive": true,
+    "mainRegion": "US",
+    "fullName": "Letter 7",
+    "color": "#00ff2b",
+    "segments": [
+      {
+        "start": "2017-07",
+        "end": "2025-10",
+        "name": "L7",
+        "leader": "Dom, Tempest"
       }
     ]
   },
@@ -1062,7 +1088,7 @@
         "start": "2024-08",
         "end": "2024-10",
         "name": "ULU",
-        "leader": "hlti, turk"
+        "leader": "bozayi, HLTI"
       },
       {
         "start": "2024-11",
@@ -1369,7 +1395,8 @@
         "start": "2021-09",
         "end": "2023-04",
         "name": "YA",
-        "leader": "solomon, aya, crexy"
+        "leader": "solomon, aya, crexy",
+        "isCheating": false
       },
       {
         "start": "2023-05",
