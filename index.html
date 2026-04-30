@@ -1,136 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Starblast Clans & Teams Timeline</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="compare.css" />
-  </head>
-  <body>
-    <!-- Bouton menu mobile -->
-    <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Starblast Clans & Teams Timeline</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-    <header>
-      <h1>Starblast Clans & Teams Timeline</h1>
-    </header>
+<div id="app">
+  <header class="topbar">
+    <div>
+      <span class="logo">Starblast - Clans & Teams Timeline</span>
+    </div>
+    <div class="toolbar">
+      <div class="zoom-indicator" id="zoomIndicator">100%</div>
+      <button class="btn icon" id="zoomOut" title="Zoom out (Ctrl + -)">−</button>
+      <button class="btn icon" id="zoomReset" title="Reset zoom (Ctrl + 0)">⊙</button>
+      <button class="btn icon" id="zoomIn" title="Zoom in (Ctrl + +)">+</button>
+      <button class="btn icon menu-toggle" id="menuToggle" title="Filters">☰</button>
+    </div>
+  </header>
 
-    <!-- Labels des clans -->
-    <div class="clan-labels"></div>
-
-    <main>
-      <div id="timeline-container">
-        <div class="years"></div>
-        <div class="months"></div>
-        <div id="clan-container"></div>
+  <main>
+    <aside class="left-panel">
+      <div class="left-panel-header">Clans / Teams</div>
+      <div class="left-labels-scroll" id="leftLabelsScroll">
+        <div class="left-labels-inner" id="leftLabels"></div>
       </div>
+    </aside>
 
-      <!-- Panneau de filtre -->
-      <div id="filter-panel">
-        <form id="filter-form">
-          <fieldset>
-            <legend>Filters</legend>
-
-            <div>
-              <label for="segment-name-filter">Search Name</label>
-              <input
-                type="text"
-                id="segment-name-filter"
-                name="segmentName"
-                placeholder="Clan name..."
-                autocomplete="off"
-              />
-            </div>
-
-            <div>
-              <label for="cheater-filter">Reputation</label>
-              <select id="cheater-filter" name="isCheaterClan">
-                <option value="">All</option>
-                <option value="false">Fair</option>
-                <option value="true">Cheaters</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="team-filter">Structure</label>
-              <select id="team-filter" name="isClan">
-                <option value="">All</option>
-                <option value="true">Clan</option>
-                <option value="false">Team</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="active-filter">Status</label>
-              <select id="active-filter" name="isActive">
-                <option value="">All</option>
-                <option value="true">Active</option>
-                <option value="false">Inactive</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="region-filter">Region</label>
-              <select id="region-filter" name="mainRegion">
-                <option value="">All Regions</option>
-                <option value="EU">Europe</option>
-                <option value="US">America</option>
-                <option value="AS">Asia</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="start-date-filter">Start Date</label>
-              <input type="month" id="start-date-filter" name="startDate" />
-            </div>
-
-            <div>
-              <label for="end-date-filter">End Date</label>
-              <input type="month" id="end-date-filter" name="endDate" />
-            </div>
-
-            <div>
-              <button
-                type="button"
-                id="reset-filters"
-                style="
-                  margin-bottom: 10px;
-                  background: rgba(134, 121, 250, 0.3);
-                "
-              >
-                Reset Filters</button
-              ><button type="submit">Apply Filters</button>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-
-      <!-- Tooltip -->
-      <div id="tooltip"></div>
-
-      <!-- Toolbar en bas -->
-      <div class="toolbar">
-        <!-- Zoom Indicator -->
-        <div id="zoom-indicator">100%</div>
-
-        <!-- Keyboard Shortcuts Info -->
-        <div class="toolbar-section" style="flex: 1; justify-content: center">
-          <span style="color: #999; font-size: 0.75rem; text-align: center">
-            <strong style="color: rgb(134, 121, 250)">Ctrl+Scroll</strong> Zoom
-          </span>
-          <span style="color: #999; font-size: 0.75rem; text-align: center">
-            <strong style="color: rgb(134, 121, 250)">Click TAGS</strong> to compare clans
-          </span>
+    <div class="timeline-area">
+      <div class="timeline-scroll" id="timelineScroll">
+        <div class="timeline-content" id="timelineContent">
+          <div class="years-bar" id="yearsBar"></div>
+          <div class="months-bar" id="monthsBar"></div>
+          <div class="grid-lines" id="gridLines"></div>
+          <div class="rows-container" id="rowsContainer"></div>
         </div>
       </div>
-    </main>
-    <script src="js/compare.js"></script> 
-    <script src="js/config.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/labels.js"></script>
-    <script src="js/timeline.js"></script>
-    <script src="js/zoom.js"></script>
-    <script src="js/filters.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <div>No clans match your filters</div>
+      </div>
+    </div>
+
+    <aside class="right-panel" id="rightPanel">
+      <h3>Filters</h3>
+      <div class="filter-group">
+        <label class="filter-label">Search Name</label>
+        <input type="text" class="filter-input" id="searchInput" placeholder="TDR, S2F, FTF...">
+      </div>
+      <div class="filter-group">
+        <label class="filter-label">Reputation</label>
+        <select class="filter-select" id="reputationFilter">
+          <option value="all">All</option>
+          <option value="fair">Fair</option>
+          <option value="cheaters">Cheaters</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="filter-label">Structure</label>
+        <select class="filter-select" id="structureFilter">
+          <option value="all">All</option>
+          <option value="clan">Clan</option>
+          <option value="team">Team</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="filter-label">Status</label>
+        <select class="filter-select" id="statusFilter">
+          <option value="all">All</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="filter-label">Region</label>
+        <select class="filter-select" id="regionFilter">
+          <option value="all">All Regions</option>
+          <option value="EU">Europe (EU)</option>
+          <option value="US">America (US)</option>
+          <option value="AS">Asia (AS)</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="filter-label">Start Date (≥)</label>
+        <input type="month" class="filter-input" id="startDateFilter" min="2016-01" max="2025-12">
+      </div>
+      <div class="filter-group">
+        <label class="filter-label">End Date (≤)</label>
+        <input type="month" class="filter-input" id="endDateFilter" min="2016-01" max="2025-12">
+      </div>
+      <button class="reset-btn" id="resetBtn">Reset Filters</button>
+
+      <div class="credits">
+      <div class="credits-section">
+        <div class="credits-title">Idea</div>
+        <div class="credits-content">Inspired by Alex's timeline</div>
+      </div>
+      <div class="credits-section">
+        <div class="credits-title">Contributors</div>
+        <div class="credits-content">Thanks to all clan leaders and players who shared their knowledge and history</div>
+      </div>
+      <div class="credits-section">
+        <div class="credits-title">For updates</div>
+        <div class="credits-content">DM <strong>_adonys</strong> on Discord</div>
+      </div>
+    </div>
+
+      <div class="filter-stats" id="filterStats">
+        Showing <strong>0</strong> of <strong>0</strong> clans
+      </div>
+    </aside>
+  </main>
+</div>
+
+<!-- Tooltip -->
+<div class="tooltip" id="tooltip"></div>
+
+<!-- Comparison floating bar -->
+<div class="compare-bar" id="compareBar">
+  <span class="compare-label">Selected:</span>
+  <div class="compare-chips" id="compareChips"></div>
+  <button class="btn" id="compareBtn" style="display:none;">Compare</button>
+  <button class="btn" id="clearBtn">Clear</button>
+</div>
+
+<!-- Comparison modal -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Clan Comparison</div>
+      <button class="modal-close" id="modalClose">×</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- Loading -->
+<div class="loading" id="loading">
+  <div class="spinner"></div>
+  <div class="loading-text">Loading clans...</div>
+</div>
+<script src="app.js"></script>
+</body>
 </html>
